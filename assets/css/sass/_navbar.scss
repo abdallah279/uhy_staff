@@ -1,0 +1,111 @@
+/********************* Start Navbar section *********************/
+.navbar-m {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  z-index: 30;
+  transition: $main-transition;
+
+  @include devices(lg){
+    padding: 10px 0 !important;
+  }
+
+  .navbar-content {
+    @include between;
+    width: 100%;
+
+    .side-open {
+      cursor: pointer;
+      display: none;
+
+      @include devices(lg){
+        display: flex;
+      }
+    }
+
+    .logo {
+      width: 200px;
+      height: 26px;
+      margin: auto;
+    }
+
+    .left-sec {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .not_link {
+        @include circle(48px);
+        box-shadow: $sec-shadow;
+        @include center;
+        position: relative;
+
+        @include devices(lg){
+          @include circle(45px);
+        }
+
+        .ic {
+          max-height: 32px;
+          
+          @include devices(lg){
+            max-height: 25px;
+          }
+        }
+
+        .count {
+          position: absolute;
+          top: 0px;
+          @include dir-left(-12px);
+          @include circle(26px);
+          @include center;
+          font-size: 12px;
+          color: $white;
+          background-color: $main;
+          padding: 4px;
+          // border: 2px solid $white;
+          
+          @include devices(lg){
+            @include circle(20px);
+            font-size: 10px;
+          }
+        }
+
+        &.side-open {
+          cursor: pointer;
+          display: none;
+    
+          @include devices(lg){
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav_style {
+  padding: 15px 0;
+  box-shadow: $main-shadow;
+  border-bottom: 1px solid $light2;
+}
+
+.nav-overlay {
+  @include devices(lg){
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 333;
+    background-color: rgba($color: #000000, $alpha: .5);
+    transition: 0.7s;
+    @include dir-right(0);
+    @include translate(100%);
+  
+    &.active {
+      transform: translateX(0) !important;
+    }
+  }
+}
+
+/********************* End links_box *********************/

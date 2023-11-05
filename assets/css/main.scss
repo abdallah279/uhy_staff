@@ -1,0 +1,11 @@
+@import "sass/variables", "sass/mixins", "sass/global", "sass/components",
+  "sass/navbar", "sass/sidebar";
+
+/********************* Start video_sec section *********************/
+.main-padding-right {
+  @include dir-padding-left(250px);
+
+  @media screen and (max-width: $screen-lg) {
+    @include dir-padding-left(0px !important);
+  }
+}
