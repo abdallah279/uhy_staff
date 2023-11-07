@@ -23,28 +23,28 @@
     position: relative;
   }
   .loader:before {
-      content: '';
-      width: 70px;
-      height: 5px;
-      background: #000;
-      opacity: 0.25;
-      position: absolute;
-      top: 83px;
-      left: 0;
-      border-radius: 50%;
-      animation: shadow 0.5s linear infinite;
-    }
-    .loader:after {
-      content: '';
-      width: 100%;
-      height: 100%;
-      background: $main;
-      animation: bxSpin 0.5s linear infinite;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 4px;
-    }
+    content: "";
+    width: 70px;
+    height: 5px;
+    background: #000;
+    opacity: 0.25;
+    position: absolute;
+    top: 83px;
+    left: 0;
+    border-radius: 50%;
+    animation: shadow 0.5s linear infinite;
+  }
+  .loader:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $main;
+    animation: bxSpin 0.5s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+  }
   @keyframes bxSpin {
     17% {
       border-bottom-right-radius: 3px;
@@ -53,7 +53,7 @@
       transform: translateY(9px) rotate(22.5deg);
     }
     50% {
-      transform: translateY(18px) scale(1, .9) rotate(45deg);
+      transform: translateY(18px) scale(1, 0.9) rotate(45deg);
       border-bottom-right-radius: 40px;
     }
     75% {
@@ -65,14 +65,14 @@
   }
 
   @keyframes shadow {
-    0%, 100% {
+    0%,
+    100% {
       transform: scale(1, 1);
     }
     50% {
       transform: scale(1.2, 1);
     }
   }
-
 }
 
 // Search
@@ -313,6 +313,10 @@
   margin-bottom: 16px;
 }
 
+.ms_auto{
+  margin-inline-start: auto;
+}
+
 .pl-25 {
   @include dir-padding-right(25px !important);
 }
@@ -510,19 +514,16 @@
 .iti {
   width: 100%;
   .iti__selected-flag {
-    width: 100px;
     justify-content: center;
-    min-height: 48px;
-    border-radius: 5px;
-    font-size: 14px;
-    color: $main;
-    transition: all 0.3s ease;
-    border: 1px solid #d5d5d5;
+    // min-height: 48px;
+    font-size: 13px;
+    color: $black;
+    @include dir-border-left(1px solid $border-input);
+    transition: $main-transition;
+    border: none;
     background-color: transparent !important;
-
-    @media screen and (max-width: $screen-xs) {
-      min-height: 44px;
-    }
+    margin: 9px 0;
+    height: calc(100% - 18px);
 
     .iti__selected-dial-code {
       margin: 8px;
@@ -546,6 +547,13 @@
   }
 }
 
+.iti__flag{
+  display: none !important;
+}
+
+.iti__arrow{
+  display: none;
+}
 /********************* Titles *********************/
 .big-title {
   font-size: 23px;
@@ -785,11 +793,11 @@
 .main-btn {
   @include center;
   gap: 7px;
-  min-width: 160px;
-  background-color: $light;
-  border: 1px solid $light;
-  color: $black;
-  font-size: 15px;
+  min-width: 130px;
+  background-color: $main;
+  border: 1px solid $main;
+  color: $white;
+  font-size: 13px;
   height: 44px;
   cursor: pointer;
   transition: $main-transition;
@@ -798,31 +806,25 @@
   position: relative;
   z-index: 1;
   max-width: fit-content;
+  border-radius: 7px;
 
-  @media screen and (max-width: $screen-sm) {
-    height: 45px;
-    font-size: 15px;
-  }
+  &.sec {
+    background-color: $sec;
+    border-color: $sec;
 
-  @media screen and (max-width: $screen-sm) {
-    min-width: 132px;
-  }
-
-  &.light {
-    background-color: $light5;
-    color: $main;
-    border-color: $light5;
-
-    // &:hover{
-    //   background-color: $sec;
-    //   color: $white;
-    // }
+    &:hover{
+      color: $sec;
+    }
   }
 
   &.red {
     background-color: $red;
     color: $white;
     border-color: $red;
+
+    &:hover{
+      color: $red;
+    }
   }
 
   &.black {
@@ -866,26 +868,10 @@
   }
 
   &.lg {
-    width: 210px;
-    font-size: 16px;
-    height: 46px;
-    // border-radius: 8px;
-
-    @media screen and (max-width: $screen-sm) {
-      font-size: 16px;
-      width: 140px;
-      height: 48px;
-    }
-
-    @media screen and (max-width: $screen-xs) {
-      font-size: 15px;
-      width: 130px;
-      height: 47px;
-    }
-
-    @media screen and (max-width: $screen-xxs) {
-      width: 120px;
-      height: 45px;
+    min-width: 200px;
+    
+    @include devices(xs){
+      min-width: 150px;
     }
   }
 
@@ -906,6 +892,31 @@
   .ic {
     max-width: 17px;
     max-height: 15px;
+  }
+}
+
+.add_btn {
+  @include center;
+  gap: 10px;
+  background-color: $white2;
+  border: 1px solid $border-color;
+  color: $main;
+  font-size: 13px;
+  cursor: pointer;
+  transition: $main-transition;
+  overflow: hidden;
+  padding: 12px 18px;
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  max-width: fit-content;
+  // font-family: fontDemi;
+
+  &:hover {
+    color: $main !important;
+  }
+  i {
+    font-size: 20px;
   }
 }
 
@@ -1022,15 +1033,15 @@
 }
 
 .bg-main {
-  background-color: $main;
+  background-color: $main !important;
 }
 
 .bg-white {
-  background-color: $white;
+  background-color: $white !important;
 }
 
 .bg-light {
-  background-color: $light;
+  background-color: $light !important;
 }
 
 .bg-smain {
@@ -1143,7 +1154,7 @@
   .fs#{$i} {
     font-size: $i + px !important;
 
-    @include devices(xs){
+    @include devices(xs) {
       font-size: ($i - 2px) !important;
     }
   }
@@ -1487,10 +1498,9 @@
 }
 
 .main-label {
-  margin-bottom: 7px;
-  font-size: 15px;
-  // font-family: fontDemi;
-  color: $white;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: $black;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1513,11 +1523,12 @@
     outline: none;
     border: none;
     font-size: 14px;
-    color: $white;
+    color: $black;
     transition: $main-transition;
-    border: 1px solid $sec;
-    background-color: $sec;
+    border: 1px solid $border-input;
+    background-color: $white;
     font-weight: 500;
+    border-radius: 7px;
 
     &.photo-input {
       display: flex;
@@ -1528,15 +1539,14 @@
     }
 
     &::placeholder {
-      font-size: 13px;
-      color: $white;
+      font-size: 12px;
+      color: $text-color;
       font-weight: 500;
       transition: $main-transition;
     }
 
     &:focus {
-      // border-color: $black;
-      background-color: transparent;
+      border-color: $main;
 
       &::placeholder {
         opacity: 0;
@@ -2128,12 +2138,37 @@
   }
 }
 
+
+.upload-label {
+  position: relative;
+  background-color: $white;
+  width: 100px;
+  height: 90px;
+  border-radius: 5px;
+  border: 1px dashed $border-input;
+  @include center;
+  flex-direction: column;
+  gap: 10px;
+  color: $main;
+  font-size: 12px;
+
+  i {
+    font-size: 18px;
+  }
+
+  img{
+    max-height: 36px;
+  }
+}
+
+
 .hidden-img {
   position: relative;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  margin-top: 8px;
+  width: 100px;
+  height: 90px;
+  border: 1px solid $border-input;
+  border-radius: 5px;
 
   img {
     border-radius: 5px;
@@ -2163,17 +2198,14 @@
 
 .remove-img {
   position: absolute;
-  top: 15px;
-  @include dir-right(15px);
-  // @include circle(15px);
-  // width: 12px;
-  // height: 12px;
-  color: $red;
-  color: #fff;
-  background-color: transparent;
-  font-size: 17px;
+  top: -7px;
+  @include dir-right(-7px);
+  @include circle(18px);
+  background-color: $red;
+  color: $white;
   @include center;
   cursor: pointer;
+  font-size: 13px;
 
   img {
     width: 24px;

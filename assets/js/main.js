@@ -2,6 +2,7 @@
 $(window).on("load", function () {
   $(".loader-container").delay(300).fadeOut(1000);
 });
+
 // Active Link
 $(".links .link").each(function () {
   $(this).removeClass("active");
@@ -14,50 +15,20 @@ $(".links .link").each(function () {
 $(document).ready(function () {
   let navbarHeight = $(".navbar-m").outerHeight();
 
-  $('.sidebar-m .logo').css('height', navbarHeight);
+  $(".sidebar-m .logo").css("height", navbarHeight);
 });
 
 // SideBar
 $("#open_links").on("click", function () {
-  $(".sidebar-m").addClass('active');
-  $(".nav-overlay").addClass('active');
+  $(".sidebar-m").addClass("active");
+  $(".nav-overlay").addClass("active");
 });
 
 // SideBar
 $(".nav-overlay").on("click", function () {
-  $(".sidebar-m").removeClass('active');
-  $(this).removeClass('active');
+  $(".sidebar-m").removeClass("active");
+  $(this).removeClass("active");
 });
-
-// dropDown stopPropagation
-$(".dropdown-menu").click(function (e) {
-  e.stopPropagation();
-});
-
-// PassWord Show In Setting Page
-const iconsPassSet = document.querySelectorAll(".pass-icon");
-
-if (iconsPassSet) {
-  iconsPassSet.forEach((ic) => {
-    ic.addEventListener("click", function () {
-      let input = ic.parentElement.querySelector("input");
-      showPassword(input, ic);
-    });
-  });
-}
-
-// Function To Show And Hide Password
-function showPassword(input, icon) {
-  if (input.type == "password") {
-    input.setAttribute("type", "text");
-    // icon.innerHTML = `<i class="fa-regular fa-eye"></i>`;
-  } else {
-    input.setAttribute("type", "password");
-    // icon.innerHTML = `<i class="fa-regular fa-eye-slash"></i>`;
-  }
-
-  icon.classList.toggle("show");
-}
 
 let isRtl = $('html[lang="ar"]').length > 0;
 
@@ -67,56 +38,103 @@ $(".select").select2({
   minimumResultsForSearch: Infinity,
 });
 
-// Heart
-$(document).on("click", ".heart", function () {
-  if ($(this).find("i").hasClass("fa-regular")) {
-    $(this).find("i").addClass("fa-solid c-yellow");
-    $(this).find("i").removeClass("fa-regular");
+
+/************* Upload Video Or Img *************/
+let loginInputs = document.querySelectorAll(".img-upload-input");
+
+loginInputs.forEach((input) => {
+  if (input.classList.contains("profile")) {
+    let img = input.parentElement.querySelector(".profile-img .img");
+    let imageSrc = img.getAttribute("src");
+    input.onchange = function () {
+      let reader = new FileReader();
+      if (input.files[0]) {
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        img.setAttribute("src", imageSrc);
+        img.classList.remove("wid");
+      }
+
+      reader.onload = () => {
+        img.setAttribute("src", reader.result);
+        img.classList.add("wid");
+      };
+    };
   } else {
-    $(this).find("i").removeClass("fa-solid c-yellow");
-    $(this).find("i").addClass("fa-regular");
+    $(".img-upload-input").change(function () {
+      imgPreview(this);
+    });
+
+    function imgPreview(input) {
+      var file = input.files[0];
+      var mixedfile = file["type"].split("/");
+      var filetype = mixedfile[0];
+
+      let photoContainer = $(input).closest(".upload-con").find(".photo-con");
+
+      if (filetype == "image") {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          photoContainer.empty();
+
+          let img = `
+                                
+                                <div class="hidden-img">
+                
+                                    <a class="fancybox" data-fancybox="gallery" href="${e.target.result}">
+                                        <img class="img" src="${e.target.result}" />
+                                    </a>
+
+                                    <button type='button' class='remove-img'>
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+
+                                </div>
+                            `;
+
+          photoContainer.append(img);
+          $(".remove-img").on("click", function (e) {
+            e.target.closest(".hidden-img").remove();
+          });
+        };
+        reader.readAsDataURL(input.files[0]);
+      } else if (filetype == "video") {
+        photoContainer.empty();
+
+        let srcVideo = URL.createObjectURL(input.files[0]);
+
+        let video = `
+                            <div class="course-page-img">
+
+                                <video class="img" src="${srcVideo}"></video>
+                                <a href="${srcVideo}" class="video" data-fancybox="gallery" data-type='video'>
+                                    <img src="../assets/imgs/icons/video_ic2.png" alt="" class="ic">
+                                </a>
+
+                                <button type='button' class='remove-img'>
+                                    <img src='../assets/imgs/icons/close-square2.png' />
+                                </button>
+
+                            </div>
+                        `;
+
+        if (photoContainer.length) {
+          photoContainer.append(video);
+        } else {
+          $(`.${$(input).data("video")}`).empty();
+          $(`.${$(input).data("video")}`).append(video);
+        }
+
+        $(".remove-img").on("click", function (e) {
+          e.target.closest(".course-page-img").remove();
+        });
+      } else {
+        alert("Invalid file type");
+      }
+    }
   }
 });
 
-// $('[data-pass]').on('click', function(){
-// let item = $(this).attr('data-pass')
-// sessionStorage.setItem("activeTab", JSON.stringify(item));
-// })
-
-let allCopy = document.querySelectorAll(".circle");
-
-if (allCopy) {
-  allCopy.forEach((el) => {
-    el.addEventListener("click", function () {
-      let code = el.closest(".copy-item").querySelector(".copy-num");
-      CopyToClipboard(code);
-    });
-  });
-}
-
-function CopyToClipboard(id) {
-  var r = document.createRange();
-  r.selectNode(id);
-  window.getSelection().removeAllRanges();
-  window.getSelection().addRange(r);
-  document.execCommand("copy");
-  window.getSelection().removeAllRanges();
-}
-
-// Input Number
-$(document).ready(function () {
-  $(".minus").click(function () {
-    var $input = $(this).parent().find("input");
-    var count = parseInt($input.val()) - 1;
-    count = count < 1 ? 1 : count;
-    $input.val(count);
-    $input.change();
-    return false;
-  });
-  $(".plus").click(function () {
-    var $input = $(this).parent().find("input");
-    $input.val(parseInt($input.val()) + 1);
-    $input.change();
-    return false;
-  });
+$(".remove-img").on("click", function (e) {
+  e.target.closest(".course-page-img").remove();
 });

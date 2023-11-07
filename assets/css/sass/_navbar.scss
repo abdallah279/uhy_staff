@@ -57,7 +57,7 @@
           position: absolute;
           top: 0px;
           @include dir-left(-12px);
-          @include circle(26px);
+          @include circle(23px);
           @include center;
           font-size: 12px;
           color: $white;

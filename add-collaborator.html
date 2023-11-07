@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="./assets/plugins/FancyBox/jquery.fancybox.min.css">
     <!-- FlatPicker -->
     <link rel="stylesheet" href="./assets/plugins/FlatPicker/flatpickr.css">
+    <!-- intlTelInput -->
+    <link rel="stylesheet" href="./assets/plugins/flag/css/intlTelInput.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
@@ -35,7 +37,7 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">الرئيسية</h1>
+                    <h1 class="fs17 ff-b">المتعاونين</h1>
                 </div>
                 
                 <div class="left-sec">
@@ -238,6 +240,75 @@
     <!-- ************** Start main Section ************** -->
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
+            
+            <form action="collaborators.html" class='bg-light rounded-4 p-sm-5 py-4 px-3'>
+                <h3 class="fs16 ff-b mb-4">إضافة متعاون جديد</h3>
+
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">اسم المتعاون </label>
+                            <div class="main-input">
+                                <input type="text" placeholder="قم بإدخال اسم المتعاون " class="input-me">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">رقم الجوال</label>
+                            <div class="main-input">
+                                <input type="number" id="telephone" placeholder="قم بإدخال رقم الجوال" class="input-me">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">اضافه رقم الحساب البنكي</label>
+                            <div class="main-input">
+                                <input type="number" placeholder="قم باضافه رقم الحساب البنكي " class="input-me">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">البريد الإلكتروني</label>
+                            <div class="main-input">
+                                <input type="email" placeholder="قم بإدخال البريد الإلكتروني" class="input-me">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">رقم الحساب الدولي IBAN </label>
+                            <div class="main-input">
+                                <input type="number" placeholder="قم بإدخال رقم الحساب الدولي IBAN" class="input-me">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="input-g">
+                    <label for="" class="main-label">صورة الحساب البنكي</label>
+                    <div class='d-flex gap-4 flex-wrap upload-con'>
+                        <label for="uploadImgs" class="upload-label">
+                            <input id="uploadImgs" type="file" accept="image/*" class="hidden-input img-upload-input">
+                            <img src='./assets/imgs/icons/add-file.gif' />
+                            <span>إضافة مرفق</span>
+                        </label>
+                        <div class="photo-con"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="main-btn sec up lg mx-auto mt-4">إضافة المتعاون</button>
+
+            </form>
+
         </div>
     </div>
     <!-- ************** End main Section ************** -->
@@ -253,6 +324,17 @@
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
     <!-- FlatPicker -->
     <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
+    <!-- intlTelInput -->
+    <script src="./assets/plugins/flag/js/intlTelInput.min.js"></script>
+    <!-- intlTelInput -->
+    <script>
+        var input = document.querySelector("#telephone");
+        window.intlTelInput(input, ({
+            autoPlaceholder: "ادخل",
+            initialCountry: 'sa',
+            separateDialCode: true,
+        }));
+    </script>
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>
 </body>

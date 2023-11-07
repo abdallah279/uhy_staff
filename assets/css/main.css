@@ -562,6 +562,10 @@ input:focus {
   margin-bottom: 16px;
 }
 
+.ms_auto {
+  margin-inline-start: auto;
+}
+
 html[lang=en] .pl-25 {
   padding-right: 25px !important;
 }
@@ -708,7 +712,7 @@ html[lang=ar] .steps .step-item + .step-item:after {
   position: relative;
   z-index: 10;
   background-color: #fff;
-  border: 2px solid #F0F2F7;
+  border: 2px solid #7EA8D0;
 }
 .steps .step-item .progress-label {
   font-size: 15px;
@@ -761,20 +765,20 @@ html[lang=ar] .steps .step-item + .step-item:after {
   width: 100%;
 }
 .iti .iti__selected-flag {
-  width: 100px;
   justify-content: center;
-  min-height: 48px;
-  border-radius: 5px;
-  font-size: 14px;
-  color: #064e94;
+  font-size: 13px;
+  color: #000;
   transition: all 0.3s ease;
-  border: 1px solid #d5d5d5;
+  border: none;
   background-color: transparent !important;
+  margin: 9px 0;
+  height: calc(100% - 18px);
 }
-@media screen and (max-width: 425px) {
-  .iti .iti__selected-flag {
-    min-height: 44px;
-  }
+html[lang=en] .iti .iti__selected-flag {
+  border-left: 1px solid #CDD6DE;
+}
+html[lang=ar] .iti .iti__selected-flag {
+  border-right: 1px solid #CDD6DE;
 }
 .iti .iti__selected-flag .iti__selected-dial-code {
   margin: 8px;
@@ -795,6 +799,14 @@ html[lang=ar] .iti--allow-dropdown .iti__flag-container,
 html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   left: 0;
   right: unset !important;
+}
+
+.iti__flag {
+  display: none !important;
+}
+
+.iti__arrow {
+  display: none;
 }
 
 /********************* Titles *********************/
@@ -876,7 +888,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 }
 .main-item .item-text {
   font-size: 13px;
-  color: #f2f5fa;
+  color: #FAFAFA;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -943,7 +955,7 @@ html[lang=ar] .copy-item {
 
 .not-price {
   font-size: 17px;
-  color: #d44a4a;
+  color: #D44A4A;
   font-family: fontDemi;
   text-decoration: line-through;
 }
@@ -1014,11 +1026,11 @@ html[lang=ar] .copy-item {
   justify-content: center;
   align-items: center;
   gap: 7px;
-  min-width: 160px;
-  background-color: #fafafa;
-  border: 1px solid #fafafa;
-  color: #000;
-  font-size: 15px;
+  min-width: 130px;
+  background-color: #064e94;
+  border: 1px solid #064e94;
+  color: #fff;
+  font-size: 13px;
   height: 44px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1027,27 +1039,22 @@ html[lang=ar] .copy-item {
   position: relative;
   z-index: 1;
   max-width: fit-content;
+  border-radius: 7px;
 }
-@media screen and (max-width: 576px) {
-  .main-btn {
-    height: 45px;
-    font-size: 15px;
-  }
+.main-btn.sec {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
 }
-@media screen and (max-width: 576px) {
-  .main-btn {
-    min-width: 132px;
-  }
-}
-.main-btn.light {
-  background-color: #F0F0F4;
-  color: #064e94;
-  border-color: #F0F0F4;
+.main-btn.sec:hover {
+  color: #3b82f6;
 }
 .main-btn.red {
-  background-color: #d44a4a;
+  background-color: #D44A4A;
   color: #fff;
-  border-color: #d44a4a;
+  border-color: #D44A4A;
+}
+.main-btn.red:hover {
+  color: #D44A4A;
 }
 .main-btn.black {
   background-color: #000;
@@ -1082,28 +1089,11 @@ html[lang=ar] .copy-item {
   font-size: 16px;
 }
 .main-btn.lg {
-  width: 210px;
-  font-size: 16px;
-  height: 46px;
+  min-width: 200px;
 }
-@media screen and (max-width: 576px) {
+@media only screen and (max-width: 425px) {
   .main-btn.lg {
-    font-size: 16px;
-    width: 140px;
-    height: 48px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .main-btn.lg {
-    font-size: 15px;
-    width: 130px;
-    height: 47px;
-  }
-}
-@media screen and (max-width: 375px) {
-  .main-btn.lg {
-    width: 120px;
-    height: 45px;
+    min-width: 150px;
   }
 }
 .main-btn.xl {
@@ -1123,6 +1113,31 @@ html[lang=ar] .copy-item {
 .main-btn .ic {
   max-width: 17px;
   max-height: 15px;
+}
+
+.add_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #FAFAFA;
+  border: 1px solid #7EA8D0;
+  color: #064e94;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 12px 18px;
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  max-width: fit-content;
+}
+.add_btn:hover {
+  color: #064e94 !important;
+}
+.add_btn i {
+  font-size: 20px;
 }
 
 .buttons {
@@ -1229,19 +1244,19 @@ html[lang=ar] .copy-item {
 }
 
 .c-red {
-  color: #d44a4a !important;
+  color: #D44A4A !important;
 }
 
 .bg-main {
-  background-color: #064e94;
+  background-color: #064e94 !important;
 }
 
 .bg-white {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 
 .bg-light {
-  background-color: #fafafa;
+  background-color: #F2F5F7 !important;
 }
 
 .bg-smain {
@@ -1842,7 +1857,7 @@ html[lang=ar] .copy-item {
   justify-content: center;
   align-items: center;
   color: #fff;
-  background-color: #d44a4a;
+  background-color: #D44A4A;
   font-size: 12px;
   padding: 0;
 }
@@ -1854,7 +1869,7 @@ html[lang=ar] .remove-append {
 }
 
 .main-border {
-  border: 1px solid #F0F2F7;
+  border: 1px solid #7EA8D0;
 }
 
 .main-border-b {
@@ -2153,9 +2168,9 @@ html[lang=ar] .remove-append {
 }
 
 .main-label {
-  margin-bottom: 7px;
-  font-size: 15px;
-  color: #fff;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #000;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -2177,11 +2192,12 @@ html[lang=ar] .remove-append {
   outline: none;
   border: none;
   font-size: 14px;
-  color: #fff;
+  color: #000;
   transition: all 0.3s ease;
-  border: 1px solid #3b82f6;
-  background-color: #3b82f6;
+  border: 1px solid #CDD6DE;
+  background-color: #fff;
   font-weight: 500;
+  border-radius: 7px;
 }
 .main-input .input-me.photo-input {
   display: flex;
@@ -2191,13 +2207,13 @@ html[lang=ar] .remove-append {
   cursor: pointer;
 }
 .main-input .input-me::placeholder {
-  font-size: 13px;
-  color: #fff;
+  font-size: 12px;
+  color: #3D444F;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 .main-input .input-me:focus {
-  background-color: transparent;
+  border-color: #064e94;
 }
 .main-input .input-me:focus::placeholder {
   opacity: 0;
@@ -2416,7 +2432,7 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #F0F2F7;
+  background-color: #7EA8D0;
   border: none;
   border-radius: 2px;
   margin: 0 !important;
@@ -2746,19 +2762,42 @@ html[lang=ar] .user-img .user-camera {
   font-size: 14px;
   width: fit-content;
   cursor: pointer;
-  background-color: #F0F2F7;
+  background-color: #7EA8D0;
   position: relative;
 }
 .file-con .close {
   color: #000;
 }
 
+.upload-label {
+  position: relative;
+  background-color: #fff;
+  width: 100px;
+  height: 90px;
+  border-radius: 5px;
+  border: 1px dashed #CDD6DE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #064e94;
+  font-size: 12px;
+}
+.upload-label i {
+  font-size: 18px;
+}
+.upload-label img {
+  max-height: 36px;
+}
+
 .hidden-img {
   position: relative;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  margin-top: 8px;
+  width: 100px;
+  height: 90px;
+  border: 1px solid #CDD6DE;
+  border-radius: 5px;
 }
 .hidden-img img {
   border-radius: 5px;
@@ -2784,21 +2823,23 @@ html[lang=ar] .user-img .user-camera {
 
 .remove-img {
   position: absolute;
-  top: 15px;
-  color: #d44a4a;
+  top: -7px;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: #D44A4A;
   color: #fff;
-  background-color: transparent;
-  font-size: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-size: 13px;
 }
 html[lang=en] .remove-img {
-  right: 15px;
+  right: -7px;
 }
 html[lang=ar] .remove-img {
-  left: 15px;
+  left: -7px;
 }
 .remove-img img {
   width: 24px;
@@ -2814,7 +2855,7 @@ html[lang=ar] .remove-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d44a4a;
+  background-color: #D44A4A;
   color: #fff;
   font-size: 12px;
   cursor: pointer;
@@ -2909,7 +2950,7 @@ html[lang=ar] .edit-pass {
 }
 
 .modal::-webkit-scrollbar-track {
-  background: #F0F2F7;
+  background: #7EA8D0;
 }
 
 .modal::-webkit-scrollbar-thumb {
@@ -3242,7 +3283,7 @@ html[lang=ar] .dropdown-menu.left.show {
 }
 .dropdown-menu.drop-lang .lang-item:hover {
   color: #272727;
-  background-color: #FAFAFA;
+  background-color: #EDF0F8;
 }
 html[lang=en] .dropdown-menu.drop-filter.show {
   inset: 45px 0% auto auto !important;
@@ -3340,8 +3381,8 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
   max-height: 16px;
 }
 .flag-item .profile-ic.red {
-  background-color: #d44a4a;
-  border-color: #d44a4a;
+  background-color: #D44A4A;
+  border-color: #D44A4A;
 }
 .flag-item .flag-text {
   font-size: 15px;
@@ -3544,7 +3585,7 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   background-color: #064e94;
 }
 .number-input .btn-num.minus {
-  background-color: #d44a4a;
+  background-color: #D44A4A;
 }
 
 /********************* Start Navbar section *********************/
@@ -3616,8 +3657,8 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   position: absolute;
   top: 0px;
   border-radius: 50%;
-  width: 26px;
-  height: 26px;
+  width: 23px;
+  height: 23px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3736,7 +3777,7 @@ html[lang=ar] .sidebar-m {
   width: 4px;
 }
 .sidebar-m .links::-webkit-scrollbar-track {
-  background-color: #fafafa;
+  background-color: #F2F5F7;
 }
 .sidebar-m .links::-webkit-scrollbar-thumb {
   border-radius: 0;
@@ -3754,9 +3795,9 @@ html[lang=ar] .sidebar-m {
 }
 .sidebar-m .links .link.head {
   font-size: 14px;
-  background-color: #f2f5fa;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  background-color: rgba(237, 240, 248, 0.7);
+  padding-top: 12px;
+  padding-bottom: 12px;
   margin: 7px 0;
   border-radius: 12px;
 }
@@ -3768,6 +3809,9 @@ html[lang=ar] .sidebar-m {
 }
 .sidebar-m .links .link .side-icon {
   max-width: 25px;
+}
+.sidebar-m .links .link.active, .sidebar-m .links .link:hover:not(.head) {
+  color: #3b82f6;
 }
 html[lang=en] .sidebar-m .links .link.active, html[lang=en] .sidebar-m .links .link:hover:not(.head) {
   transform: translateX(5px);
@@ -3787,7 +3831,7 @@ html[lang=ar] .sidebar-m .links .collapse-content {
   padding-right: 60px;
 }
 
-/********************* Start video_sec section *********************/
+/********************* Start Main padding Righ section *********************/
 html[lang=en] .main-padding-right {
   padding-left: 250px;
 }
@@ -3802,5 +3846,39 @@ html[lang=ar] .main-padding-right {
     padding-right: 0px !important;
   }
 }
+
+/********************* End Main padding Right section *********************/
+/********************* Start setting_item Item *********************/
+.setting_item {
+  padding: 15px 25px;
+  border: 1px solid rgba(126, 168, 208, 0.6);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 425px) {
+  .setting_item {
+    padding: 15px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .setting_item .setting_btn {
+    width: 40px;
+    height: 40px;
+    min-width: fit-content;
+    max-width: none;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .setting_item .setting_btn span {
+    display: none;
+  }
+}
+
+/********************* Start setting_item Item *********************/
 
 /*# sourceMappingURL=main.css.map */
