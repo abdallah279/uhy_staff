@@ -4,28 +4,44 @@
 /********************* Start Main padding Righ section *********************/
 .main-padding-right {
   @include dir-padding-left(250px);
-  
+
   @media screen and (max-width: $screen-lg) {
     @include dir-padding-left(0px !important);
   }
 }
 /********************* End Main padding Right section *********************/
 
+/********************* Start home_card *********************/
+.home_card {
+  border-radius: 12px;
+  padding: 18px;
+  background-color: $white5;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: space-between;
+
+  &.sec{
+    background-color: $white4;
+  }
+}
+/********************* End home_card *********************/
+
 /********************* Start setting_item Item *********************/
-.setting_item{
+.setting_item {
   padding: 15px 25px;
-  border: 1px solid rgba($color: $border-color, $alpha: .6);
+  border: 1px solid rgba($color: $border-color, $alpha: 0.6);
   border-radius: 7px;
   @include between;
   gap: 15px;
   flex-wrap: wrap;
-  
-  @include devices(xs){
+
+  @include devices(xs) {
     padding: 15px;
   }
-  
-  .setting_btn{
-    @include devices(xs){
+
+  .setting_btn {
+    @include devices(xs) {
       width: 40px;
       height: 40px;
       min-width: fit-content;
@@ -33,11 +49,26 @@
       padding: 0;
     }
 
-    span{
-      @include devices(xs){
+    span {
+      @include devices(xs) {
         display: none;
       }
     }
   }
 }
 /********************* Start setting_item Item *********************/
+
+.offersMonth{
+  position: relative;
+  &::after{
+    @include circle(240px);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid #fafafa;
+    z-index: -1;
+
+  }
+}

@@ -212,7 +212,7 @@
 }
 
 .shadow {
-  box-shadow: 0 0.1rem 1rem rgba($black, 0.1) !important;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.08) !important;
 }
 
 .shadow-0 {
@@ -315,6 +315,14 @@
 
 .ms_auto{
   margin-inline-start: auto;
+}
+
+.ts{
+  text-align: start;
+}
+
+.te{
+  text-align: end;
 }
 
 .pl-25 {
@@ -598,6 +606,11 @@
       max-width: 13px;
     }
   }
+}
+
+.card_style{
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.08) !important;
+  border-radius: 10px;
 }
 
 .card-padding {

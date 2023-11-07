@@ -434,7 +434,7 @@ input:focus {
 }
 
 .shadow {
-  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.08) !important;
 }
 
 .shadow-0 {
@@ -564,6 +564,14 @@ input:focus {
 
 .ms_auto {
   margin-inline-start: auto;
+}
+
+.ts {
+  text-align: start;
+}
+
+.te {
+  text-align: end;
 }
 
 html[lang=en] .pl-25 {
@@ -856,6 +864,11 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 }
 .card-title .icon .img {
   max-width: 13px;
+}
+
+.card_style {
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.08) !important;
+  border-radius: 10px;
 }
 
 .card-padding {
@@ -3848,6 +3861,21 @@ html[lang=ar] .main-padding-right {
 }
 
 /********************* End Main padding Right section *********************/
+/********************* Start home_card *********************/
+.home_card {
+  border-radius: 12px;
+  padding: 18px;
+  background-color: #e5ecf6;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: space-between;
+}
+.home_card.sec {
+  background-color: #E3F5FF;
+}
+
+/********************* End home_card *********************/
 /********************* Start setting_item Item *********************/
 .setting_item {
   padding: 15px 25px;
@@ -3880,5 +3908,20 @@ html[lang=ar] .main-padding-right {
 }
 
 /********************* Start setting_item Item *********************/
+.offersMonth {
+  position: relative;
+}
+.offersMonth::after {
+  border-radius: 50%;
+  width: 240px;
+  height: 240px;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid #fafafa;
+  z-index: -1;
+}
 
 /*# sourceMappingURL=main.css.map */
