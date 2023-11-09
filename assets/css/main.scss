@@ -69,6 +69,48 @@
     transform: translate(-50%, -50%);
     border: 10px solid #fafafa;
     z-index: -1;
+  }
+}
+.apexcharts-text tspan, .apexcharts-legend-text{
+  font-family: fontDemi !important;
+}
 
+.apexcharts-legend{
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 0 !important;
+}
+
+.apexcharts-legend-series{
+  margin: 0 !important;
+}
+
+.apexcharts-legend-marker{
+  margin-right: 0;
+  margin-left: 0;
+  margin-inline-end: 7px;
+}
+
+.legend_item{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+
+  .color{
+    background-color: $three;
+    display:block;
+    width: 24px;
+    height: 12px;
+    border-radius: 7px;
+
+    &.color2{
+      background-color: #03045E;
+    }
+  }
+
+  &:last-child{
+    margin-bottom: 0;
   }
 }

@@ -1041,6 +1041,10 @@
   color: $main !important;
 }
 
+.c-three {
+  color: $three !important;
+}
+
 .c-red {
   color: $red !important;
 }
@@ -2435,8 +2439,8 @@
       }
 
       .modal-img {
-        max-width: 90px;
-        max-height: 110px;
+        max-width: 220px;
+        max-height: 180px;
         margin: auto;
 
         &.lg {
@@ -2522,6 +2526,10 @@
         width: 180px;
         height: 160px;
         display: block;
+
+        &.verified{
+          width: 160px;
+        }
       }
     }
 

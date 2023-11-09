@@ -1256,6 +1256,10 @@ html[lang=ar] .copy-item {
   color: #064e94 !important;
 }
 
+.c-three {
+  color: #0077B6 !important;
+}
+
 .c-red {
   color: #D44A4A !important;
 }
@@ -3076,8 +3080,8 @@ html[lang=ar] .modal-dialog .close-btn {
   margin-bottom: 0;
 }
 .modal-dialog .modal-content .modal-header .modal-img {
-  max-width: 90px;
-  max-height: 110px;
+  max-width: 220px;
+  max-height: 180px;
   margin: auto;
 }
 .modal-dialog .modal-content .modal-header .modal-img.lg {
@@ -3157,6 +3161,9 @@ html[lang=ar] .modal-dialog .close-btn {
   width: 180px;
   height: 160px;
   display: block;
+}
+.modal-dialog .modal-content .modal-body .modal-img-body.verified {
+  width: 160px;
 }
 .modal-dialog .modal-content .modal-footer {
   margin-top: 20px;
@@ -3922,6 +3929,47 @@ html[lang=ar] .main-padding-right {
   transform: translate(-50%, -50%);
   border: 10px solid #fafafa;
   z-index: -1;
+}
+
+.apexcharts-text tspan, .apexcharts-legend-text {
+  font-family: fontDemi !important;
+}
+
+.apexcharts-legend {
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 0 !important;
+}
+
+.apexcharts-legend-series {
+  margin: 0 !important;
+}
+
+.apexcharts-legend-marker {
+  margin-right: 0;
+  margin-left: 0;
+  margin-inline-end: 7px;
+}
+
+.legend_item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+.legend_item .color {
+  background-color: #0077B6;
+  display: block;
+  width: 24px;
+  height: 12px;
+  border-radius: 7px;
+}
+.legend_item .color.color2 {
+  background-color: #03045E;
+}
+.legend_item:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

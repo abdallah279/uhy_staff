@@ -301,12 +301,24 @@
 
             </div>
 
-            <div class="row">
+            <div class="row mb-5 gy-4">
 
                 <div class="col-lg-6">
                     <div class="card_style p-4 h-100">
                         <h4 class="fs16 ff-d mb-5">عروض الأسعار هذا الشهر</h4>
                         <div id="offersMonth" class='offersMonth'></div>
+
+                        <div class="mt-4">
+                            <div class="legend_item">
+                                <span class='color'></span>
+                                <span class="fs13 ff-d">عروض تم تحويله الخطاب ارتباط</span>
+                            </div>
+
+                            <div class="legend_item">
+                                <span class='color color2'></span>
+                                <span class="fs13 ff-d">عروض لم يتم تحويل هالخطاب ارتباط</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -314,9 +326,50 @@
                     <div class="card_style p-4 h-100">
                         <h4 class="fs16 ff-d mb-5">عروض الأسعار اخر 6 اشهر</h4>
                         <div id="offers6months"></div>
+
+                        <div class="mt-4">
+                            <div class="legend_item">
+                                <span class='color'></span>
+                                <span class="fs13 ff-d">عروض تم تحويله الخطاب ارتباط</span>
+                            </div>
+
+                            <div class="legend_item">
+                                <span class='color color2'></span>
+                                <span class="fs13 ff-d">عروض لم يتم تحويل هالخطاب ارتباط</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
+            </div>
+
+            <div class="card_style p-4 mb-5">
+                <div class='d-flex justify-content-between flex-md-row gap-4 flex-column'>
+                    <div>
+                        <h4 class="fs16 ff-d mb-5">مبالغ خطابات الأرتباط الحالية</h4>
+                        <div class="mb-3">
+                            <div class="fs14 mb-3"> المبالغ الكلية المحصلة لحالات الأرتباط الحالية</div>
+                            <div class="fs20 c-three ff-d">9834.72 ر.س</div>
+                        </div>
+                        <div class="d-flex gap-sm-5 gap-4">
+                            <div>
+                                <div class="fs14 mb-3"> المبلغ الكلي المحصل</div>
+                                <div class="fs20 c-three ff-d">9834.72 ر.س</div>
+                            </div>
+                            <div>
+                                <div class="fs14 mb-3"> المبلغ الكلي المتبقي</div>
+                                <div class="fs20 c-three ff-d">9834.72 ر.س</div>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="commitmentLetterAmounts" width="390" height="280"></canvas>
+                </div>
+            </div>
+
+            <div class="card_style p-4">
+                <h4 class="fs16 ff-d mb-5">عدد خطابات الارتباطات الحالية وحالتهم</h4>
+                <div id="numberEngagementLetters"></div>
             </div>
 
         </div>
@@ -343,7 +396,7 @@
             series: [70],
             colors: ['#000'],
             chart: {
-                height: 320,
+                height: 340,
                 type: 'radialBar',
             },
             plotOptions: {
@@ -368,7 +421,7 @@
             },
             fill: {
                 type: 'solid',
-                colors: ['#064e94'],
+                colors: ['#0077b6'],
             },
             stroke: {
                 lineCap: 'round'
@@ -382,13 +435,13 @@
 
     <!-- Price offers for the last 6 months -->
     <script>
-        var options = {
+        var options2 = {
             series: [{
-                name: 'Net Profit',
+                name: 'عروض الأسعار اخر 6 اشهر',
                 data: [44, 55, 41, 67, 22, 60]
             }],
             chart: {
-                height: 320,
+                height: 300,
                 type: 'bar',
                 toolbar: {
                     show: false,
@@ -399,6 +452,19 @@
                     columnWidth: '50%',
                 }
             },
+            // legend: {
+            //     show: true,
+            //     horizontalAlign: 'left',
+            //     showForSingleSeries: true,
+            //     position: 'bottom',
+            //     customLegendItems: ['عروض تم تحويله الخطاب ارتباط', 'عروض لم يتم تحويل هالخطاب ارتباط'],
+            //     markers: {
+            //         fillColors: ['#0077B6', '#03045E'],
+            //         width: 22,
+            //         height: 12,
+            //         radius: 7,
+            //     },
+            // },
             dataLabels: {
                 enabled: false
             },
@@ -423,10 +489,182 @@
                     stops: [50, 0, 100],
                 },
             },
+            grid: {
+                show: true,
+                borderColor: '#e4e4e438',
+            }
         };
 
-        var chart = new ApexCharts(document.querySelector("#offers6months"), options);
-        chart.render();
+        var chart2 = new ApexCharts(document.querySelector("#offers6months"), options2);
+        chart2.render();
+    </script>
+
+    <!-- Current commitment letter amounts -->
+    <script>
+        var myColor = ["#0077b6", "#0096c7"];
+        var myData = [80, 20];
+
+        function getTotal() {
+            var myTotal = 0;
+            for (var j = 0; j < myData.length; j++) {
+                myTotal += typeof myData[j] == "number" ? myData[j] : 0;
+            }
+            return myTotal;
+        }
+
+        function plotData() {
+            var canvas;
+            var ctx;
+            var lastend = 0;
+            var myTotal = getTotal();
+            var doc;
+            canvas = document.getElementById("commitmentLetterAmounts");
+            var x = canvas.width / 2;
+            var y = canvas.height / 2;
+            var r = 100;
+
+            ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (var i = 0; i < myData.length; i++) {
+                ctx.fillStyle = myColor[i];
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.arc(
+                    x,
+                    y,
+                    r,
+                    lastend,
+                    lastend + Math.PI * 2 * (myData[i] / myTotal),
+                    false
+                );
+                ctx.lineTo(x, y);
+                ctx.fill();
+
+                // Now the pointers
+                ctx.beginPath();
+                var start = [];
+                var end = [];
+                var last = 0;
+                var flip = 0;
+                var textOffset = 0;
+                var precentage = (myData[i] / myTotal) * 100;
+                start = getPoint(
+                    x,
+                    y,
+                    r - -10,
+                    lastend + (Math.PI * 2 * (myData[i] / myTotal)) / 2
+                );
+                end = getPoint(
+                    x,
+                    y,
+                    r + 30,
+                    lastend + (Math.PI * 2 * (myData[i] / myTotal)) / 2
+                );
+
+                if (start[0] <= x) {
+                    flip = -1;
+                    textOffset = -25;
+                } else {
+                    flip = 1;
+                    textOffset = 55;
+                }
+
+                ctx.moveTo(start[0], start[1]);
+                ctx.lineTo(end[0], end[1]);
+                ctx.lineTo(end[0] + 20 * flip, end[1]);
+                ctx.strokeStyle = "#272727";
+                ctx.fillStyle = "#000";
+                ctx.lineWidth = 1;
+                ctx.textAlign = "start";
+                ctx.stroke();
+                // The labels
+                ctx.font = "14px verdana, sans-serif";
+                ctx.fillText(`${myData[i]}%`, end[0] + textOffset, end[1] + 4);
+                // Increment Loop
+                lastend += Math.PI * 2 * (myData[i] / myTotal);
+            }
+        }
+
+        // Find that magical point
+        function getPoint(c1, c2, radius, angle) {
+            return [c1 + Math.cos(angle) * radius, c2 + Math.sin(angle) * radius];
+        }
+
+        // The drawing
+        plotData();
+
+    </script>
+
+    <!-- The number of current engagement letters and their status -->
+    <script>
+        var options4 = {
+            series: [{
+                name: 'عدد خطابات الارتباطات الحالية وحالتهم',
+                data: [15, 22, 26, 20, 15, 18]
+            }],
+            chart: {
+                height: 350,
+                type: 'bar',
+                toolbar: {
+                    show: false,
+                },
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 8,
+                    columnWidth: '10%',
+                    dataLabels: {
+                        position: 'top',
+                    },
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                offsetY: -30,
+                style: {
+                    fontSize: '14px',
+                    colors: ["#707E8C"]
+                }
+            },
+            fill: {
+                type: 'solid',
+                colors: ['#023E8A'],
+            },
+            xaxis: {
+                categories: ["بانتظار توجيه للإدارة المعنية ورفع الماليات", "بانتظار اعتماد للعميل", "بانتظار أرساله للعميل", "بانتظار اعتماد الشريك", "بانتظار اعتماد V.P", "بانتظار اعداد الخطاب وتحديد الشريك"],
+                position: 'bottom',
+                axisBorder: {
+                    show: false
+                },
+                axisTicks: {
+                    show: false
+                },
+                tooltip: {
+                    enabled: true,
+                },
+                labels: {
+                    show: true,
+                    rotate: 0,
+                    trim: true,
+                    hideOverlappingLabels: true,
+                    style: {
+                        colors: ['#272727'],
+                        fontSize: '12px',
+                        cssClass: 'apexcharts-xaxis-label',
+                    },
+                }
+            },
+            yaxis: {
+                show: false,
+            },
+            grid: {
+                show: false,
+            }
+        };
+
+        var chart4 = new ApexCharts(document.querySelector("#numberEngagementLetters"), options4);
+        chart4.render();
     </script>
 
     <!-- Main Js -->
