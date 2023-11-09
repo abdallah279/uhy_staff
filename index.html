@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="./assets/plugins/FancyBox/jquery.fancybox.min.css">
     <!-- FlatPicker -->
     <link rel="stylesheet" href="./assets/plugins/FlatPicker/flatpickr.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
@@ -241,7 +244,7 @@
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
 
-            <div class='row gy-4 mb-5'>
+            <section class='row gy-4 mb-5'>
 
                 <div class='col-xl-3 col-lg-4 col-sm-6'>
                     <div class="home_card h-100">
@@ -299,9 +302,9 @@
                     </div>
                 </div>
 
-            </div>
+            </section>
 
-            <div class="row mb-5 gy-4">
+            <section class="row mb-5 gy-4 pb-2">
 
                 <div class="col-lg-6">
                     <div class="card_style p-sm-4 px-3 py-4 h-100">
@@ -342,9 +345,94 @@
                     </div>
                 </div>
 
-            </div>
+            </section>
 
-            <div class="card_style p-sm-4 px-3 py-4 mb-5">
+            <!-- Start Data Table -->
+
+            <section class="card_style p-4 mb-5">
+                <div class="d-flex-between gap-4 flex-wrap mb-5">
+                    <h4 class="fs16 ff-d">بيانات خطابات الارتباطات الحالية</h4>
+                    <a href="#" class="main_link">مشاهدة الكل</a>
+                </div>
+                <div class="data">
+                    <table id="myTable" class="display table" dir="rtl">
+                        <thead>
+                            <tr>
+                                <th>رقم</th>
+                                <th>اسم العميل</th>
+                                <th>حالة الدفع</th>
+                                <th>وقت البداية</th>
+                                <th>وقت الأنتهاء</th>
+                                <th>التقدم</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>شركة الحمد للتجارة والتوزيع</td>
+                                <td>تم الدفع</td>
+                                <td>3 يناير 2021</td>
+                                <td>3 يناير 2021</td>
+                                <td>
+                                    <span class="badge_m">بانتظار اعداد الخطاب وتحديد الشريك</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>شركة الحمد للتجارة والتوزيع</td>
+                                <td>تم الدفع</td>
+                                <td>3 يناير 2021</td>
+                                <td>3 يناير 2021</td>
+                                <td>
+                                    <span class="badge_m wait">بانتظار اعتماد V.P</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>شركة الحمد للتجارة والتوزيع</td>
+                                <td>تم الدفع</td>
+                                <td>3 يناير 2021</td>
+                                <td>3 يناير 2021</td>
+                                <td>
+                                    <span class="badge_m yellow">بانتظار اعتماد الشريك</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>شركة الحمد للتجارة والتوزيع</td>
+                                <td>تم الدفع</td>
+                                <td>3 يناير 2021</td>
+                                <td>3 يناير 2021</td>
+                                <td>
+                                    <span class="badge_m yellow">بانتظار أرساله للعميل</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>شركة الحمد للتجارة والتوزيع</td>
+                                <td>تم الدفع</td>
+                                <td>3 يناير 2021</td>
+                                <td>3 يناير 2021</td>
+                                <td>
+                                    <span class="badge_m red">بانتظار اعتماد للعميل</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>شركة الحمد للتجارة والتوزيع</td>
+                                <td>تم الدفع</td>
+                                <td>3 يناير 2021</td>
+                                <td>3 يناير 2021</td>
+                                <td>
+                                    <span class="badge_m red">بانتظار توجيه للإدارة المعنية ورفع الماليات</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card_style p-sm-4 px-3 py-4 mb-5">
                 <div class='d-flex justify-content-between flex-md-row gap-4 flex-column'>
                     <div>
                         <h4 class="fs16 ff-d mb-5">مبالغ خطابات الأرتباط الحالية</h4>
@@ -365,12 +453,12 @@
                     </div>
                     <canvas id="commitmentLetterAmounts" width="390" height="280"></canvas>
                 </div>
-            </div>
+            </section>
 
-            <div class="card_style p-sm-4 px-3 py-4">
+            <section class="card_style p-sm-4 px-3 py-4">
                 <h4 class="fs16 ff-d mb-5">عدد خطابات الارتباطات الحالية وحالتهم</h4>
                 <div id="numberEngagementLetters"></div>
-            </div>
+            </section>
 
         </div>
     </div>
@@ -389,6 +477,8 @@
     <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
     <!-- Chart -->
     <script src="./assets/plugins/apexChart/apexcharts.min.js"></script>
+    <!-- Datatables -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
 
     <!-- Price offers this month Chart -->
     <script>

@@ -33,11 +33,40 @@ $(".nav-overlay").on("click", function () {
 let isRtl = $('html[lang="ar"]').length > 0;
 
 // Normal Select To
-$(".select").select2({
-  dir: isRtl ? "rtl" : "ltr",
-  minimumResultsForSearch: Infinity,
-});
+if($(".select").length){
+  $(".select").select2({
+    dir: isRtl ? "rtl" : "ltr",
+    minimumResultsForSearch: Infinity,
+  });
+}
 
+/************* Data Table *************/
+
+$(document).ready(function () {
+  var myTable = $("#myTable").dataTable({
+    pageLength: 7,
+    responsive: true,
+    bLengthChange: false,
+    "ordering": false,
+    language: {
+      paginate: {
+        previous: `<i class="fa-solid fa-angles-left"></i>`,
+        next: `<i class="fa-solid fa-angles-right"></i>`,
+      },
+      sProcessing: "جارٍ التحميل...",
+      sLengthMenu: "أظهر _MENU_ مدخلات",
+      sZeroRecords: "لم يعثر على أية سجلات",
+      sInfo: "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+      sInfoEmpty: "يعرض 0 إلى 0 من أصل 0 سجل",
+      sInfoFiltered: "(منتقاة من مجموع _MAX_ مُدخل)",
+      sInfoPostFix: "",
+    },
+  });
+
+  $("#searchTable").on("keyup", function () {
+    $("#myTable").DataTable().search($(this).val()).draw();
+  });
+});
 
 /************* Upload Video Or Img *************/
 let loginInputs = document.querySelectorAll(".img-upload-input");
@@ -78,19 +107,18 @@ loginInputs.forEach((input) => {
           photoContainer.empty();
 
           let img = `
-                                
-                                <div class="hidden-img">
-                
-                                    <a class="fancybox" data-fancybox="gallery" href="${e.target.result}">
-                                        <img class="img" src="${e.target.result}" />
-                                    </a>
+                <div class="hidden-img">
 
-                                    <button type='button' class='remove-img'>
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
+                    <a class="fancybox" data-fancybox="gallery" href="${e.target.result}">
+                        <img class="img" src="${e.target.result}" />
+                    </a>
 
-                                </div>
-                            `;
+                    <button type='button' class='remove-img'>
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+            `;
 
           photoContainer.append(img);
           $(".remove-img").on("click", function (e) {

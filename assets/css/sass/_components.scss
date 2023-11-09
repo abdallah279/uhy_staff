@@ -313,15 +313,15 @@
   margin-bottom: 16px;
 }
 
-.ms_auto{
+.ms_auto {
   margin-inline-start: auto;
 }
 
-.ts{
+.ts {
   text-align: start;
 }
 
-.te{
+.te {
   text-align: end;
 }
 
@@ -555,11 +555,11 @@
   }
 }
 
-.iti__flag{
+.iti__flag {
   display: none !important;
 }
 
-.iti__arrow{
+.iti__arrow {
   display: none;
 }
 /********************* Titles *********************/
@@ -608,7 +608,7 @@
   }
 }
 
-.card_style{
+.card_style {
   box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.08) !important;
   border-radius: 10px;
 }
@@ -621,11 +621,35 @@
   padding: 12px 20px;
 }
 
-.main-link {
+.main_link {
   font-size: 15px;
   cursor: pointer;
-  color: $black;
+  color: $sec;
   text-decoration: underline;
+}
+
+.badge_m {
+  font-size: 12px;
+  background-color: rgba($color: #1a932e, $alpha: .18);
+  color: #1a932e;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-family: "fontDemi";
+
+  &.wait{
+    background-color: rgba($color: #E2B133, $alpha: .18);
+    color: #DFA510;
+  }
+
+  &.red{
+    background-color: rgba($color: #E65F2B, $alpha: .18);
+    color: #E65F2B;
+  }
+
+  &.yellow{
+    background-color: #FAF1DA;
+    color: #DFA510;
+  }
 }
 
 .main-item {
@@ -825,7 +849,7 @@
     background-color: $sec;
     border-color: $sec;
 
-    &:hover{
+    &:hover {
       color: $sec;
     }
   }
@@ -835,7 +859,7 @@
     color: $white;
     border-color: $red;
 
-    &:hover{
+    &:hover {
       color: $red;
     }
   }
@@ -882,8 +906,8 @@
 
   &.lg {
     min-width: 200px;
-    
-    @include devices(xs){
+
+    @include devices(xs) {
       min-width: 150px;
     }
   }
@@ -2155,7 +2179,6 @@
   }
 }
 
-
 .upload-label {
   position: relative;
   background-color: $white;
@@ -2173,11 +2196,10 @@
     font-size: 18px;
   }
 
-  img{
+  img {
     max-height: 36px;
   }
 }
-
 
 .hidden-img {
   position: relative;
@@ -2527,7 +2549,7 @@
         height: 160px;
         display: block;
 
-        &.verified{
+        &.verified {
           width: 160px;
         }
       }
@@ -2540,7 +2562,7 @@
       flex-wrap: wrap;
       flex-shrink: 0;
       justify-content: center;
-      padding: 0;
+      padding: 0 10px;
       border-top: none;
       gap: 15px;
 
@@ -2550,7 +2572,7 @@
 
       .main-btn {
         margin: 0;
-        min-width: 190px;
+        // min-width: 190px;
       }
 
       .social-ic {
@@ -2868,6 +2890,7 @@
       @include center;
       border: 1px solid $light4;
       background-color: $white;
+      transition: $main-transition;
 
       @media screen and (max-width: $screen-sm) {
         @include circle(34px);
@@ -2886,15 +2909,10 @@
         color: $main !important;
       }
 
-      &.active {
-        color: $white;
-        background-color: $main;
-      }
-
       &:hover,
       &:focus {
         background-color: $main;
-        color: $white;
+        color: $white !important;
 
         .ic {
           color: $white;
@@ -2904,6 +2922,13 @@
 
       &:focus {
         box-shadow: none;
+      }
+    }
+
+    &.active {
+      .page-link{
+        color: $white !important;
+        background-color: $main;
       }
     }
 
