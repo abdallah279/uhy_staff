@@ -538,6 +538,7 @@ input:focus {
 
 .d-flex-c {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -890,8 +891,19 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   text-decoration: underline;
 }
 
+.icon_link {
+  font-size: 16px;
+  cursor: pointer;
+  color: #c3cad9;
+  background-color: transparent;
+  padding: 0;
+}
+.icon_link.blue {
+  color: #589ee3;
+}
+
 .badge_m {
-  font-size: 12px;
+  font-size: 11px;
   background-color: rgba(26, 147, 46, 0.18);
   color: #1a932e;
   padding: 5px 12px;
@@ -900,15 +912,31 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 }
 .badge_m.wait {
   background-color: rgba(226, 177, 51, 0.18);
-  color: #DFA510;
+  color: #dfa510;
 }
 .badge_m.red {
   background-color: rgba(230, 95, 43, 0.18);
-  color: #E65F2B;
+  color: #e65f2b;
+}
+.badge_m.origin {
+  background-color: rgba(106, 106, 106, 0.15);
+  color: #6a6a6a;
+}
+.badge_m.blue {
+  background-color: rgba(6, 78, 148, 0.18);
+  color: #064e94;
+}
+.badge_m.blue2 {
+  background-color: #CEE1F4;
+  color: #064e94;
 }
 .badge_m.yellow {
-  background-color: #FAF1DA;
-  color: #DFA510;
+  background-color: #faf1da;
+  color: #dfa510;
+}
+.badge_m.lg {
+  padding: 8px 15px;
+  font-size: 12px;
 }
 
 .main-item {
@@ -1103,13 +1131,22 @@ html[lang=ar] .copy-item {
   color: #000;
 }
 .main-btn.transparent {
-  background-color: #fff;
-  color: #000;
-  border-color: #064e94;
+  background-color: transparent;
+  color: #3b82f6;
+  border-color: #3b82f6;
 }
 .main-btn.transparent:hover {
+  background-color: #3b82f6;
+  color: #fff !important;
+}
+.main-btn.transparent_main {
+  background-color: transparent;
+  color: #064e94;
+  border-color: #064e94;
+}
+.main-btn.transparent_main:hover {
   background-color: #064e94;
-  color: #fff;
+  color: #fff !important;
 }
 .main-btn.sm {
   min-width: 120px;
@@ -2280,7 +2317,7 @@ html[lang=ar] .remove-append {
   top: 50%;
   transform: translateY(-50%);
   color: #3baeaa;
-  font-size: 15px;
+  font-size: 13px;
   cursor: pointer;
   pointer-events: none;
   background-color: transparent;
@@ -2344,7 +2381,7 @@ html[lang=ar] .main-input .sec-icon {
 .select ~ .select2,
 .select-multi ~ .select2,
 .select-color ~ .select2 {
-  width: 180px !important;
+  width: 100% !important;
 }
 .select ~ .select2 .select2-selection--single,
 .select ~ .select2 .select2-selection--multiple,
@@ -2353,16 +2390,18 @@ html[lang=ar] .main-input .sec-icon {
 .select-color ~ .select2 .select2-selection--single,
 .select-color ~ .select2 .select2-selection--multiple {
   cursor: pointer;
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   outline: none;
-  font-size: 13px;
-  color: #fff !important;
-  border: 1px solid #fff;
-  background-color: transparent;
-  border-radius: 0 !important;
+  width: 100%;
+  min-height: 50px;
+  padding: 0 12px;
+  outline: none;
+  font-size: 14px;
+  color: #000;
+  transition: all 0.3s ease;
+  border: 1px solid #CDD6DE;
+  background-color: #fff;
+  font-weight: 500;
+  border-radius: 7px;
 }
 @media (max-width: 425px) {
   .select ~ .select2 .select2-selection--single,
@@ -2380,13 +2419,29 @@ html[lang=ar] .main-input .sec-icon {
 .select-multi ~ .select2 .select2-selection--multiple .select2-selection__rendered,
 .select-color ~ .select2 .select2-selection--single .select2-selection__rendered,
 .select-color ~ .select2 .select2-selection--multiple .select2-selection__rendered {
-  color: #fff;
-  font-size: 14px;
+  color: #3D444F;
+  font-size: 12px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   padding: 6px auto;
-  direction: ltr;
+  line-height: 50px;
+}
+html[lang=en] .select ~ .select2 .select2-selection--single .select2-selection__rendered,
+html[lang=en] .select ~ .select2 .select2-selection--multiple .select2-selection__rendered,
+html[lang=en] .select-multi ~ .select2 .select2-selection--single .select2-selection__rendered,
+html[lang=en] .select-multi ~ .select2 .select2-selection--multiple .select2-selection__rendered,
+html[lang=en] .select-color ~ .select2 .select2-selection--single .select2-selection__rendered,
+html[lang=en] .select-color ~ .select2 .select2-selection--multiple .select2-selection__rendered {
+  padding-left: 0;
+}
+html[lang=ar] .select ~ .select2 .select2-selection--single .select2-selection__rendered,
+html[lang=ar] .select ~ .select2 .select2-selection--multiple .select2-selection__rendered,
+html[lang=ar] .select-multi ~ .select2 .select2-selection--single .select2-selection__rendered,
+html[lang=ar] .select-multi ~ .select2 .select2-selection--multiple .select2-selection__rendered,
+html[lang=ar] .select-color ~ .select2 .select2-selection--single .select2-selection__rendered,
+html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-selection__rendered {
+  padding-right: 0;
 }
 .select ~ .select2 .select2-selection--single .select2-selection__arrow,
 .select ~ .select2 .select2-selection--multiple .select2-selection__arrow,
@@ -2484,7 +2539,6 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
   color: #272727;
-  font-size: 14px;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -2516,7 +2570,7 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
   text-align: center;
   padding: 12px;
   color: #000;
-  font-size: 15px;
+  font-size: 13px;
   border-bottom: 1px solid rgba(6, 78, 148, 0.3);
   direction: ltr;
 }
@@ -2527,7 +2581,7 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
   background-color: transparent;
   color: #000;
-  font-size: 15px;
+  font-size: 13px;
   transition: all 0.3s ease;
 }
 .select2-container--default .select2-results__option--selected {
@@ -2535,7 +2589,7 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
 }
 .select2-container--default .select2-results__option--disabled {
   color: #000;
-  font-size: 15px;
+  font-size: 13px;
   opacity: 0.8;
 }
 
@@ -2548,12 +2602,12 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
 }
 
 .select2-results__options::-webkit-scrollbar-track {
-  background: #f0f0f0;
+  background-color: #F2F5F7;
 }
 
 .select2-results__options::-webkit-scrollbar-thumb {
-  border-radius: 25px;
-  background-color: rgba(6, 78, 148, 0.5);
+  border-radius: 0;
+  background-color: #ddd;
 }
 
 .dropdown-select-2 {
@@ -2689,12 +2743,11 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
 .radio-box .input-radio {
   width: 18px;
   height: 18px;
-  accent-color: #000;
+  accent-color: #3b82f6;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .radio-box .label-radio {
-  font-size: 15px;
   color: #000;
   cursor: pointer;
   display: flex;
@@ -2814,7 +2867,7 @@ html[lang=ar] .user-img .user-camera {
 .upload-label {
   position: relative;
   background-color: #fff;
-  width: 100px;
+  min-width: 100px;
   height: 90px;
   border-radius: 5px;
   border: 1px dashed #CDD6DE;
@@ -2825,6 +2878,8 @@ html[lang=ar] .user-img .user-camera {
   gap: 10px;
   color: #064e94;
   font-size: 12px;
+  padding: 5px 12px;
+  flex-shrink: 0;
 }
 .upload-label i {
   font-size: 18px;
@@ -2883,9 +2938,18 @@ html[lang=en] .remove-img {
 html[lang=ar] .remove-img {
   left: -7px;
 }
+.remove-img i {
+  font-size: 13px;
+}
 .remove-img img {
   width: 24px;
   height: 24px;
+}
+
+.photo-con {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .remove-img-2 {
@@ -3878,7 +3942,17 @@ html[lang=ar] .sidebar-m .links .collapse-content {
 
 /****************** Start Data Table **************/
 .data {
-  overflow: hidden;
+  overflow-x: auto;
+}
+.data::-webkit-scrollbar {
+  height: 3px;
+}
+.data::-webkit-scrollbar-track {
+  background: transparent;
+}
+.data::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: #064e94;
 }
 
 .table {
@@ -3889,19 +3963,24 @@ table.dataTable {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
+html[lang=en] table.dataTable {
+  direction: ltr;
+}
+html[lang=ar] table.dataTable {
+  direction: rtl;
+}
 
 #myTable_wrapper .row {
   --bs-gutter-x: 0;
 }
 
 table.dataTable thead tr th {
-  font-size: 15px;
   font-family: fontDemi;
 }
 
 table.dataTable th,
 table.dataTable td {
-  border: 1px solid rgba(238, 237, 237, 0.66) !important;
+  border: 1px solid rgba(238, 237, 237, 0.5) !important;
   white-space: nowrap;
   padding: 20px 10px;
   text-align: center !important;
@@ -3910,7 +3989,7 @@ table.dataTable td {
 
 .data .table > tbody > tr > td {
   border: none;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .data .table > tbody > tr > td.line-clamp {
@@ -3920,8 +3999,8 @@ table.dataTable td {
 }
 
 /* .data .table > tbody > tr > td.ser-case{
-    color: #04B74C;
-} */
+      color: #04B74C;
+  } */
 .data .table > tbody > tr > td > img {
   border-radius: 10px;
   width: 60px;
@@ -4107,9 +4186,16 @@ div.dataTables_wrapper div.dataTables_paginate {
 }
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-  direction: ltr;
   margin: 2px 0;
-  justify-content: flex-start;
+}
+html[lang=en] div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  direction: ltr;
+}
+html[lang=ar] div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  direction: rtl;
+}
+html[lang=ar] div.dataTables_wrapper div.dataTables_paginate ul.pagination .fa-angles-left, html[lang=ar] div.dataTables_wrapper div.dataTables_paginate ul.pagination .fa-angles-right {
+  transform: scaleX(-1);
 }
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item:first-child .page-link {
@@ -4218,7 +4304,45 @@ html[lang=ar] .main-padding-right {
   }
 }
 
-/********************* Start setting_item Item *********************/
+/********************* End setting_item Item *********************/
+/********************* Start filter_con *********************/
+.filter_con {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.filter_con .filter_item .input-me {
+  background-color: #FAFAFA;
+  border-color: #FAFAFA;
+  width: 280px;
+  border-radius: 12px;
+}
+html[lang=en] .filter_con .filter_item .input-me {
+  padding-left: 35px;
+}
+html[lang=ar] .filter_con .filter_item .input-me {
+  padding-right: 35px;
+}
+.filter_con .filter_item .main-icon {
+  color: #000;
+}
+html[lang=en] .filter_con .filter_item .main-icon {
+  left: 12px !important;
+}
+html[lang=ar] .filter_con .filter_item .main-icon {
+  right: 12px !important;
+}
+html[lang=en] .filter_con .filter_item .main-icon {
+  right: unset !important;
+}
+html[lang=ar] .filter_con .filter_item .main-icon {
+  left: unset !important;
+}
+.filter_con .main-btn {
+  border-radius: 12px;
+}
+
+/********************* End filter_con *********************/
 .offersMonth {
   position: relative;
 }

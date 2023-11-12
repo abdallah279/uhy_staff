@@ -56,7 +56,35 @@
     }
   }
 }
-/********************* Start setting_item Item *********************/
+/********************* End setting_item Item *********************/
+
+/********************* Start filter_con *********************/
+.filter_con{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  .filter_item{
+    .input-me{
+      background-color: $white2;
+      border-color: $white2;
+      width: 280px;
+      @include dir-padding-left(35px);
+      border-radius: 12px;
+    }
+    
+    .main-icon{
+      @include dir-left(12px !important);
+      @include dir-right(unset !important);
+      color: $black;
+    }
+  }
+  
+  .main-btn{
+    border-radius: 12px;
+  }
+}
+/********************* End filter_con *********************/
 
 .offersMonth{
   position: relative;

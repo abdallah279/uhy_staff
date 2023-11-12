@@ -284,8 +284,7 @@
 }
 
 .d-flex-c {
-  display: flex;
-  align-items: center;
+  @include center;
 }
 
 .d-flex-between {
@@ -628,27 +627,59 @@
   text-decoration: underline;
 }
 
+.icon_link {
+  font-size: 16px;
+  cursor: pointer;
+  color: #c3cad9;
+  background-color: transparent;
+  padding: 0;
+
+  &.blue {
+    color: #589ee3;
+  }
+}
+
 .badge_m {
-  font-size: 12px;
-  background-color: rgba($color: #1a932e, $alpha: .18);
+  font-size: 11px;
+  background-color: rgba($color: #1a932e, $alpha: 0.18);
   color: #1a932e;
   padding: 5px 12px;
   border-radius: 15px;
   font-family: "fontDemi";
 
-  &.wait{
-    background-color: rgba($color: #E2B133, $alpha: .18);
-    color: #DFA510;
+  &.wait {
+    background-color: rgba($color: #e2b133, $alpha: 0.18);
+    color: #dfa510;
   }
 
-  &.red{
-    background-color: rgba($color: #E65F2B, $alpha: .18);
-    color: #E65F2B;
+  &.red {
+    background-color: rgba($color: #e65f2b, $alpha: 0.18);
+    color: #e65f2b;
   }
 
-  &.yellow{
-    background-color: #FAF1DA;
-    color: #DFA510;
+  &.origin {
+    background-color: rgba($color: #6a6a6a, $alpha: 0.15);
+    color: #6a6a6a;
+  }
+
+  &.blue {
+    background-color: rgba($color: #064e94, $alpha: 0.18);
+    color: #064e94;
+  }
+
+  &.blue2 {
+    background-color: #CEE1F4;
+    color: #064e94;
+  }
+
+  &.yellow {
+    background-color: #faf1da;
+    color: #dfa510;
+  }
+
+  &.lg{
+    padding: 8px 15px;
+    font-size: 12px;
   }
 }
 
@@ -875,13 +906,24 @@
   }
 
   &.transparent {
-    background-color: $white;
-    color: $black;
+    background-color: transparent;
+    color: $sec;
+    border-color: $sec;
+
+    &:hover {
+      background-color: $sec;
+      color: #fff !important;
+    }
+  }
+
+  &.transparent_main {
+    background-color: transparent;
+    color: $main;
     border-color: $main;
 
     &:hover {
       background-color: $main;
-      color: #fff;
+      color: #fff !important;
     }
   }
 
@@ -1620,7 +1662,7 @@
     transform: translateY(-50%);
     @include dir-right(14px);
     color: #3baeaa;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     pointer-events: none;
     background-color: transparent;
@@ -1681,34 +1723,37 @@
 .select-multi,
 .select-color {
   ~ .select2 {
-    width: 180px !important;
+    width: 100% !important;
 
     .select2-selection--single,
     .select2-selection--multiple {
       cursor: pointer;
-      min-height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       outline: none;
-      font-size: 13px;
-      color: $white !important;
-      border: 1px solid $white;
-      background-color: transparent;
-      border-radius: 0 !important;
+      width: 100%;
+      min-height: 50px;
+      padding: 0 12px;
+      outline: none;
+      font-size: 14px;
+      color: $black;
+      transition: $main-transition;
+      border: 1px solid $border-input;
+      background-color: $white;
+      font-weight: 500;
+      border-radius: 7px;
 
       @media (max-width: $screen-xs) {
         min-height: 44px;
       }
 
       .select2-selection__rendered {
-        color: $white;
-        font-size: 14px;
+        color: $text-color;
+        font-size: 12px;
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
         padding: 6px auto;
-        direction: ltr;
+        line-height: 50px;
+        @include dir-padding-left(0);
       }
 
       .select2-selection__arrow {
@@ -1784,7 +1829,6 @@
   .select2-selection--multiple
   .select2-selection__choice__display {
   color: $dark;
-  font-size: 14px;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -1811,7 +1855,7 @@
   text-align: center;
   padding: 12px;
   color: $black;
-  font-size: 15px;
+  font-size: 13px;
   border-bottom: 1px solid rgba($main, 0.3);
   direction: ltr;
 
@@ -1824,7 +1868,7 @@
   .select2-results__option--highlighted.select2-results__option--selectable {
     background-color: transparent;
     color: $black;
-    font-size: 15px;
+    font-size: 13px;
     transition: $main-transition;
   }
 
@@ -1834,7 +1878,7 @@
 
   .select2-results__option--disabled {
     color: $black;
-    font-size: 15px;
+    font-size: 13px;
     opacity: 0.8;
   }
 }
@@ -1848,11 +1892,11 @@
   width: 4px;
 }
 .select2-results__options::-webkit-scrollbar-track {
-  background: #f0f0f0;
+  background-color: $light;
 }
 .select2-results__options::-webkit-scrollbar-thumb {
-  border-radius: 25px;
-  background-color: rgba($color: $main, $alpha: 0.5);
+  border-radius: 0;
+  background-color: #ddd;
 }
 
 .dropdown-select-2 {
@@ -2010,14 +2054,14 @@
   .input-radio {
     width: 18px;
     height: 18px;
-    accent-color: $black;
+    accent-color: $sec;
     // appearance: none;
     cursor: pointer;
     transition: $main-transition;
   }
 
   .label-radio {
-    font-size: 15px;
+    // font-size: 15px;
     color: $black;
     cursor: pointer;
     display: flex;
@@ -2182,7 +2226,7 @@
 .upload-label {
   position: relative;
   background-color: $white;
-  width: 100px;
+  min-width: 100px;
   height: 90px;
   border-radius: 5px;
   border: 1px dashed $border-input;
@@ -2191,6 +2235,8 @@
   gap: 10px;
   color: $main;
   font-size: 12px;
+  padding: 5px 12px;
+  flex-shrink: 0;
 
   i {
     font-size: 18px;
@@ -2245,11 +2291,21 @@
   @include center;
   cursor: pointer;
   font-size: 13px;
+  
+  i{
+    font-size: 13px;
+  }
 
   img {
     width: 24px;
     height: 24px;
   }
+}
+
+.photo-con{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .remove-img-2 {
@@ -2926,7 +2982,7 @@
     }
 
     &.active {
-      .page-link{
+      .page-link {
         color: $white !important;
         background-color: $main;
       }

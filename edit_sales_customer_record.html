@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <!-- (en و ar) ما بين (lang) عشان تغيير اللغه غيير-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UHY STAFF</title>
+    <link rel="shortcut icon" href="./assets/imgs/logo.png" type="image/x-icon">
+    <!-- Icons -->
+    <link rel="stylesheet" href="./assets/plugins/fontawesome-free-6.2.0-web/css/all.min.css">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="./assets/plugins/bootstrap/bootstrap.rtl.min.css">
+    <!-- Select 2 -->
+    <link rel="stylesheet" href="./assets/plugins/select2/select2.min.css">
+    <!-- fancybox -->
+    <link rel="stylesheet" href="./assets/plugins/FancyBox/jquery.fancybox.min.css">
+    <!-- FlatPicker -->
+    <link rel="stylesheet" href="./assets/plugins/FlatPicker/flatpickr.css">
+    <!-- intlTelInput -->
+    <link rel="stylesheet" href="./assets/plugins/flag/css/intlTelInput.css">
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    <!-- Style Css -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+
+    <!-- ************** start to loader ************** -->
+    <div class="loader-container">
+        <span class="loader"></span>
+    </div>
+    <!-- ************** End to loader ************** -->
+
+
+
+    <!-- ************** Start Navbar ************** -->
+    <nav class="navbar-m nav_style main-padding-right">
+        <div class="container ">
+            <div class="navbar-content">
+
+                <div class="d-flex align-items-center gap-2">
+                    <h1 class="fs17 ff-b">سجل العملاء</h1>
+                </div>
+                
+                <div class="left-sec">
+                    <a href="notifications.html" class="not_link">
+                        <img src="./assets/imgs/icons/notification.gif" alt="" class="ic">
+                        <span class='count'>2</span>
+                    </a>
+                    <div class="not_link side-open" id='open_links'>
+                        <img src="./assets/imgs/icons/menu.gif" alt="" class="ic">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+    <div class="nav-overlay"></div>
+    <!-- ************** End Navbar ************** -->
+
+
+
+    <!-- ************** Start Sidebar ************** -->
+    <div class="sidebar-m">
+
+        <a href="index.html" class="logo nav_style">
+            <img src="./assets/imgs/logo.png" alt="logo" class="img">
+        </a>
+
+        <div class='profile px-4 d-flex align-items-center gap-3'>
+            <img src="./assets/imgs/profile_img.jpg" alt="" class="circle_img">
+            <div class="left">
+                <h5 class="fs15 ff-d mb-1">عبدالله زكريا</h5>
+                <p class="fs14">مدير النظام</p>
+            </div>
+        </div>
+
+        <ul class="links">
+
+            <a href="index.html" class="link">
+                <img class="side-icon" src="assets/imgs/icons/home.gif" alt="">
+                <span class="text">الرئيسية</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/sales.gif" alt="">
+                <span class="text">المبيعات</span>
+            </div>
+
+            <a href="sales_clients.html" class="link">
+                <span class="text">العملاء</span>
+            </a>
+            
+            <a href="Sales_customer_record.html" class="link">
+                <span class="text">سجل العملاء</span>
+            </a>
+            
+            <a href="sales_prices_offers.html" class="link">
+                <span class="text">عروض الأسعار</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/system.gif" alt="">
+                <span class="text">اعدادات</span>
+            </div>
+
+            <a href="settings_users.html" class="link">
+                <span class="text">المستخدمين</span>
+            </a>
+            
+            <a href="user_privileges.html" class="link">
+                <span class="text">امتيازات المستخدم</span>
+            </a>
+            
+            <a href="concerned_administration.html" class="link">
+                <span class="text">الادارة المعنية</span>
+            </a>
+            
+            <a href="partner_hours.html" class="link">
+                <span class="text">ساعات الشريك</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/user.gif" alt="">
+                <span class="text">نائب الرئيس</span>
+            </div>
+
+            <a href="president_prices_offers.html" class="link">
+                <span class="text">عروض الأسعار</span>
+            </a>
+            
+            <a href="president_engagement_letters.html" class="link">
+                <span class="text">خطابات الارتباط</span>
+            </a>
+            
+            <a href="letters_directed.html" class="link">
+                <span class="text">خطابات موجه لأدارة معنية</span>
+            </a>
+            
+            <a href="engagement_letter_tasks.html" class="link">
+                <span class="text">مهام خطابات الارتباطات</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/wallet.gif" alt="">
+                <span class="text">التفاصيل المالية</span>
+            </div>
+
+            <a href="payment_engagement_letter.html" class="link">
+                <span class="text">دفع خطاب الارتباط</span>
+            </a>
+            
+            <a href="payment_history.html" class="link">
+                <span class="text">سجل المدفوعات</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/user.gif" alt="">
+                <span class="text">سكرتير</span>
+            </div>
+
+            <a href="secretary_price_offers.html" class="link">
+                <span class="text">عروض السعر</span>
+            </a>
+            
+            <a href="secretary_engagement_letter.html" class="link">
+                <span class="text">خطاب الارتباط</span>
+            </a>
+            
+            <a href="attach_final.html" class="link">
+                <span class="text">ارفاق النهائى</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/business.gif" alt="">
+                <span class="text">شريك</span>
+            </div>
+            
+            <a href="partner_engagement_letter.html" class="link">
+                <span class="text">خطاب الارتباط</span>
+            </a>
+            
+            <a href="close_business.html" class="link">
+                <span class="text">اغلاق العمل</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/verified.gif" alt="">
+                <span class="text">الجودة ما قبل الاصدار</span>
+            </div>
+
+            <a href="quality_engagement_letters.html" class="link">
+                <span class="text">خطابات الارتباط</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/checklist.gif" alt="">
+                <span class="text">التقرير</span>
+            </div>
+
+            <a href="report_clients.html" class="link">
+                <span class="text">العملاء</span>
+            </a>
+
+            <div class="link head">
+                <img class="side-icon" src="assets/imgs/icons/system.gif" alt="">
+                <span class="text">الاعدادات العامة</span>
+            </div>
+
+            <a href="collaborators.html" class="link">
+                <span class="text">المتعاونين</span>
+            </a>
+
+            <a href="activities.html" class="link">
+                <span class="text">النشاطات</span>
+            </a>
+            
+            <a href="services.html" class="link">
+                <span class="text">الخدمات</span>
+            </a>
+            
+            <a href="tax_amount.html" class="link">
+                <span class="text">قيمة الضريبة</span>
+            </a>
+            
+            <a href="branches.html" class="link">
+                <span class="text">الفروع</span>
+            </a>
+            
+            <a href="hourly_price.html" class="link">
+                <span class="text">سعر الساعة</span>
+            </a>
+
+        </ul>
+
+    </div>
+    <!-- ************** End Sidebar ************** -->
+
+
+
+    <!-- ************** Start main Section ************** -->
+    <div class="main-sec sec-padding main-padding-right">
+        <div class="container">
+
+            <form class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
+                <h3 class="fs16 ff-b mb-4">تعديل تقرير </h3>
+
+                <div class="row gy-3">
+
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">اسم العميل باللغة العربية</label>
+                            <div class="main-input">
+                                <input type="text" placeholder="قم بإدخال اسم العميل باللغة العربية " class="input-me">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">رقم العميل</label>
+                            <div class="main-input">
+                                <input type="number" placeholder="قم بإدخال رقم العميل" class="input-me">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="input-g">
+                            <label for="" class="main-label">المرفقات التقرير</label>
+                            <div class='d-flex gap-4 upload-con'>
+                                <label class="upload-label">
+                                    <input id="uploadImgs" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
+                                    <img src='./assets/imgs/icons/add-file.gif' />
+                                    <span>إضافة مرفق</span>
+                                </label>
+                                <div class="photo-con"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="input-g">
+                            <label for="" class="main-label d-flex gap-4">وصف التقرير</label>
+                            <div class="main-input">
+                                <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="button" data-bs-target="#doneModal" data-bs-toggle="modal" class="main-btn sec up lg mx-auto mt-4">تعديل تقرير </button>
+
+            </form>
+
+        </div>
+    </div>
+    <!-- ************** End main Section ************** -->
+
+
+    <!-- ************** Done Modal ************** -->
+    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم تعديل التقرير بنجاح</h3>
+            </div>
+
+            <div class="modal-footer">
+                <div class="buttons w-100 justify-content-center">
+                    <a href='add_sales_customer_record.html' class="main-btn sec lg up">تأكيد</a>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap 5 -->
+    <script src="./assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- Jquery -->
+    <script src="./assets/plugins/jquery/jquery-3.5.1.min.js"></script>
+    <!-- fancybox -->
+    <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
+    <!-- FlatPicker -->
+    <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
+    <!-- Datatables -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
+    <!-- Select 2 -->
+    <script src="./assets/plugins/select2/select2.js"></script>
+    <!-- intlTelInput -->
+    <script src="./assets/plugins/flag/js/intlTelInput.min.js"></script>
+    <!-- Main Js -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

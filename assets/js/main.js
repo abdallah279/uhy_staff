@@ -33,7 +33,7 @@ $(".nav-overlay").on("click", function () {
 let isRtl = $('html[lang="ar"]').length > 0;
 
 // Normal Select To
-if($(".select").length){
+if ($(".select").length > 0) {
   $(".select").select2({
     dir: isRtl ? "rtl" : "ltr",
     minimumResultsForSearch: Infinity,
@@ -43,24 +43,44 @@ if($(".select").length){
 /************* Data Table *************/
 
 $(document).ready(function () {
+  let tableTanguage = {};
+  let arTable = {
+    paginate: {
+      previous: `<i class="fa-solid fa-angles-left"></i>`,
+      next: `<i class="fa-solid fa-angles-right"></i>`,
+    },
+    sProcessing: "جارٍ التحميل...",
+    sLengthMenu: "أظهر _MENU_ مدخلات",
+    sZeroRecords: "لم يعثر على أية سجلات",
+    sInfo: "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+    sInfoEmpty: "يعرض 0 إلى 0 من أصل 0 سجل",
+    sInfoFiltered: "(منتقاة من مجموع _MAX_ مُدخل)",
+    sInfoPostFix: "",
+  };
+  let enTable = {
+    paginate: {
+      previous: `<i class="fa-solid fa-angles-left"></i>`,
+      next: `<i class="fa-solid fa-angles-right"></i>`,
+    },
+    sLengthMenu: "Display _MENU_ records per page",
+    sZeroRecords: "Nothing found - sorry",
+    zInfo: "Showing page _PAGE_ of _PAGES_",
+    sInfoEmpty: "No records available",
+    sInfoFiltered: "(filtered from _MAX_ total records)",
+  };
+
+  if (isRtl) {
+    tableTanguage = arTable;
+  } else {
+    tableTanguage = enTable;
+  }
+
   var myTable = $("#myTable").dataTable({
     pageLength: 7,
-    responsive: true,
+    // responsive: true,
     bLengthChange: false,
-    "ordering": false,
-    language: {
-      paginate: {
-        previous: `<i class="fa-solid fa-angles-left"></i>`,
-        next: `<i class="fa-solid fa-angles-right"></i>`,
-      },
-      sProcessing: "جارٍ التحميل...",
-      sLengthMenu: "أظهر _MENU_ مدخلات",
-      sZeroRecords: "لم يعثر على أية سجلات",
-      sInfo: "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
-      sInfoEmpty: "يعرض 0 إلى 0 من أصل 0 سجل",
-      sInfoFiltered: "(منتقاة من مجموع _MAX_ مُدخل)",
-      sInfoPostFix: "",
-    },
+    ordering: false,
+    language: tableTanguage,
   });
 
   $("#searchTable").on("keyup", function () {
@@ -68,7 +88,7 @@ $(document).ready(function () {
   });
 });
 
-/************* Upload Video Or Img *************/
+/************* Upload Files Or Img *************/
 let loginInputs = document.querySelectorAll(".img-upload-input");
 
 loginInputs.forEach((input) => {
@@ -90,79 +110,119 @@ loginInputs.forEach((input) => {
       };
     };
   } else {
-    $(".img-upload-input").change(function () {
-      imgPreview(this);
+    input.addEventListener("change", function () {
+      imgPreview(input);
     });
 
     function imgPreview(input) {
       var file = input.files[0];
       var mixedfile = file["type"].split("/");
       var filetype = mixedfile[0];
-
       let photoContainer = $(input).closest(".upload-con").find(".photo-con");
 
-      if (filetype == "image") {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-          photoContainer.empty();
+      const multiple = $(input).attr("multiple");
 
-          let img = `
-                <div class="hidden-img">
-
-                    <a class="fancybox" data-fancybox="gallery" href="${e.target.result}">
-                        <img class="img" src="${e.target.result}" />
-                    </a>
-
-                    <button type='button' class='remove-img'>
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-
-                </div>
-            `;
-
-          photoContainer.append(img);
-          $(".remove-img").on("click", function (e) {
-            e.target.closest(".hidden-img").remove();
-          });
-        };
-        reader.readAsDataURL(input.files[0]);
-      } else if (filetype == "video") {
-        photoContainer.empty();
-
-        let srcVideo = URL.createObjectURL(input.files[0]);
-
-        let video = `
-                            <div class="course-page-img">
-
-                                <video class="img" src="${srcVideo}"></video>
-                                <a href="${srcVideo}" class="video" data-fancybox="gallery" data-type='video'>
-                                    <img src="../assets/imgs/icons/video_ic2.png" alt="" class="ic">
-                                </a>
-
-                                <button type='button' class='remove-img'>
-                                    <img src='../assets/imgs/icons/close-square2.png' />
-                                </button>
-
-                            </div>
-                        `;
-
-        if (photoContainer.length) {
-          photoContainer.append(video);
-        } else {
-          $(`.${$(input).data("video")}`).empty();
-          $(`.${$(input).data("video")}`).append(video);
+      if (multiple) {
+        if (filetype == "image") {
+          uploadMultiImgs(input, photoContainer);
+        } else if (filetype == "application") {
+          uploadFile(input, photoContainer);
         }
-
-        $(".remove-img").on("click", function (e) {
-          e.target.closest(".course-page-img").remove();
-        });
       } else {
-        alert("Invalid file type");
+        if (filetype == "image") {
+          uploadImg(input, photoContainer);
+        } else if (filetype == "application") {
+          photoContainer.empty();
+          uploadFile(input, photoContainer);
+        } else {
+          alert("Invalid file type");
+        }
       }
     }
   }
 });
 
-$(".remove-img").on("click", function (e) {
-  e.target.closest(".course-page-img").remove();
-});
+// uploadMultiImgs
+function uploadMultiImgs(input, photoContainer) {
+  for (file of input.files) {
+    let reader = new FileReader();
+    reader.onload = () => {
+      let img = `
+          <div class="hidden-img">
+              <input type='hidden' value='${reader.result}' />
+              <a class="fancybox" data-fancybox="gallery" href="${reader.result}">
+                  <img class="img" src="${reader.result}" />
+              </a>
+
+              <button type='button' class='remove-img'>
+                  <i class="fa-solid fa-xmark"></i>
+              </button>
+
+          </div>
+      `;
+
+      photoContainer.append(img);
+      removeIcon();
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+// Upload Image
+function uploadImg(input, photoContainer) {
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    photoContainer.empty();
+    let img = `
+        <div class="hidden-img">
+
+            <a class="fancybox" data-fancybox="gallery" href="${e.target.result}">
+                <img class="img" src="${e.target.result}" />
+            </a>
+
+            <button type='button' class='remove-img'>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+    `;
+
+    photoContainer.append(img);
+    removeIcon();
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+// uploadFiles
+function uploadFile(input, photoContainer) {
+  Object.values(input.files).forEach(function (file) {
+    var name = file.name;
+
+    let myFile = `
+          <div class="upload-label">
+              <input type='hidden' value='${name}' />
+              <img src='./assets/imgs/icons/pdf-file.gif' />
+              <span>${name}</span>
+              <button type='button' class='remove-img'>
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+          </div>
+        `;
+
+    photoContainer.append(myFile);
+    removeIcon();
+  });
+}
+
+// Remove Icon
+function removeIcon() {
+  $(".remove-img").on("click", function (e) {
+    if (e.target.closest(".hidden-img")) {
+      e.target.closest(".hidden-img").remove();
+    } else if (e.target.closest(".upload-label")) {
+      e.target.closest(".upload-label").remove();
+    }
+  });
+}
+
+removeIcon();
