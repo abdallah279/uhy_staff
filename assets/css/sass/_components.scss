@@ -652,6 +652,11 @@
     color: #dfa510;
   }
 
+  &.done {
+    background-color:#D6EBD9;
+    color: #1A932E;
+  }
+
   &.red {
     background-color: rgba($color: #e65f2b, $alpha: 0.18);
     color: #e65f2b;
@@ -681,6 +686,18 @@
     padding: 8px 15px;
     font-size: 12px;
   }
+}
+
+.totla_item{
+  padding: 15px;
+  background-color: #DEF4FF;
+  border-radius: 7px;
+  color: $main;
+  border: 1px solid #0078EC;
+  @include between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-family: fontDemi;
 }
 
 .main-item {
@@ -990,6 +1007,16 @@
   z-index: 1;
   max-width: fit-content;
   // font-family: fontDemi;
+
+  &.sec{
+    background-color: transparent;
+    color: $sec;
+    border-color: $sec;
+
+    &:hover {
+      color: $sec !important;
+    }
+  }
 
   &:hover {
     color: $main !important;
@@ -2102,54 +2129,73 @@
 }
 
 // switch-con
-// .switch-con{
-//   line-height: 0;
-//   .switch{
-//     width: 52px;
-//     height: 28px;
-//     cursor: pointer;
-//     position: relative;
-//     background-color: $white;
-//     border-radius: 25px;
-//     box-shadow: 0 1px 6px rgb(0 0 0 / 8%);
-//     transition: $main-transition;
+.switch-con{
+  line-height: 0;
+  .switch{
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    background-color: #ccc;
+    border-radius: 25px;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 8%);
+    transition: $main-transition;
 
-//     &::after{
-//       content: '';
-//       position: absolute;
-//       top: 50%;
-//       transform: translateY(-50%);
-//       @include dir-left(4px);
-//       @include circle(22px);
-//       background-color: $gold2;
-//       transition: $main-transition;
-//     }
-//   }
+    &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @include dir-left(4px);
+      @include circle(14px);
+      background-color: $white;
+      transition: $main-transition;
+    }
+  }
 
-//   input:checked + .switch::after{
-//     #{$ltr} & {
-//       transform: translateX(100%) translateY(-50%);
-//     }
-//     #{$rtl} & {
-//       transform: translateX(-100%) translateY(-50%);
-//     }
-//     background-color: $red;
-//   }
-// }
+  .text {
+    display: none;
+    
+    &.text1 {
+      display: block;
+      transition: $main-transition;
+    }
+  }
+
+  input:checked { 
+    + .switch{
+      background-color: $sec;
+      &::after{
+        #{$ltr} & {
+          transform: translateX(27px) translateY(-50%);
+        }
+        #{$rtl} & {
+          transform: translateX(-27px) translateY(-50%);
+        }
+      }
+    }
+
+    ~ {
+      .text1 {
+        display: none;
+      }
+      .text2 {
+        display: block;
+      }
+    }
+}
+}
 
 // user-photo-con
 .user-photo-con {
-  @include center;
-  flex-direction: column;
-  gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 
   .user-text {
-    font-size: 16px;
+    font-size: 14px;
     color: $black;
-
-    @media screen and (max-width: $screen-xs) {
-      font-size: 14px;
-    }
+    font-family: fontDemi;
   }
 }
 
@@ -2165,12 +2211,18 @@
     @include circle(100%);
     overflow: hidden;
     border: 3px solid $white;
-    outline: 1px solid $main;
+    outline: 1px solid $sec;
+    @include center;
 
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 40px;
+      
+      &.wid{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-width: none;
+      }
     }
   }
 
@@ -2181,9 +2233,9 @@
     @include circle(30px);
     @include center;
     cursor: pointer;
-    background-color: $main;
+    background-color: $sec;
     border: 1px solid $white;
-    outline: 1px solid $main;
+    outline: 1px solid $sec;
 
     img {
       max-width: 14px;

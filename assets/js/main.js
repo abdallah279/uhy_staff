@@ -57,6 +57,7 @@ $(document).ready(function () {
     sInfoFiltered: "(منتقاة من مجموع _MAX_ مُدخل)",
     sInfoPostFix: "",
   };
+
   let enTable = {
     paginate: {
       previous: `<i class="fa-solid fa-angles-left"></i>`,

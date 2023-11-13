@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="./assets/plugins/FancyBox/jquery.fancybox.min.css">
     <!-- FlatPicker -->
     <link rel="stylesheet" href="./assets/plugins/FlatPicker/flatpickr.css">
-    <!-- intlTelInput -->
-    <link rel="stylesheet" href="./assets/plugins/flag/css/intlTelInput.css">
     <!-- Datatables -->
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css" />
@@ -43,7 +41,7 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">العملاء</h1>
+                    <h1 class="fs17 ff-b">المستخدمين</h1>
                 </div>
 
                 <div class="left-sec">
@@ -246,122 +244,127 @@
     <!-- ************** Start main Section ************** -->
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
+            <a href="add_settings_users.html" class='add_btn up mb-4'> 
+                <i class="fa-solid fa-circle-plus"></i>
+                اضافة مستخدم جديد 
+            </a>
 
-            <div class='bg-light rounded-4 p-sm-5 py-4 px-3'>
-                <div class="d-flex-between gap-4 flex-wrap mb-4">
-                    <h3 class="fs16 ff-b">عرض بيانات العميل رقم 65</h3>
-                    <div class="d-flex gap-4 align-items-center">
-                        <h6 class="ff-d">حالة العميل</h6>
-                        <span class="badge_m lg blue2">يملك خطاب سعر / عرض سعر</span>
-                    </div>
-                </div>
-
-                <div class="row gy-4">
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3">الاسم باللغة العربية</div>
-                        <div class="fs15 ff-d">شركة المجد</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3">رقم سجل تجاري</div>
-                        <div class="fs15 ff-d">56625616516521</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3">الاسم باللغة الإنجليزية</div>
-                        <div class="fs15 ff-d">El Majed company</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3">الرقم الضريبي</div>
-                        <div class="fs15 ff-d">614654</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> الشخص المسؤول لدى العميل</div>
-                        <div class="fs15 ff-d">احمد عثمان</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3">العنوان</div>
-                        <div class="fs15 ff-d">
-                            طريق الملك عبدالله بعد قاعة الوليد للاحتفالات حي،
-                            المدينة المنورة المملكة العربية السعودية
-                        </div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> البريد الإلكتروني</div>
-                        <div class="fs15 ff-d">osmanobeh@gmail.com</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> قطاع العميل ( النشاط )</div>
-                        <div class="fs15 ff-d">التجارة</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> رقم الجوال</div>
-                        <div class="fs15 ff-d">+966123456987</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> رقم الهاتف</div>
-                        <div class="fs15 ff-d">05123121321</div>
-                    </div>
-
-                    <div class='col-12'>
-                        <div class="fs14 mb-3"> منطقة العميل</div>
-                        <div class="fs15 ff-d">الشرقية</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> السجل التجاري</div>
-                        <div class="fs15 ff-d">
-                            <div class="photo-con">
-                                <div class="upload-label">
-                                    <input type='hidden' value='${name}' />
-                                    <img src='./assets/imgs/icons/pdf-file.gif' />
-                                    <span>اسم الملف</span>
-                                    <button type='button' class='remove-img'>
-                                      <i class="fa-solid fa-xmark"></i>
-                                    </button>
+            <div class="data">
+                <table id="myTable" class="display table" dir="rtl">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>اسم العميل</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>المهمة</th>
+                            <th>الإدارة المعنية ان وجد</th>
+                            <th>الحالة</th>
+                            <th>المزيد</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> الرقم الضريبي</div>
-                        <div class="fs15 ff-d">
-                            <div class="photo-con">
-                                <div class="upload-label">
-                                    <input type='hidden' value='${name}' />
-                                    <img src='./assets/imgs/icons/pdf-file.gif' />
-                                    <span>اسم الملف</span>
-                                    <button type='button' class='remove-img'>
-                                      <i class="fa-solid fa-xmark"></i>
-                                    </button>
+                            </td>
+                            <td>mohameduhy@yhy.com</td>
+                            <td>مدير النظام</td>
+                            <td>...</td>
+                            <td>
+                                <span class="badge_m blue">مفعل</span>
+                            </td>
+                            <td class="d-flex-c gap-1">
+                                <a href="settings_user.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                <a href="edit_settings_users.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='col-12'>
-                        <div class="fs14 mb-3"> التعليقات</div>
-                        <div class="fs15 ff-d">
-                            لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم
-                        </div>
-                    </div>
-                </div>
-
-                <div class='buttons justify-content-center mt-5'>
-                    <a href="edit_sales_client.html" class="main-btn sec up lg">تعديل بيانات العميل</a>
-                    <a href="add_sales_customer_record.html" class="main-btn transparent lg">سجل العميل</a>
-                    <a href="add_sales_prices_offers.html" class="main-btn transparent_main lg"><i class="fa-solid fa-circle-plus"></i> إضافة عرض سعر </a>
-                </div>
-
+                            </td>
+                            <td>mohameduhy@yhy.com</td>
+                            <td>مدير النظام</td>
+                            <td>...</td>
+                            <td>
+                                <span class="badge_m red">غير مفعل</span>
+                            </td>
+                            <td class="d-flex-c gap-1">
+                                <a href="settings_user.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                <a href="edit_settings_users.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>mohameduhy@yhy.com</td>
+                            <td>مدير النظام</td>
+                            <td>المحاسبة</td>
+                            <td>
+                                <span class="badge_m blue">مفعل</span>
+                            </td>
+                            <td class="d-flex-c gap-1">
+                                <a href="settings_user.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                <a href="edit_settings_users.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>mohameduhy@yhy.com</td>
+                            <td>مدير النظام</td>
+                            <td>...</td>
+                            <td>
+                                <span class="badge_m blue">مفعل</span>
+                            </td>
+                            <td class="d-flex-c gap-1">
+                                <a href="settings_user.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                <a href="edit_settings_users.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>mohameduhy@yhy.com</td>
+                            <td>مدير النظام</td>
+                            <td>الزكاة</td>
+                            <td>
+                                <span class="badge_m blue">مفعل</span>
+                            </td>
+                            <td class="d-flex-c gap-1">
+                                <a href="settings_user.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                <a href="edit_settings_users.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
@@ -369,10 +372,57 @@
     <!-- ************** End main Section ************** -->
 
 
+    <!-- ************** Delete Modal ************** -->
+    <div class="modal fade" id="deleteModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="./assets/imgs/icons/delete.gif" alt="" class="modal-img-body mb-3 mx-auto">
+                <h3 class="fs15 c-black text-center ff-d mb-4">هل انت متأكد من الحذف ؟</h3>
+            </div>
+
+            <div class="modal-footer">
+                <div class="buttons w-100 justify-content-center">
+                    <button type="button" data-bs-target="#doneModal" data-bs-toggle="modal" data-bs-dismiss="modal" class="main-btn lg up red">حذف</button>
+                    <button type="button" data-bs-dismiss="modal" class="main-btn lg transparent">تراجع</button>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- ************** Done Modal ************** -->
+    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم الحذف بنجاح</h3>
+            </div>
+
+            <div class="modal-footer">
+                <div class="buttons w-100 justify-content-center">
+                    <button type="button" data-bs-dismiss="modal" class="main-btn sec lg up">تأكيد</button>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+
+
     <!-- Bootstrap 5 -->
     <script src="./assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- Jquery -->
     <script src="./assets/plugins/jquery/jquery-3.5.1.min.js"></script>
+    <!-- Select 2 -->
+    <script src="./assets/plugins/select2/select2.js"></script>
     <!-- fancybox -->
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
     <!-- FlatPicker -->
@@ -380,10 +430,6 @@
     <!-- Datatables -->
     <script type="text/javascript"
         src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
-    <!-- Select 2 -->
-    <script src="./assets/plugins/select2/select2.js"></script>
-    <!-- intlTelInput -->
-    <script src="./assets/plugins/flag/js/intlTelInput.min.js"></script>
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>
 </body>

@@ -9,11 +9,11 @@
     height: 3px;
   }
   &::-webkit-scrollbar-track {
-    background: transparent;
+    background-color: $light;
   }
   &::-webkit-scrollbar-thumb {
-    border-radius: 25px;
-    background-color: $main;
+    border-radius: 0;
+    background-color: #ddd;
   }
 }
 .table {
@@ -33,13 +33,13 @@ table.dataTable {
 table.dataTable thead tr th {
   // font-size: 15px;
   font-family: fontDemi;
+  padding: 20px 10px;
 }
 
 table.dataTable th,
 table.dataTable td {
   border: 1px solid rgb(238 237 237 / 50%) !important;
   white-space: nowrap;
-  padding: 20px 10px;
   text-align: center !important;
   vertical-align: middle;
 }
@@ -47,6 +47,8 @@ table.dataTable td {
 .data .table > tbody > tr > td {
   border: none;
   font-size: 13px;
+  height: 50px !important;
+  padding: 12px 10px;
 }
 
 .data .table > tbody > tr > td.line-clamp {
@@ -59,11 +61,11 @@ table.dataTable td {
       color: #04B74C;
   } */
 
-.data .table > tbody > tr > td > img {
-  border-radius: 10px;
-  width: 60px;
-  height: 60px;
-}
+// .data .table > tbody > tr > td > img {
+//   border-radius: 10px;
+//   width: 60px;
+//   height: 60px;
+// }
 
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.child {
   background-color: #fff;

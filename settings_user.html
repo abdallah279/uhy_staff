@@ -43,7 +43,7 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">العملاء</h1>
+                    <h1 class="fs17 ff-b">المستخدمين</h1>
                 </div>
 
                 <div class="left-sec">
@@ -248,57 +248,40 @@
         <div class="container">
 
             <div class='bg-light rounded-4 p-sm-5 py-4 px-3'>
-                <div class="d-flex-between gap-4 flex-wrap mb-4">
-                    <h3 class="fs16 ff-b">عرض بيانات العميل رقم 65</h3>
-                    <div class="d-flex gap-4 align-items-center">
-                        <h6 class="ff-d">حالة العميل</h6>
-                        <span class="badge_m lg blue2">يملك خطاب سعر / عرض سعر</span>
+                <h3 class="fs16 ff-b mb-4">بيانات المستخدم </h3>
+
+                <div class="input-g mb-4">
+                    <div class="user-photo-con">
+                        <div class="user-img">
+                            <div class="profile-img">
+                                <img src="assets/imgs/profile_img.jpg" class="img wid" alt="">
+                            </div>
+                        </div>
+
+                        <span class="user-text">الصورة الشخصية</span>
                     </div>
                 </div>
 
                 <div class="row gy-4">
 
                     <div class='col-sm-6'>
-                        <div class="fs14 mb-3">الاسم باللغة العربية</div>
-                        <div class="fs15 ff-d">شركة المجد</div>
+                        <div class="fs14 mb-3">الأسم الأول واسم الأب</div>
+                        <div class="fs15 ff-d">احمد عثمان احمد محمد سيلمان</div>
                     </div>
 
                     <div class='col-sm-6'>
-                        <div class="fs14 mb-3">رقم سجل تجاري</div>
-                        <div class="fs15 ff-d">56625616516521</div>
+                        <div class="fs14 mb-3"> اسم المستخدم كامل</div>
+                        <div class="fs15 ff-d">احمد عثمان احمد محمد سيلمان</div>
                     </div>
 
                     <div class='col-sm-6'>
-                        <div class="fs14 mb-3">الاسم باللغة الإنجليزية</div>
-                        <div class="fs15 ff-d">El Majed company</div>
+                        <div class="fs14 mb-3">الوظيفة</div>
+                        <div class="fs15 ff-d">موظف</div>
                     </div>
 
                     <div class='col-sm-6'>
-                        <div class="fs14 mb-3">الرقم الضريبي</div>
-                        <div class="fs15 ff-d">614654</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> الشخص المسؤول لدى العميل</div>
-                        <div class="fs15 ff-d">احمد عثمان</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3">العنوان</div>
-                        <div class="fs15 ff-d">
-                            طريق الملك عبدالله بعد قاعة الوليد للاحتفالات حي،
-                            المدينة المنورة المملكة العربية السعودية
-                        </div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> البريد الإلكتروني</div>
-                        <div class="fs15 ff-d">osmanobeh@gmail.com</div>
-                    </div>
-
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> قطاع العميل ( النشاط )</div>
-                        <div class="fs15 ff-d">التجارة</div>
+                        <div class="fs14 mb-3">تاريخ الميلاد</div>
+                        <div class="fs15 ff-d">16-5-2025</div>
                     </div>
 
                     <div class='col-sm-6'>
@@ -307,59 +290,48 @@
                     </div>
 
                     <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> رقم الهاتف</div>
+                        <div class="fs14 mb-3">رقم الهاتف</div>
                         <div class="fs15 ff-d">05123121321</div>
                     </div>
 
-                    <div class='col-12'>
-                        <div class="fs14 mb-3"> منطقة العميل</div>
-                        <div class="fs15 ff-d">الشرقية</div>
+                    <div class='col-sm-6'>
+                        <div class="fs14 mb-3"> فريق الإدارة المعنية</div>
+                        <div class="fs15 ff-d">المحاسبة</div>
                     </div>
 
                     <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> السجل التجاري</div>
-                        <div class="fs15 ff-d">
+                        <div class="fs14 mb-3"> الحالة</div>
+                        <div class="fs15 ff-d">مفعل</div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="input-g">
+                            <label for="" class="main-label">المرفقات</label>
                             <div class="photo-con">
+
                                 <div class="upload-label">
                                     <input type='hidden' value='${name}' />
                                     <img src='./assets/imgs/icons/pdf-file.gif' />
                                     <span>اسم الملف</span>
-                                    <button type='button' class='remove-img'>
-                                      <i class="fa-solid fa-xmark"></i>
-                                    </button>
                                 </div>
+
+                                <div class="hidden-img">
+
+                                    <a class="fancybox" data-fancybox="gallery" href="assets/imgs/profile_img.jpg">
+                                        <img class="img" src="assets/imgs/profile_img.jpg" />
+                                    </a>
+                        
+                                </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class='col-sm-6'>
-                        <div class="fs14 mb-3"> الرقم الضريبي</div>
-                        <div class="fs15 ff-d">
-                            <div class="photo-con">
-                                <div class="upload-label">
-                                    <input type='hidden' value='${name}' />
-                                    <img src='./assets/imgs/icons/pdf-file.gif' />
-                                    <span>اسم الملف</span>
-                                    <button type='button' class='remove-img'>
-                                      <i class="fa-solid fa-xmark"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='col-12'>
-                        <div class="fs14 mb-3"> التعليقات</div>
-                        <div class="fs15 ff-d">
-                            لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم
-                        </div>
-                    </div>
                 </div>
 
                 <div class='buttons justify-content-center mt-5'>
-                    <a href="edit_sales_client.html" class="main-btn sec up lg">تعديل بيانات العميل</a>
-                    <a href="add_sales_customer_record.html" class="main-btn transparent lg">سجل العميل</a>
-                    <a href="add_sales_prices_offers.html" class="main-btn transparent_main lg"><i class="fa-solid fa-circle-plus"></i> إضافة عرض سعر </a>
+                    <a href="edit_settings_users.html" class="main-btn sec up lg">تعديل المستخدم</a>
+                    <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="main-btn red up lg">حذف العميل</button>
                 </div>
 
             </div>
@@ -367,6 +339,49 @@
         </div>
     </div>
     <!-- ************** End main Section ************** -->
+
+    <!-- ************** Delete Modal ************** -->
+    <div class="modal fade" id="deleteModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="./assets/imgs/icons/delete.gif" alt="" class="modal-img-body mb-3 mx-auto">
+                <h3 class="fs15 c-black text-center ff-d mb-4">هل انت متأكد من الحذف ؟</h3>
+            </div>
+
+            <div class="modal-footer">
+                <div class="buttons w-100 justify-content-center">
+                    <button type="button" data-bs-target="#doneModal" data-bs-toggle="modal" data-bs-dismiss="modal" class="main-btn lg up red">حذف</button>
+                    <button type="button" data-bs-dismiss="modal" class="main-btn lg transparent">تراجع</button>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- ************** Done Modal ************** -->
+    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم الحذف بنجاح</h3>
+            </div>
+
+            <div class="modal-footer">
+                <div class="buttons w-100 justify-content-center">
+                    <a href='settings_users.html' class="main-btn sec lg up">تأكيد</a>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
 
 
     <!-- Bootstrap 5 -->
