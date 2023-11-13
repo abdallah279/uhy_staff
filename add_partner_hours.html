@@ -35,7 +35,7 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">القيمة الضريبية</h1>
+                    <h1 class="fs17 ff-b">ساعات الشريك</h1>
                 </div>
                 
                 <div class="left-sec">
@@ -240,23 +240,43 @@
         <div class="container">
             
             <form action="tax_amount.html" class='bg-light rounded-4 p-sm-5 py-4 px-3'>
-                <h3 class="fs16 ff-b mb-4">تعديل الضريبة </h3>
+                <h3 class="fs16 ff-b mb-4">إضافة ساعات الشريك </h3>
 
                 <div class="input-g">
-                    <label for="" class="main-label">اسم الضريبة</label>
+                    <label for="" class="main-label">اسم الشريك</label>
                     <div class="main-input">
-                        <input type="text" placeholder="قم بإدخال اسم الضريبة" class="input-me">
+                        <select name="" id="" class="select">
+                            <option value="0" selected disabled>قم باختيار الشريك</option>
+                            <option value="1">اسم الشريك</option>
+                            <option value="2">اسم الشريك</option>
+                            <option value="3">اسم الشريك</option>
+                        </select>
+                        <i class="fa-solid fa-angle-down main-icon"></i>
                     </div>
                 </div>
 
                 <div class="input-g">
-                    <label for="" class="main-label">قيمة الضريبة بالنسبة المئوية</label>
+                    <label for="" class="main-label">عدد ساعات الشريك</label>
                     <div class="main-input">
-                        <input type="number" placeholder="قم بإدخال قيمة الضريبة بالنسبة المئوية" class="input-me">
+                        <input type="number" placeholder="قم بإدخال عدد ساعات الشريك" class="input-me">
                     </div>
                 </div>
 
-                <button type="button" data-bs-target='#doneModal' data-bs-toggle='modal' class="main-btn sec up lg mx-auto mt-4">تعديل الضريبة </button>
+                <div class="input-g">
+                    <label for="" class="main-label">سعر الساعة</label>
+                    <div class="main-input">
+                        <input type="text" placeholder="قم بإدخال سعر الساعة" class="input-me">
+                    </div>
+                </div>
+
+                <div class="input-g">
+                    <label for="" class="main-label">السنة</label>
+                    <div class="main-input">
+                        <input type="text" placeholder="قم بإدخال السنة" class="input-me">
+                    </div>
+                </div>
+
+                <button type="button" data-bs-target='#doneModal' data-bs-toggle='modal' class="main-btn sec up lg mt-4">إضافة ساعات الشريك</button>
 
             </form>
 
@@ -271,12 +291,12 @@
 
             <div class="modal-body">
                 <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
-                <h3 class="fs15 c-black text-center ff-d mb-4">تم تعديل الضريبة بنجاح</h3>
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم اضافة ساعات الشريك بنجاح</h3>
             </div>
 
             <div class="modal-footer">
                 <div class="buttons w-100 justify-content-center">
-                    <a href='tax_amount.html' class="main-btn sec lg up">تأكيد</a>
+                    <a href='partner_hours.html' class="main-btn sec lg up">تأكيد</a>
                 </div>
             </div>
 

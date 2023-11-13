@@ -418,12 +418,16 @@
   z-index: 10;
 
   .step-item {
-    min-width: 180px;
+    min-width: 160px;
     max-width: 100%;
-    display: flex;
+    // display: flex;
     flex-direction: column;
     text-align: center;
     position: relative;
+
+    @media screen and (max-width: $screen-md) {
+      min-width: 115px;
+    }
 
     @media screen and (max-width: $screen-sm) {
       min-width: 105px;
@@ -433,28 +437,36 @@
       min-width: 95px;
     }
 
-    @media screen and (max-width: $screen-xxs) {
+    @media screen and (max-width: 376px) {
       min-width: 82px;
     }
 
-    & + .step-item:after {
-      content: "";
-      position: absolute;
-      top: 9px;
-      @include dir-left(0);
-      width: 100%;
-      border: 1px dashed $main;
-      #{$ltr} & {
-        transform: translateX(-50%);
+    & + .step-item {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 11px;
+        @include dir-left(0);
+        width: 100%;
+        border: 1px dashed $main;
+        #{$ltr} & {
+          transform: translateX(-50%);
+        }
+        #{$rtl} & {
+          transform: translateX(50%);
+        }
+        z-index: -10;
+        opacity: 0.5;
       }
-      #{$rtl} & {
-        transform: translateX(50%);
+      &.no_after {
+        &::after {
+          display: none;
+        }
       }
-      z-index: -10;
     }
 
     .progress-count {
-      @include circle(18px);
+      @include circle(22px);
       @include center;
       margin: 0 auto;
       position: relative;
@@ -464,17 +476,12 @@
     }
 
     .progress-label {
-      font-size: 15px;
+      font-size: 13px;
       margin-top: 14px;
-      color: $dark;
-      font-family: fontMed;
+      color: $black;
 
-      @media screen and (max-width: $screen-sm) {
-        font-size: 13px;
-      }
-
-      @media screen and (max-width: $screen-xs) {
-        font-size: 12px;
+      @include devices(xs) {
+        font-size: 11px;
       }
     }
 
@@ -486,8 +493,18 @@
       }
 
       .progress-label {
-        font-family: fontDemi;
-        color: $black;
+        color: $main;
+      }
+    }
+
+    &.reject {
+      .progress-count {
+        background-color: $red;
+        border: none;
+      }
+
+      .progress-label {
+        color: $red;
       }
     }
   }
@@ -653,8 +670,8 @@
   }
 
   &.done {
-    background-color:#D6EBD9;
-    color: #1A932E;
+    background-color: #d6ebd9;
+    color: #1a932e;
   }
 
   &.red {
@@ -673,7 +690,7 @@
   }
 
   &.blue2 {
-    background-color: #CEE1F4;
+    background-color: #cee1f4;
     color: #064e94;
   }
 
@@ -682,18 +699,18 @@
     color: #dfa510;
   }
 
-  &.lg{
+  &.lg {
     padding: 8px 15px;
     font-size: 12px;
   }
 }
 
-.totla_item{
+.totla_item {
   padding: 15px;
-  background-color: #DEF4FF;
+  background-color: #def4ff;
   border-radius: 7px;
   color: $main;
-  border: 1px solid #0078EC;
+  border: 1px solid #0078ec;
   @include between;
   flex-wrap: wrap;
   font-size: 14px;
@@ -893,6 +910,10 @@
   max-width: fit-content;
   border-radius: 7px;
 
+  @include devices(xs){
+    font-size: 12px;
+  }
+
   &.sec {
     background-color: $sec;
     border-color: $sec;
@@ -908,7 +929,7 @@
     border-color: $red;
 
     &:hover {
-      color: $red;
+      color: $red !important;
     }
   }
 
@@ -1008,7 +1029,17 @@
   max-width: fit-content;
   // font-family: fontDemi;
 
-  &.sec{
+  &.main {
+    background-color: $main;
+    color: $white;
+    border-color: $main;
+
+    &:hover {
+      color: $main !important;
+    }
+  }
+
+  &.sec {
     background-color: transparent;
     color: $sec;
     border-color: $sec;
@@ -1172,6 +1203,17 @@
 
 .c-dark {
   color: #434343;
+}
+
+.text_color{
+  color: $text-color;
+}
+
+.bg_box {
+  border: 1px solid $border-input;
+  background-color: $white;
+  padding: 15px 20px;
+  border-radius: 7px;
 }
 
 /********************* Classes *********************/
@@ -1572,6 +1614,12 @@
   }
 }
 
+.main_ic{
+  max-height: 24px;
+  font-size: 17px;
+  color: $main;
+}
+
 .position_text {
   position: absolute;
   top: 50%;
@@ -1731,17 +1779,15 @@
   .sec-icon {
     position: absolute;
     top: 0;
-    @include dir-right(0);
-    background-color: $main;
-    font-size: 15px;
-    // pointer-events: none;
+    @include dir-right(14px);
+    // background-color: $main;
+    font-size: 13px;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
     border: none;
     outline: none;
-    width: 50px;
-    height: 100%;
-    color: $white;
-    @include center;
-    border-radius: 6px;
+    color: #3baeaa;
   }
 }
 
@@ -1781,6 +1827,11 @@
         padding: 6px auto;
         line-height: 50px;
         @include dir-padding-left(0);
+        
+        @include devices(xs){
+          line-height: initial;
+          @include dir-padding-left(12px);
+        }
       }
 
       .select2-selection__arrow {
@@ -1879,7 +1930,7 @@
 }
 
 .select2-results__option {
-  text-align: center;
+  // text-align: center;
   padding: 12px;
   color: $black;
   font-size: 13px;
@@ -1941,8 +1992,8 @@
 }
 
 .flatpickr-day.selected {
-  background-color: $main;
-  border-color: $main;
+  background-color: $sec;
+  border-color: $sec;
 
   &:hover {
     background-color: $main;
@@ -2129,9 +2180,9 @@
 }
 
 // switch-con
-.switch-con{
+.switch-con {
   line-height: 0;
-  .switch{
+  .switch {
     width: 50px;
     height: 20px;
     cursor: pointer;
@@ -2141,8 +2192,8 @@
     box-shadow: 0 1px 6px rgb(0 0 0 / 8%);
     transition: $main-transition;
 
-    &::after{
-      content: '';
+    &::after {
+      content: "";
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -2155,17 +2206,17 @@
 
   .text {
     display: none;
-    
+
     &.text1 {
       display: block;
       transition: $main-transition;
     }
   }
 
-  input:checked { 
-    + .switch{
+  input:checked {
+    + .switch {
       background-color: $sec;
-      &::after{
+      &::after {
         #{$ltr} & {
           transform: translateX(27px) translateY(-50%);
         }
@@ -2183,7 +2234,7 @@
         display: block;
       }
     }
-}
+  }
 }
 
 // user-photo-con
@@ -2216,8 +2267,8 @@
 
     img {
       max-width: 40px;
-      
-      &.wid{
+
+      &.wid {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -2343,8 +2394,8 @@
   @include center;
   cursor: pointer;
   font-size: 13px;
-  
-  i{
+
+  i {
     font-size: 13px;
   }
 
@@ -2354,7 +2405,7 @@
   }
 }
 
-.photo-con{
+.photo-con {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -2481,6 +2532,23 @@
     }
   }
 
+  &.md {
+    min-width: 600px;
+
+    .modal-content {
+      border-radius: 20px;
+      padding: 30px 40px;
+
+      .modal-body {
+        padding: 0;
+      }
+
+      @media screen and (max-width: $screen-xs) {
+        padding: 25px 15px;
+      }
+    }
+  }
+
   @media (max-width: $screen-md) {
     margin: auto;
     min-width: calc(100% - 20px) !important;
@@ -2488,14 +2556,19 @@
 
   .close-btn {
     position: absolute;
-    top: 15px;
-    @include dir-right(18px);
+    top: 18px;
+    @include dir-left(22px);
     background-color: transparent;
     padding: 0;
     line-height: 1;
     color: $dark;
-    font-size: 24px;
+    font-size: 13px;
     cursor: pointer;
+    @include circle(36px);
+    color: $black;
+    background-color: $white;
+    box-shadow: $sec-shadow;
+    z-index: 5;
   }
 
   .print-modal {
@@ -3101,13 +3174,13 @@
   .flatpickr-day {
     margin: 2px;
     @include center;
-    @include circle(48px);
-    max-width: 48px;
+    @include circle(40px);
+    max-width: 40px;
     line-height: initial;
 
     @media screen and (max-width: $screen-sm) {
-      @include circle(42px);
-      max-width: 42px;
+      @include circle(38px);
+      max-width: 38px;
     }
   }
 

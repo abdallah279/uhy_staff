@@ -256,13 +256,33 @@
                     </div>
                 </div>
 
-                <button type="submit" class="main-btn sec up lg mx-auto mt-4">تعديل الخدمة </button>
+                <button type="button" data-bs-target='#doneModal' data-bs-toggle='modal' class="main-btn sec up lg mx-auto mt-4">تعديل الخدمة </button>
 
             </form>
 
         </div>
     </div>
     <!-- ************** End main Section ************** -->
+
+    <!-- ************** Done Modal ************** -->
+    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم تعديل الخدمة بنجاح</h3>
+            </div>
+
+            <div class="modal-footer">
+                <div class="buttons w-100 justify-content-center">
+                    <a href='services.html' class="main-btn sec lg up">تأكيد</a>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
 
 
     <!-- Bootstrap 5 -->

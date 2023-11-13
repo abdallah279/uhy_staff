@@ -16,6 +16,7 @@
     background-color: #ddd;
   }
 }
+
 .table {
   width: 100% !important;
 }
@@ -30,21 +31,35 @@ table.dataTable {
   --bs-gutter-x: 0;
 }
 
-table.dataTable thead tr th {
+table.dataTable thead tr th, table.sec_table thead tr th {
   // font-size: 15px;
   font-family: fontDemi;
   padding: 20px 10px;
 }
 
+.table.sec_table thead th{
+  background-color: $main !important;
+  color: $white !important;
+  padding: 12px 10px;
+  font-family: fontMed !important;
+  font-weight: 500 !important;
+}
+
 table.dataTable th,
-table.dataTable td {
+table.dataTable td,
+table.sec_table th,
+table.sec_table td {
   border: 1px solid rgb(238 237 237 / 50%) !important;
   white-space: nowrap;
   text-align: center !important;
   vertical-align: middle;
+
+  @include devices(xs){
+    font-size: 13px !important;
+  }
 }
 
-.data .table > tbody > tr > td {
+.data .table > tbody > tr > td, .data .sec_table > tbody > tr > td {
   border: none;
   font-size: 13px;
   height: 50px !important;

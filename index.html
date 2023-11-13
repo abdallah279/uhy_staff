@@ -244,6 +244,23 @@
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
 
+            <form class='filter_con mb-4'>
+
+                <div class='filter_item main-input'>
+                    <i class="fa-regular fa-calendar-days main-icon"></i>
+                    <input class='input-me' id='calender' placeholder='اختر التاريخ' />
+                    <i class="fa-solid fa-angle-down sec-icon"></i>
+                </div>
+
+                <div class='filter_item main-input'>
+                    <i class="fa-solid fa-magnifying-glass main-icon"></i>
+                    <input class='input-me' id='searchTable' placeholder='ابحث باسم العميل او البائع او المتعاون' />
+                </div>
+
+                <button type="submit" class="main-btn sec up">بحث</button>
+
+            </form>
+
             <section class='row gy-4 mb-5'>
 
                 <div class='col-xl-3 col-lg-4 col-sm-6'>
@@ -755,6 +772,15 @@
 
         var chart4 = new ApexCharts(document.querySelector("#numberEngagementLetters"), options4);
         chart4.render();
+    </script>
+
+    <!-- Flat Picker -->
+    <script>
+        flatpickr("#calender", {
+            disableMobile: "true",
+            mode: "range",
+            dateFormat: "Y-m-d",
+        });
     </script>
 
     <!-- Main Js -->

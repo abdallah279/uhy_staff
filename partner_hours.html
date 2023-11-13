@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
-    <!-- (en و ar) ما بين (lang) عشان تغيير اللغه غيير-->
+<!-- (en و ar) ما بين (lang) عشان تغيير اللغه غيير-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +17,14 @@
     <link rel="stylesheet" href="./assets/plugins/FancyBox/jquery.fancybox.min.css">
     <!-- FlatPicker -->
     <link rel="stylesheet" href="./assets/plugins/FlatPicker/flatpickr.css">
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
+
 <body>
 
     <!-- ************** start to loader ************** -->
@@ -35,9 +41,9 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">القيمة الضريبية</h1>
+                    <h1 class="fs17 ff-b">ساعات الشريك</h1>
                 </div>
-                
+
                 <div class="left-sec">
                     <a href="notifications.html" class="not_link">
                         <img src="./assets/imgs/icons/notification.gif" alt="" class="ic">
@@ -87,11 +93,11 @@
             <a href="sales_clients.html" class="link">
                 <span class="text">العملاء</span>
             </a>
-            
+
             <a href="Sales_customer_record.html" class="link">
                 <span class="text">سجل العملاء</span>
             </a>
-            
+
             <a href="sales_prices_offers.html" class="link">
                 <span class="text">عروض الأسعار</span>
             </a>
@@ -104,15 +110,15 @@
             <a href="settings_users.html" class="link">
                 <span class="text">المستخدمين</span>
             </a>
-            
+
             <a href="user_privileges.html" class="link">
                 <span class="text">امتيازات المستخدم</span>
             </a>
-            
+
             <a href="concerned_administration.html" class="link">
                 <span class="text">الادارة المعنية</span>
             </a>
-            
+
             <a href="partner_hours.html" class="link">
                 <span class="text">ساعات الشريك</span>
             </a>
@@ -125,15 +131,15 @@
             <a href="president_prices_offers.html" class="link">
                 <span class="text">عروض الأسعار</span>
             </a>
-            
+
             <a href="president_engagement_letters.html" class="link">
                 <span class="text">خطابات الارتباط</span>
             </a>
-            
+
             <a href="letters_directed.html" class="link">
                 <span class="text">خطابات موجه لأدارة معنية</span>
             </a>
-            
+
             <a href="engagement_letter_tasks.html" class="link">
                 <span class="text">مهام خطابات الارتباطات</span>
             </a>
@@ -146,7 +152,7 @@
             <a href="payment_engagement_letter.html" class="link">
                 <span class="text">دفع خطاب الارتباط</span>
             </a>
-            
+
             <a href="payment_history.html" class="link">
                 <span class="text">سجل المدفوعات</span>
             </a>
@@ -159,11 +165,11 @@
             <a href="secretary_price_offers.html" class="link">
                 <span class="text">عروض السعر</span>
             </a>
-            
+
             <a href="secretary_engagement_letter.html" class="link">
                 <span class="text">خطاب الارتباط</span>
             </a>
-            
+
             <a href="attach_final.html" class="link">
                 <span class="text">ارفاق النهائى</span>
             </a>
@@ -172,11 +178,11 @@
                 <img class="side-icon" src="assets/imgs/icons/business.gif" alt="">
                 <span class="text">شريك</span>
             </div>
-            
+
             <a href="partner_engagement_letter.html" class="link">
                 <span class="text">خطاب الارتباط</span>
             </a>
-            
+
             <a href="close_business.html" class="link">
                 <span class="text">اغلاق العمل</span>
             </a>
@@ -211,19 +217,19 @@
             <a href="activities.html" class="link">
                 <span class="text">النشاطات</span>
             </a>
-            
+
             <a href="services.html" class="link">
                 <span class="text">الخدمات</span>
             </a>
-            
+
             <a href="tax_amount.html" class="link">
                 <span class="text">قيمة الضريبة</span>
             </a>
-            
+
             <a href="branches.html" class="link">
                 <span class="text">الفروع</span>
             </a>
-            
+
             <a href="hourly_price.html" class="link">
                 <span class="text">سعر الساعة</span>
             </a>
@@ -238,31 +244,151 @@
     <!-- ************** Start main Section ************** -->
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
-            
-            <form action="tax_amount.html" class='bg-light rounded-4 p-sm-5 py-4 px-3'>
-                <h3 class="fs16 ff-b mb-4">تعديل الضريبة </h3>
+            <a href="add_partner_hours.html" class='add_btn up mb-4'> 
+                <i class="fa-solid fa-circle-plus"></i>
+                إضافة ساعات شريك جديد 
+            </a>
 
-                <div class="input-g">
-                    <label for="" class="main-label">اسم الضريبة</label>
-                    <div class="main-input">
-                        <input type="text" placeholder="قم بإدخال اسم الضريبة" class="input-me">
-                    </div>
-                </div>
-
-                <div class="input-g">
-                    <label for="" class="main-label">قيمة الضريبة بالنسبة المئوية</label>
-                    <div class="main-input">
-                        <input type="number" placeholder="قم بإدخال قيمة الضريبة بالنسبة المئوية" class="input-me">
-                    </div>
-                </div>
-
-                <button type="button" data-bs-target='#doneModal' data-bs-toggle='modal' class="main-btn sec up lg mx-auto mt-4">تعديل الضريبة </button>
-
-            </form>
+            <div class="data">
+                <table id="myTable" class="display table" dir="rtl">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>بيانات الشريك</th>
+                            <th>عدد ساعات الشريك</th>
+                            <th>سعر الساعة</th>
+                            <th>السنة المالية</th>
+                            <th>المزيد</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>20</td>
+                            <td>2023 ر.س</td>
+                            <td>2023</td>
+                            <td class="d-flex-c gap-1">
+                                <a href="edit_partner_hours.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>20</td>
+                            <td>2023 ر.س</td>
+                            <td>2023</td>
+                            <td class="d-flex-c gap-1">
+                                <a href="edit_partner_hours.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>20</td>
+                            <td>2023 ر.س</td>
+                            <td>2023</td>
+                            <td class="d-flex-c gap-1">
+                                <a href="edit_partner_hours.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>20</td>
+                            <td>2023 ر.س</td>
+                            <td>2023</td>
+                            <td class="d-flex-c gap-1">
+                                <a href="edit_partner_hours.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>20</td>
+                            <td>2023 ر.س</td>
+                            <td>2023</td>
+                            <td class="d-flex-c gap-1">
+                                <a href="edit_partner_hours.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class='d-flex-c gap-2'>
+                                    <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                    محمد بن سلمان القحطاني
+                                </div>
+                            </td>
+                            <td>20</td>
+                            <td>2023 ر.س</td>
+                            <td>2023</td>
+                            <td class="d-flex-c gap-1">
+                                <a href="edit_partner_hours.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
+                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
         </div>
     </div>
     <!-- ************** End main Section ************** -->
+
+
+    <!-- ************** Delete Modal ************** -->
+    <div class="modal fade" id="deleteModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="./assets/imgs/icons/delete.gif" alt="" class="modal-img-body mb-3 mx-auto">
+                <h3 class="fs15 c-black text-center ff-d mb-4">هل انت متأكد من الحذف ؟</h3>
+            </div>
+
+            <div class="modal-footer">
+                <div class="buttons w-100 justify-content-center">
+                    <button type="button" data-bs-target="#doneModal" data-bs-toggle="modal" data-bs-dismiss="modal" class="main-btn lg up red">حذف</button>
+                    <button type="button" data-bs-dismiss="modal" class="main-btn lg transparent">تراجع</button>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    
+    
 
     <!-- ************** Done Modal ************** -->
     <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -271,18 +397,19 @@
 
             <div class="modal-body">
                 <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
-                <h3 class="fs15 c-black text-center ff-d mb-4">تم تعديل الضريبة بنجاح</h3>
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم الحذف بنجاح</h3>
             </div>
 
             <div class="modal-footer">
                 <div class="buttons w-100 justify-content-center">
-                    <a href='tax_amount.html' class="main-btn sec lg up">تأكيد</a>
+                    <button type="button" data-bs-dismiss="modal" class="main-btn sec lg up">تأكيد</button>
                 </div>
             </div>
 
           </div>
         </div>
     </div>
+
 
 
     <!-- Bootstrap 5 -->
@@ -295,7 +422,11 @@
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
     <!-- FlatPicker -->
     <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
+    <!-- Datatables -->
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>

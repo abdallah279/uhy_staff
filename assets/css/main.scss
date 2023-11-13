@@ -21,7 +21,7 @@
   gap: 18px;
   justify-content: space-between;
 
-  &.sec{
+  &.sec {
     background-color: $white4;
   }
 }
@@ -59,38 +59,54 @@
 /********************* End setting_item Item *********************/
 
 /********************* Start filter_con *********************/
-.filter_con{
+.filter_con {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 
-  .filter_item{
-    .input-me{
+  .filter_item {
+    .input-me {
       background-color: $white2;
       border-color: $white2;
       width: 280px;
       @include dir-padding-left(35px);
       border-radius: 12px;
     }
-    
-    .main-icon{
+
+    .main-icon {
       @include dir-left(12px !important);
       @include dir-right(unset !important);
       color: $black;
     }
   }
-  
-  .main-btn{
+
+  .select {
+    ~ .select2 {
+      width: 280px !important;
+
+      .select2-selection--single,
+      .select2-selection--multiple {
+        min-height: 50px;
+
+        background-color: $white2;
+        border-color: $white2;
+        width: 280px;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  .main-btn {
     border-radius: 12px;
   }
 }
 /********************* End filter_con *********************/
 
-.offersMonth{
+.offersMonth {
   position: relative;
-  &::after{
+  &::after {
     @include circle(240px);
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -99,46 +115,47 @@
     z-index: -1;
   }
 }
-.apexcharts-text tspan, .apexcharts-legend-text{
+.apexcharts-text tspan,
+.apexcharts-legend-text {
   font-family: fontDemi !important;
 }
 
-.apexcharts-legend{
+.apexcharts-legend {
   flex-direction: column;
   gap: 10px;
   margin-top: 15px;
   padding: 0 !important;
 }
 
-.apexcharts-legend-series{
+.apexcharts-legend-series {
   margin: 0 !important;
 }
 
-.apexcharts-legend-marker{
+.apexcharts-legend-marker {
   margin-right: 0;
   margin-left: 0;
   margin-inline-end: 7px;
 }
 
-.legend_item{
+.legend_item {
   display: flex;
   align-items: center;
   gap: 7px;
   margin-bottom: 20px;
 
-  .color{
+  .color {
     background-color: $three;
-    display:block;
+    display: block;
     width: 24px;
     height: 12px;
     border-radius: 7px;
 
-    &.color2{
-      background-color: #03045E;
+    &.color2 {
+      background-color: #03045e;
     }
   }
 
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
   }
 }
