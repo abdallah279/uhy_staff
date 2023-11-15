@@ -102,6 +102,34 @@
 }
 /********************* End filter_con *********************/
 
+/********************* Start checkbox_items *********************/
+.checkbox_items th , .checkbox_items td{
+  white-space: nowrap;
+  text-align: center !important;
+  vertical-align: middle;
+  padding: 15px;
+  justify-content: center;
+  
+  &:first-child{
+    text-align: start !important;
+  }
+}
+
+.checkbox_items th {
+  color: #060606;
+  padding: 18px;
+}
+
+.checkbox_items tbody tr {
+  &:nth-child(odd){
+    background-color: #F2F5F7;
+    border-radius: 7px !important;
+  }
+}
+/********************* End checkbox_items *********************/
+
+/********************* Start Charts *********************/
+
 .offersMonth {
   position: relative;
   &::after {
@@ -159,3 +187,5 @@
     margin-bottom: 0;
   }
 }
+
+/********************* End Charts *********************/

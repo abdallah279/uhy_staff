@@ -928,7 +928,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 }
 .badge_m.red {
   background-color: rgba(230, 95, 43, 0.18);
-  color: #e65f2b;
+  color: #EE201C;
 }
 .badge_m.origin {
   background-color: rgba(106, 106, 106, 0.15);
@@ -1383,6 +1383,10 @@ html[lang=ar] .copy-item {
 
 .bg-light {
   background-color: #F2F5F7 !important;
+}
+
+.bg-light2 {
+  background-color: #E8F2FF !important;
 }
 
 .bg-smain {
@@ -2510,7 +2514,7 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
   .select-multi ~ .select2 .select2-selection--multiple .select2-selection__rendered,
   .select-color ~ .select2 .select2-selection--single .select2-selection__rendered,
   .select-color ~ .select2 .select2-selection--multiple .select2-selection__rendered {
-    line-height: initial;
+    line-height: 1.8;
   }
   html[lang=en] .select ~ .select2 .select2-selection--single .select2-selection__rendered,
   html[lang=en] .select ~ .select2 .select2-selection--multiple .select2-selection__rendered,
@@ -2518,7 +2522,7 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
   html[lang=en] .select-multi ~ .select2 .select2-selection--multiple .select2-selection__rendered,
   html[lang=en] .select-color ~ .select2 .select2-selection--single .select2-selection__rendered,
   html[lang=en] .select-color ~ .select2 .select2-selection--multiple .select2-selection__rendered {
-    padding-left: 12px;
+    padding-left: 10px;
   }
   html[lang=ar] .select ~ .select2 .select2-selection--single .select2-selection__rendered,
   html[lang=ar] .select ~ .select2 .select2-selection--multiple .select2-selection__rendered,
@@ -2526,7 +2530,7 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
   html[lang=ar] .select-multi ~ .select2 .select2-selection--multiple .select2-selection__rendered,
   html[lang=ar] .select-color ~ .select2 .select2-selection--single .select2-selection__rendered,
   html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-selection__rendered {
-    padding-right: 12px;
+    padding-right: 10px;
   }
 }
 .select ~ .select2 .select2-selection--single .select2-selection__arrow,
@@ -2600,8 +2604,8 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
   padding: 0 8px;
 }
 .select2-container .select2-search--inline .select2-search__field::placeholder {
-  color: #adabab;
-  font-size: 13px;
+  color: #000;
+  font-size: 12px;
 }
 
 .select2-selection__clear {
@@ -2615,7 +2619,7 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #7EA8D0;
+  background-color: #E8F2FF;
   border: none;
   border-radius: 2px;
   margin: 0 !important;
@@ -2629,13 +2633,18 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
   margin: 0 !important;
 }
 
+.select2-selection.select2-selection--multiple {
+  display: flex;
+  align-items: center;
+}
+
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
   border-radius: 50% !important;
   width: 14px !important;
   height: 14px !important;
   padding: 0 !important;
   margin: 0 !important;
-  background-color: #064e94 !important;
+  background-color: #D44A4A !important;
   color: #fff !important;
   font-size: 12px;
   border: none !important;
@@ -2664,7 +2673,7 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
 }
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-  background-color: transparent;
+  background-color: rgba(59, 130, 246, 0.4);
   color: #000;
   font-size: 13px;
   transition: all 0.3s ease;
@@ -2732,12 +2741,6 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
   margin-bottom: 0;
 }
 
-.check-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
 .check-box:last-child {
   margin-bottom: 0;
 }
@@ -2753,14 +2756,15 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
   display: none;
 }
 .check-box .check {
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 24px;
   border-radius: 3px;
-  background-color: #dcdbdb;
+  background-color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   flex-shrink: 0;
+  border: 1px solid #7EA8D0;
 }
 .check-box .check::after {
   content: "\f00c";
@@ -2776,7 +2780,7 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
   transition: all 0.3s ease;
 }
 .check-box .check:hover {
-  background-color: #606E7D;
+  background-color: #F2F5F7;
 }
 .check-box.form-check-m .check {
   width: 22px;
@@ -4345,7 +4349,7 @@ table.dataTable thead > tr > td.sorting_desc:after {
 
 #myTable_wrapper .row:last-of-type {
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
   padding: 8px 15px;
 }
 
@@ -4529,6 +4533,30 @@ html[lang=ar] .filter_con .filter_item .main-icon {
 }
 
 /********************* End filter_con *********************/
+/********************* Start checkbox_items *********************/
+.checkbox_items th, .checkbox_items td {
+  white-space: nowrap;
+  text-align: center !important;
+  vertical-align: middle;
+  padding: 15px;
+  justify-content: center;
+}
+.checkbox_items th:first-child, .checkbox_items td:first-child {
+  text-align: start !important;
+}
+
+.checkbox_items th {
+  color: #060606;
+  padding: 18px;
+}
+
+.checkbox_items tbody tr:nth-child(odd) {
+  background-color: #F2F5F7;
+  border-radius: 7px !important;
+}
+
+/********************* End checkbox_items *********************/
+/********************* Start Charts *********************/
 .offersMonth {
   position: relative;
 }
@@ -4586,5 +4614,7 @@ html[lang=ar] .filter_con .filter_item .main-icon {
 .legend_item:last-child {
   margin-bottom: 0;
 }
+
+/********************* End Charts *********************/
 
 /*# sourceMappingURL=main.css.map */

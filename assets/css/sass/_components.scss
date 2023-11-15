@@ -676,7 +676,7 @@
 
   &.red {
     background-color: rgba($color: #e65f2b, $alpha: 0.18);
-    color: #e65f2b;
+    color: #EE201C;
   }
 
   &.origin {
@@ -910,7 +910,7 @@
   max-width: fit-content;
   border-radius: 7px;
 
-  @include devices(xs){
+  @include devices(xs) {
     font-size: 12px;
   }
 
@@ -1185,6 +1185,10 @@
   background-color: $light !important;
 }
 
+.bg-light2 {
+  background-color: #E8F2FF !important;
+}
+
 .bg-smain {
   background-color: #d8e8ef;
 }
@@ -1205,7 +1209,7 @@
   color: #434343;
 }
 
-.text_color{
+.text_color {
   color: $text-color;
 }
 
@@ -1614,7 +1618,7 @@
   }
 }
 
-.main_ic{
+.main_ic {
   max-height: 24px;
   font-size: 17px;
   color: $main;
@@ -1827,10 +1831,10 @@
         padding: 6px auto;
         line-height: 50px;
         @include dir-padding-left(0);
-        
-        @include devices(xs){
-          line-height: initial;
-          @include dir-padding-left(12px);
+
+        @include devices(xs) {
+          line-height: 1.8;
+          @include dir-padding-left(10px);
         }
       }
 
@@ -1877,8 +1881,8 @@
   font-family: fontMed;
   padding: 0 8px;
   &::placeholder {
-    color: $placholder-color;
-    font-size: 13px;
+    color: $black;
+    font-size: 12px;
   }
 }
 
@@ -1895,7 +1899,7 @@
 .select2-container--default
   .select2-selection--multiple
   .select2-selection__choice {
-  background-color: $border-color;
+  background-color: #E8F2FF;
   border: none;
   border-radius: 2px;
   margin: 0 !important;
@@ -1911,6 +1915,10 @@
   margin: 0 !important;
 }
 
+.select2-selection.select2-selection--multiple{
+  display: flex;
+  align-items: center;
+}
 .select2-container--default
   .select2-selection--multiple
   .select2-selection__choice__remove {
@@ -1919,7 +1927,7 @@
   height: 14px !important;
   padding: 0 !important;
   margin: 0 !important;
-  background-color: $main !important;
+  background-color: $red !important;
   color: $white !important;
   font-size: 12px;
   @include dir-right(4px !important);
@@ -1944,7 +1952,7 @@
 
 .select2-container--default {
   .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: transparent;
+    background-color: rgba($color: $sec, $alpha: 0.4);
     color: $black;
     font-size: 13px;
     transition: $main-transition;
@@ -2014,10 +2022,10 @@
 }
 
 .check-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  // display: flex;
+  // align-items: center;
+  // gap: 10px;
+  // margin-bottom: 10px;
 
   &:last-child {
     margin-bottom: 0;
@@ -2037,15 +2045,15 @@
   }
 
   .check {
-    width: 18px;
-    height: 18px;
+    width: 26px;
+    height: 24px;
     border-radius: 3px;
-    // border: 1px solid $black;
-    background-color: #dcdbdb;
+    background-color: $white;
     cursor: pointer;
     transition: $main-transition;
     position: relative;
     flex-shrink: 0;
+    border: 1px solid $border-color;
 
     &::after {
       content: "\f00c";
@@ -2062,7 +2070,7 @@
     }
 
     &:hover {
-      background-color: $dark3;
+      background-color: $light;
     }
   }
 

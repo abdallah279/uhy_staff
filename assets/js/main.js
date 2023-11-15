@@ -37,6 +37,9 @@ if ($(".select").length > 0) {
   $(".select").select2({
     dir: isRtl ? "rtl" : "ltr",
     minimumResultsForSearch: Infinity,
+    placeholder: function () {
+      $(this).data("placeholder");
+    },
   });
 }
 
@@ -44,6 +47,7 @@ if ($(".select").length > 0) {
 
 $(document).ready(function () {
   let tableTanguage = {};
+
   let arTable = {
     paginate: {
       previous: `<i class="fa-solid fa-angles-left"></i>`,
@@ -76,17 +80,19 @@ $(document).ready(function () {
     tableTanguage = enTable;
   }
 
-  var myTable = $("#myTable").dataTable({
-    pageLength: 7,
-    // responsive: true,
-    bLengthChange: false,
-    ordering: false,
-    language: tableTanguage,
-  });
+  if ($("#myTable").length > 0) {
+    var myTable = $("#myTable").dataTable({
+      pageLength: 7,
+      // responsive: true,
+      bLengthChange: false,
+      ordering: false,
+      language: tableTanguage,
+    });
 
-  $("#searchTable").on("keyup", function () {
-    $("#myTable").DataTable().search($(this).val()).draw();
-  });
+    $("#searchTable").on("keyup", function () {
+      $("#myTable").DataTable().search($(this).val()).draw();
+    });
+  }
 });
 
 /************* Upload Files Or Img *************/
