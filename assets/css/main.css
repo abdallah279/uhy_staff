@@ -619,26 +619,33 @@ html[lang=ar] .ml-25 {
 }
 
 /********************* Tabs *********************/
-.nav-pills {
+.nav-tabs {
   border: none !important;
   justify-content: center;
   gap: 12px;
 }
 @media screen and (max-width: 425px) {
-  .nav-pills {
+  .nav-tabs {
     gap: 7px;
   }
 }
-.nav-pills .nav-link {
+.nav-tabs .nav-link {
   transition: all 0.3s ease;
-  background-color: #fff;
-  color: #000;
-  font-size: 14px;
-  border-radius: 5px;
+  background-color: transparent;
+  color: #064e94;
+  border: 1px solid #064e94;
+  border-radius: 7px;
+  font-size: 12px;
   min-height: 44px;
-  min-width: 130px;
+  min-width: 190px;
 }
-.nav-pills .nav-link.active {
+@media screen and (max-width: 425px) {
+  .nav-tabs .nav-link {
+    min-width: 120px;
+    font-size: 11px;
+  }
+}
+.nav-tabs .nav-link.active {
   background-color: #064e94;
   color: #fff;
 }
@@ -671,6 +678,11 @@ html[lang=ar] .ml-25 {
   position: relative;
   z-index: 10;
 }
+@media screen and (max-width: 500px) {
+  .steps.sm .step-item {
+    min-width: 85px !important;
+  }
+}
 .steps .step-item {
   min-width: 160px;
   max-width: 100%;
@@ -678,24 +690,34 @@ html[lang=ar] .ml-25 {
   text-align: center;
   position: relative;
 }
+@media screen and (max-width: 992px) {
+  .steps .step-item {
+    min-width: 140px;
+  }
+}
 @media screen and (max-width: 768px) {
   .steps .step-item {
-    min-width: 115px;
+    min-width: 100px;
   }
 }
 @media screen and (max-width: 576px) {
   .steps .step-item {
-    min-width: 105px;
+    min-width: 90px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .steps .step-item {
+    min-width: 78px;
   }
 }
 @media screen and (max-width: 425px) {
   .steps .step-item {
-    min-width: 95px;
+    min-width: 65px;
   }
 }
 @media screen and (max-width: 376px) {
   .steps .step-item {
-    min-width: 82px;
+    min-width: 50px;
   }
 }
 .steps .step-item + .step-item:after {
@@ -1161,6 +1183,14 @@ html[lang=ar] .copy-item {
 .main-btn.black:hover {
   color: #000;
 }
+.main-btn.light {
+  background-color: rgba(205, 214, 222, 0.4);
+  color: #000;
+  border-color: rgba(205, 214, 222, 0.4);
+}
+.main-btn.light:hover {
+  color: #000;
+}
 .main-btn.transparent {
   background-color: transparent;
   color: #3b82f6;
@@ -1274,8 +1304,8 @@ html[lang=ar] .copy-item {
 @media screen and (max-width: 576px) {
   .buttons .main-btn {
     width: fit-content;
-    min-width: 150px;
-    padding: 0 12px;
+    min-width: 115px;
+    padding: 0 20px;
   }
 }
 
@@ -1382,11 +1412,21 @@ html[lang=ar] .copy-item {
 }
 
 .bg-light {
-  background-color: #F2F5F7 !important;
+  background-color: #F7F9FA !important;
 }
 
 .bg-light2 {
   background-color: #E8F2FF !important;
+}
+
+.wait_bg {
+  background-color: rgba(226, 177, 51, 0.18);
+  color: #dfa510;
+}
+
+.red_bg {
+  background-color: rgba(230, 95, 43, 0.18);
+  color: #EE201C;
 }
 
 .bg-smain {
@@ -2662,10 +2702,10 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
 }
 
 .select2-results__option {
-  padding: 12px;
+  padding: 14px 12px;
   color: #000;
   font-size: 13px;
-  border-bottom: 1px solid rgba(6, 78, 148, 0.3);
+  border-bottom: 1px solid rgba(6, 78, 148, 0.1);
   direction: ltr;
 }
 .select2-results__option:last-child {
@@ -3023,6 +3063,8 @@ html[lang=ar] .user-img .user-camera {
   font-size: 12px;
   padding: 5px 12px;
   flex-shrink: 0;
+  max-width: 160px;
+  text-align: center;
 }
 .upload-label i {
   font-size: 18px;
@@ -4616,5 +4658,48 @@ html[lang=ar] .filter_con .filter_item .main-icon {
 }
 
 /********************* End Charts *********************/
+/***************** Start not-item Section *********************/
+.not-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 18px;
+  border-radius: 7px;
+  border: 1px solid rgba(220, 220, 220, 0.56);
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+.not-item .right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.not-item .right .logo {
+  max-width: 60px;
+  flex-shrink: 0;
+}
+.not-item .right .not_body .time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #272727;
+}
+.not-item .right .not_body .time i {
+  animation: bell-animation 4s infinite ease-in-out;
+}
+.not-item:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes bell-animation {
+  0%, 100% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+}
+/***************** End not-item Section *********************/
 
 /*# sourceMappingURL=main.css.map */

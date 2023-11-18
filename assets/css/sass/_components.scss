@@ -357,7 +357,7 @@
 }
 
 /********************* Tabs *********************/
-.nav-pills {
+.nav-tabs {
   border: none !important;
   justify-content: center;
   gap: 12px;
@@ -368,16 +368,18 @@
 
   .nav-link {
     transition: $main-transition;
-    background-color: $white;
-    color: $black;
-    font-size: 14px;
-    border-radius: 5px;
+    background-color: transparent;
+    color: $main;
+    border: 1px solid $main;
+    border-radius: 7px;
+    font-size: 12px;
     min-height: 44px;
-    min-width: 130px;
-
-    // @media screen and (max-width:$screen-xs) {
-    //   min-width: 85px;
-    // }
+    min-width: 190px;
+    
+    @media screen and (max-width:$screen-xs) {
+      min-width: 120px;
+      font-size: 11px;
+    }
 
     &.active {
       background-color: $main;
@@ -417,6 +419,14 @@
   position: relative;
   z-index: 10;
 
+  &.sm{
+    .step-item {
+      @media screen and (max-width: 500px) {
+        min-width: 85px !important;
+      }
+    }  
+  }
+
   .step-item {
     min-width: 160px;
     max-width: 100%;
@@ -425,20 +435,28 @@
     text-align: center;
     position: relative;
 
+    @media screen and (max-width: $screen-lg) {
+      min-width: 140px;
+    }
+
     @media screen and (max-width: $screen-md) {
-      min-width: 115px;
+      min-width: 100px;
     }
 
     @media screen and (max-width: $screen-sm) {
-      min-width: 105px;
+      min-width: 90px;
+    }
+
+    @media screen and (max-width: 500px) {
+      min-width: 78px;
     }
 
     @media screen and (max-width: $screen-xs) {
-      min-width: 95px;
+      min-width: 65px;
     }
 
     @media screen and (max-width: 376px) {
-      min-width: 82px;
+      min-width: 50px;
     }
 
     & + .step-item {
@@ -943,6 +961,16 @@
     }
   }
 
+  &.light {
+    background-color: rgba($color: $border-input, $alpha: .4);
+    color: $black;
+    border-color: rgba($color: $border-input, $alpha: .4);
+
+    &:hover {
+      color: $black;
+    }
+  }
+
   &.transparent {
     background-color: transparent;
     color: $sec;
@@ -1070,8 +1098,8 @@
   @media screen and (max-width: $screen-sm) {
     .main-btn {
       width: fit-content;
-      min-width: 150px;
-      padding: 0 12px;
+      min-width: 115px;
+      padding: 0 20px;
     }
   }
 }
@@ -1182,11 +1210,21 @@
 }
 
 .bg-light {
-  background-color: $light !important;
+  background-color: #F7F9FA !important;
 }
 
 .bg-light2 {
   background-color: #E8F2FF !important;
+}
+
+.wait_bg {
+  background-color: rgba($color: #e2b133, $alpha: 0.18);
+  color: #dfa510;
+}
+
+.red_bg{
+  background-color: rgba($color: #e65f2b, $alpha: 0.18);
+  color: #EE201C;
 }
 
 .bg-smain {
@@ -1939,10 +1977,10 @@
 
 .select2-results__option {
   // text-align: center;
-  padding: 12px;
+  padding: 14px 12px;
   color: $black;
   font-size: 13px;
-  border-bottom: 1px solid rgba($main, 0.3);
+  border-bottom: 1px solid rgba($main, 0.1);
   direction: ltr;
 
   &:last-child {
@@ -2348,6 +2386,8 @@
   font-size: 12px;
   padding: 5px 12px;
   flex-shrink: 0;
+  max-width: 160px;
+  text-align: center;
 
   i {
     font-size: 18px;

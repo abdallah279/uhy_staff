@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
-    <!-- (en و ar) ما بين (lang) عشان تغيير اللغه غيير-->
+<!-- (en و ar) ما بين (lang) عشان تغيير اللغه غيير-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +20,13 @@
     <!-- intlTelInput -->
     <link rel="stylesheet" href="./assets/plugins/flag/css/intlTelInput.css">
     <!-- Datatables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
+
 <body>
 
     <!-- ************** start to loader ************** -->
@@ -40,9 +43,9 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">سجل العملاء</h1>
+                    <h1 class="fs17 ff-b">الخطابات موجه لإدارة معنية</h1>
                 </div>
-                
+
                 <div class="left-sec">
                     <a href="notifications.html" class="not_link">
                         <img src="./assets/imgs/icons/notification.gif" alt="" class="ic">
@@ -244,130 +247,119 @@
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
 
-            <form class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
-                <h3 class="fs16 ff-b mb-4">إضافة سجل جديد لعميل </h3>
+            <div class='bg-light rounded-4 p-sm-5 py-4 px-3'>
 
-                <div class="row gy-3">
+                <h3 class="fs16 ff-b mb-4">خطاب ارتباط رقم 1156</h3>
 
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">اسم العميل باللغة العربية</label>
-                            <div class="main-input">
-                                <input type="text" placeholder="قم بإدخال اسم العميل باللغة العربية " class="input-me">
+                <div class="bg_box mb-4">
+                    <h3 class="fs16 ff-d mb-4">اسم خطاب الارتباط</h3>
+                    <div class="row align-items-center gy-4">
+
+                        <div class='col-lg-3 col-md-4 col-sm-6'>
+                            <div class='d-flex align-items-center gap-3'>
+                                <div class="fs14">الأدارة المعنية</div>
+                                <span class="py-2 px-3 fs12 c-main rounded-1 bg-light2"> المحاسبة</span>
                             </div>
+                        </div>
+                        
+                        <div class='col-lg-3 col-md-4 col-sm-6'>
+                            <div class='d-flex align-items-center gap-3'>
+                                <div class="fs14">حالة المهمة</div>
+                                <span class="py-2 px-3 fs12 rounded-1 wait_bg"> قيد التنفيذ</span>
+                                <!-- <span class="py-2 px-3 fs12 c-main rounded-1 bg-light2"> تم الأسناد</span> 
+                                <span class="py-2 px-3 fs12 rounded-1 red_bg"> تم الانتهاء</span> -->
+                            </div>
+                        </div>
+
+                        <div class='col-lg-3 col-md-4 col-sm-6'>
+                            <div class='d-flex align-items-center gap-3'>
+                                <div class="fs14">المدة المستغرقة</div>
+                                <div class="fs14 ff-d">3 ايام</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bg_box mb-4">
+                    <h3 class="fs16 ff-d mb-4">بيانات المهمة</h3>
+                    <div class="row gy-4 mb-4">
+
+                        <div class='col-lg-4 col-md-6'>
+                            <div class="fs14 mb-3">اسم الموظف المسند اليه</div>
+                            <div class='d-flex align-items-center gap-2'>
+                                <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                محمد بن سلمان القحطاني
+                            </div>
+                        </div>
+                        
+                        <div class='col-lg-4 col-md-6'>
+                            <div class="fs14 mb-3">وقت الأسناد</div>
+                            <div class="fs14 ff-d lh-base">12pm - 16-5-2025</div>
+                        </div>
+                        
+                        <div class='col-lg-4 col-md-6'>
+                            <div class="fs14 mb-3">اسند المهمة الي</div>
+                            <div class='d-flex align-items-center gap-2'>
+                                <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                محمد بن سلمان القحطاني
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="bg_box mb-4">
+                        <div class="fs14 mb-3">وصف المهمة</div>
+                        <div class="fs14 ff-d lh-base">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="" class="main-label">المرفقات</label>
+                        <div class="photo-con">
+
+                            <div class="upload-label">
+                                <input type='hidden' value='${name}' />
+                                <img src='./assets/imgs/icons/pdf-file.gif' />
+                                <span>اسم الملف</span>
+                            </div>
+
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">رقم العميل</label>
-                            <div class="main-input">
-                                <input type="number" placeholder="قم بإدخال رقم العميل" class="input-me">
-                            </div>
-                        </div>
+                    <div class="bg_box mb-4">
+                        <div class="fs14 mb-3 d-flex gap-4">ملاحظات <span class='c-text2 fs13'>ان وجدت</span></div>
+                        <div class="fs14 ff-d lh-base">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم</div>
+                    </div>
+                </div>
+
+                <div class="bg_box">
+
+                    <div class="bg_box mb-4">
+                        <div class="fs14 mb-3">ما تم إنجازه بالمهمة</div>
+                        <div class="fs14 ff-d lh-base">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم</div>
                     </div>
 
-                    <div class="col-12">
-                        <div class="input-g">
-                            <label for="" class="main-label">المرفقات التقرير</label>
-                            <div class='d-flex gap-4 upload-con'>
-                                <label class="upload-label">
-                                    <input id="uploadImgs" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
-                                    <img src='./assets/imgs/icons/add-file.gif' />
-                                    <span>إضافة مرفق</span>
-                                </label>
-                                <div class="photo-con"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="">
+                        <label for="" class="main-label">المرفقات</label>
+                        <div class="photo-con">
 
-                    <div class="col-12">
-                        <div class="input-g">
-                            <label for="" class="main-label d-flex gap-4">وصف التقرير</label>
-                            <div class="main-input">
-                                <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
+                            <div class="upload-label">
+                                <input type='hidden' value='${name}' />
+                                <img src='./assets/imgs/icons/pdf-file.gif' />
+                                <span>اسم الملف</span>
                             </div>
+
                         </div>
                     </div>
 
                 </div>
 
-                <button type="button" class="main-btn sec up lg mx-auto mt-4">اضافة تقرير جديد</button>
 
-            </form>
-
-            <div class="reports">
-                <div class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
-                    <h3 class="fs16 ff-b mb-4">سجل بتاريخ  19/5/2025</h3>
-    
-                    <div class="row gy-3">
-    
-                        <div class="col-12">
-                            <div class="input-g">
-                                <label for="" class="main-label">المرفقات</label>
-                                <div class='d-flex gap-4 upload-con'>
-                                    <label class="upload-label">
-                                        <input id="uploadfile" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
-                                        <img src='./assets/imgs/icons/add-file.gif' />
-                                        <span>إضافة مرفق</span>
-                                    </label>
-                                    <div class="photo-con">
-                                        <div class="upload-label">
-                                            <input type='hidden' value='${name}' />
-                                            <img src='./assets/imgs/icons/pdf-file.gif' />
-                                            <span>اسم الملف</span>
-                                            <!-- <button type='button' class='remove-img'>
-                                              <i class="fa-solid fa-xmark"></i>
-                                            </button> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-12">
-                            <div class="input-g">
-                                <div class="main-input">
-                                    <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-    
-                    <div class="buttons justify-content-center mt-4">
-                        <a href="edit_sales_customer_record.html" class="main-btn sec up lg">تعديل التقرير</a>
-                        <button type="button" class="main-btn sec transparent lg"><i class="fa-solid fa-cloud-arrow-down"></i> تحميل</button>
-                    </div>
-    
-                </div>
             </div>
 
         </div>
     </div>
     <!-- ************** End main Section ************** -->
-
-
-    <!-- ************** Done Modal ************** -->
-    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-
-            <div class="modal-body">
-                <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
-                <h3 class="fs15 c-black text-center ff-d mb-4">تم اضافة العميل بنجاح</h3>
-            </div>
-
-            <div class="modal-footer">
-                <div class="buttons w-100 justify-content-center">
-                    <a href='sales_clients.html' class="main-btn sec lg up">تأكيد</a>
-                </div>
-            </div>
-
-          </div>
-        </div>
-    </div>
-
 
     <!-- Bootstrap 5 -->
     <script src="./assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
@@ -378,7 +370,8 @@
     <!-- FlatPicker -->
     <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
     <!-- Datatables -->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
     <!-- Select 2 -->
     <script src="./assets/plugins/select2/select2.js"></script>
     <!-- intlTelInput -->
@@ -386,4 +379,5 @@
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>

@@ -43,7 +43,7 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">المستخدمين</h1>
+                    <h1 class="fs17 ff-b">مهام خطاباط الأرتباط</h1>
                 </div>
 
                 <div class="left-sec">
@@ -247,155 +247,197 @@
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
 
-            <form class='bg-light rounded-4 p-sm-5 py-4 px-3'>
-                <h3 class="fs16 ff-b mb-4">تعديل مستخدم </h3>
+            <div class='bg-light rounded-4 p-sm-5 py-4 px-3'>
 
-                <div class="input-g mb-4">
-                    <div class="user-photo-con">
-                        <div class="user-img">
-                            <div class="profile-img">
-                                <img src="assets/imgs/profile_img.jpg" class="img wid" alt="">
+                <h3 class="fs16 ff-b mb-4">خطاب ارتباط رقم 1156</h3>
+
+                <div class="bg_box mb-4">
+                    <h3 class="fs16 ff-d mb-4">اسم خطاب الارتباط</h3>
+                    <div class="row align-items-center gy-4">
+
+                        <div class='col-lg-3 col-md-4 col-sm-6'>
+                            <div class='d-flex align-items-center gap-3'>
+                                <div class="fs14">الأدارة المعنية</div>
+                                <span class="py-2 px-3 fs12 c-main rounded-1 bg-light2"> المحاسبة</span>
                             </div>
-                            <input type="file" id="profileImg" accept="image/*" class="hidden-input img-upload-input profile">
-                            <label for="profileImg" class="user-camera">
-                                <img src="assets/imgs/icons/photo-camera.gif" alt="">
-                            </label>
+                        </div>
+                        
+                        <div class='col-lg-3 col-md-4 col-sm-6'>
+                            <div class='d-flex align-items-center gap-3'>
+                                <div class="fs14">حالة المهمة</div>
+                                <span class="py-2 px-3 fs12 rounded-1 wait_bg"> قيد التنفيذ</span>
+                                <!-- <span class="py-2 px-3 fs12 c-main rounded-1 bg-light2"> تم الأسناد</span> 
+                                <span class="py-2 px-3 fs12 rounded-1 red_bg"> تم الانتهاء</span> -->
+                            </div>
                         </div>
 
-                        <span class="user-text">الصورة الشخصية</span>
+                        <div class='col-lg-3 col-md-4 col-sm-6'>
+                            <div class='d-flex align-items-center gap-3'>
+                                <div class="fs14">المدة المستغرقة</div>
+                                <div class="fs14 ff-d">3 ايام</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="row gy-2">
+                <div class="bg_box mb-4">
+                    <h3 class="fs16 ff-d mb-4">بيانات المهمة</h3>
+                    <div class="row gy-4 mb-4">
 
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">الأسم الأول واسم الأب</label>
-                            <div class="main-input">
-                                <input type="text" placeholder="قم بإدخال الأسم الأول واسم الأب " class="input-me">
+                        <div class='col-lg-4 col-md-6'>
+                            <div class="fs14 mb-3">اسم الموظف المسند اليه</div>
+                            <div class='d-flex align-items-center gap-2'>
+                                <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                محمد بن سلمان القحطاني
                             </div>
+                        </div>
+                        
+                        <div class='col-lg-4 col-md-6'>
+                            <div class="fs14 mb-3">وقت الأسناد</div>
+                            <div class="fs14 ff-d lh-base">12pm - 16-5-2025</div>
+                        </div>
+                        
+                        <div class='col-lg-4 col-md-6'>
+                            <div class="fs14 mb-3">اسند المهمة الي</div>
+                            <div class='d-flex align-items-center gap-2'>
+                                <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                محمد بن سلمان القحطاني
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="bg_box mb-4">
+                        <div class="fs14 mb-3">وصف المهمة</div>
+                        <div class="fs14 ff-d lh-base">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="" class="main-label">المرفقات</label>
+                        <div class="photo-con">
+
+                            <div class="upload-label">
+                                <input type='hidden' value='${name}' />
+                                <img src='./assets/imgs/icons/pdf-file.gif' />
+                                <span>اسم الملف</span>
+                            </div>
+
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <!-- <div class="bg_box mb-4">
+                        <div class="fs14 mb-3 d-flex gap-4">ملاحظات <span class='c-text2 fs13'>ان وجدت</span></div>
+                        <div class="fs14 ff-d lh-base">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم</div>
+                    </div> -->
+                </div>
+
+                <form class="bg_box mb-4">
+
+                    <div class="bg_box mb-4">
+                        <div class="fs14 mb-3">ما تم إنجازه بالمهمة</div>
+                        <div class="fs14 ff-d lh-base">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم</div>
+                    </div>
+
+                    <!-- <div class="col-12 mb-4">
                         <div class="input-g">
-                            <label for="" class="main-label"> اسم المستخدم كامل</label>
+                            <label for="" class="main-label d-flex gap-4">ما تم إنجازه بالمهمة</label>
                             <div class="main-input">
-                                <input type="text" placeholder="قم بإدخال  اسم المستخدم كامل" class="input-me">
+                                <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال ما تم إنجازه بالمهمة"></textarea>
                             </div>
+                        </div>
+                    </div> -->
+
+                    <div class="input-g mb-4">
+                        <label for="" class="main-label">المرفقات</label>
+                        <div class='d-flex gap-4 upload-con'>
+                            <label class="upload-label">
+                                <input id="uploadnumber" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
+                                <img src='./assets/imgs/icons/add-file.gif' />
+                                <span>إضافة مرفق</span>
+                            </label>
+                            <div class="photo-con"></div>
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label"> الوظيفة</label>
-                            <div class="main-input">
-                                <select class="select">
-                                    <option value="0" selected disabled>قم بإدخال وظيفة المستخدم</option>
-                                    <option value="1">وظيفة المستخدم</option>
-                                    <option value="2">وظيفة المستخدم</option>
-                                    <option value="3">وظيفة المستخدم</option>
-                                    <option value="4">وظيفة المستخدم</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="bg_box mb-4">
+                        <div class="fs14 mb-3 d-flex gap-4">ملاحظات <span class='c-text2 fs13'>ان وجدت</span></div>
+                        <div class="fs14 ff-d lh-base">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم</div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <!-- <div class="col-12">
                         <div class="input-g">
-                            <label for="" class="main-label"> تاريخ الميلاد</label>
+                            <label for="" class="main-label d-flex gap-4">ملاحظات <span class='c-text2 fs13'>ان وجدت</span></label>
                             <div class="main-input">
-                                <input type="date" placeholder="قم بإدخال  تاريخ الميلاد" class="input-me calender">
+                                <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال ملاحظات"></textarea>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">رقم الجوال</label>
-                            <div class="main-input">
-                                <input type="number" id="telephone" placeholder="قم بإدخال رقم الجوال" class="input-me">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">البريد الإلكتروني</label>
-                            <div class="main-input">
-                                <input type="email" id="telephone" placeholder="قم بإدخال البريد الإلكتروني" class="input-me">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">كلمة المرور</label>
-                            <div class="main-input">
-                                <input type="password" id="telephone" placeholder="قم بإدخال كلمة المرور" class="input-me">
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-12">
-                        <div class="input-g">
-                            <label for="" class="main-label">المرفقات</label>
-                            <div class='d-flex gap-4 upload-con'>
-                                <label class="upload-label">
-                                    <input id="uploadImgs2" type="file" multiple accept="image/* , application/*"
-                                    class="hidden-input img-upload-input">
-                                    <img src='./assets/imgs/icons/add-file.gif' />
-                                    <span>إضافة مرفق</span>
-                                </label>
-                                <div class="photo-con"></div>
+                        <div class='d-flex align-items-center gap-3'>
+                            <div class="switch-con">
+                                <input type="checkbox" hidden name="" id="switch">
+                                <label for="switch" class="switch"></label>
+                            </div>
+                            <span class="c-black">اسناد المهمة لزميل</span>
+                        </div>
+                    </div>
+
+                    <div class="discount_con row align-items-center mt-3">
+                        <div class="col-sm-6">
+                            <div class="input-g">
+                                <label for="" class="main-label"> الزميل المسند له المهمة</label>
+                                <div class="main-input">
+                                    <select name="" id="" class="select">
+                                        <option value="0" selected disabled hidden>قم باختيار الزميل المسند له المهمة</option>
+                                        <option value="1">الزميل المسند له المهمة</option>
+                                        <option value="2">الزميل المسند له المهمة</option>
+                                        <option value="3">الزميل المسند له المهمة</option>
+                                    </select>
+                                    <i class="fa-solid fa-angle-down main-icon"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12 input-g">
-                        <label for="" class="main-label">الحالة</label>
-                        <div class="switch-con d-flex align-items-center gap-3">
-                            <input type="checkbox" hidden checked name="" id="switch">
-                            <label for="switch" class="switch"></label>
-                            <span class="text text2 c-black">مفعل</span>
-                            <span class="text text1 c-red">غير مفعل</span>
+                    <div class="buttons justify-content-center mt-5">
+        
+                        <button type='submit' class="main-btn sec up lg ">اسناد المهمة للزميل</button>
+                        <button class="main-btn transparent lg ">انتهاء المهمة</button>
+                        
+                    </div>
+
+                </form>
+
+                <!-- <div class="bg_box">
+
+                    <div class="bg_box mb-4">
+                        <div class="fs14 mb-3">ما تم إنجازه بالمهمة</div>
+                        <div class="fs14 ff-d lh-base">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم</div>
+                    </div>
+
+                    <div class="">
+                        <label for="" class="main-label">المرفقات</label>
+                        <div class="photo-con">
+
+                            <div class="upload-label">
+                                <input type='hidden' value='${name}' />
+                                <img src='./assets/imgs/icons/pdf-file.gif' />
+                                <span>اسم الملف</span>
+                            </div>
+
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
-                <button type="button" data-bs-target='#doneModal' data-bs-toggle='modal'
-                    class="main-btn sec up lg mx-auto mt-4">
-                    تعديل مستخدم
-                </button>
 
-            </form>
+            </div>
 
         </div>
     </div>
     <!-- ************** End main Section ************** -->
-
-
-    <!-- ************** Done Modal ************** -->
-    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="modal-body">
-                    <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
-                    <h3 class="fs15 c-black text-center ff-d mb-4">تم تعديل مستخدم بنجاح</h3>
-                </div>
-
-                <div class="modal-footer">
-                    <div class="buttons w-100 justify-content-center">
-                        <a href='settings_users.html' class="main-btn sec lg up">تأكيد</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
 
     <!-- Bootstrap 5 -->
     <script src="./assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
@@ -412,26 +454,13 @@
     <script src="./assets/plugins/select2/select2.js"></script>
     <!-- intlTelInput -->
     <script src="./assets/plugins/flag/js/intlTelInput.min.js"></script>
-
-    <!-- Flat Picker -->
+    <!-- Show And Hide Discount -->
     <script>
-        flatpickr(".calender", {
-            disableMobile: "true",
-            inline: false,
-            dateFormat: "Y-m-d",
-        });
+        $('.discount_con').hide();
+        $(document).on('change', '#switch', function () {
+            $('#switch').is(":checked") ? $('.discount_con').slideDown() : $('.discount_con').slideUp();
+        })
     </script>
-
-    <!-- intlTelInput -->
-    <script>
-        var input = document.querySelector("#telephone");
-        window.intlTelInput(input, ({
-            autoPlaceholder: "ادخل",
-            initialCountry: 'sa',
-            separateDialCode: true,
-        }));
-    </script>
-
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>
 </body>

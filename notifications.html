@@ -40,7 +40,7 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">سجل العملاء</h1>
+                    <h1 class="fs17 ff-b">الاشعارات</h1>
                 </div>
                 
                 <div class="left-sec">
@@ -243,130 +243,63 @@
     <!-- ************** Start main Section ************** -->
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
+            
+            <form class='bg-light rounded-4 p-sm-5 py-4 px-3'>
 
-            <form class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
-                <h3 class="fs16 ff-b mb-4">إضافة سجل جديد لعميل </h3>
+                <div class="notification-items">
 
-                <div class="row gy-3">
-
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">اسم العميل باللغة العربية</label>
-                            <div class="main-input">
-                                <input type="text" placeholder="قم بإدخال اسم العميل باللغة العربية " class="input-me">
+                    <div class="not-item">
+                        <div class="right">
+                            <img src="./assets/imgs/logo_sm.png" alt="" class="logo">
+                            <div class="not_body">
+                                <div class="time">
+                                    <i class="fa-regular fa-bell"></i>
+                                    منذ 5 دقائق
+                                </div>
+                                <p class="mt-3 c-black fs13 ff-d">
+                                    لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">رقم العميل</label>
-                            <div class="main-input">
-                                <input type="number" placeholder="قم بإدخال رقم العميل" class="input-me">
+                    <div class="not-item">
+                        <div class="right">
+                            <img src="./assets/imgs/logo_sm.png" alt="" class="logo">
+                            <div class="not_body">
+                                <div class="time">
+                                    <i class="fa-regular fa-bell"></i>
+                                    منذ 5 دقائق
+                                </div>
+                                <p class="mt-3 c-black fs13 ff-d">
+                                    لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12">
-                        <div class="input-g">
-                            <label for="" class="main-label">المرفقات التقرير</label>
-                            <div class='d-flex gap-4 upload-con'>
-                                <label class="upload-label">
-                                    <input id="uploadImgs" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
-                                    <img src='./assets/imgs/icons/add-file.gif' />
-                                    <span>إضافة مرفق</span>
-                                </label>
-                                <div class="photo-con"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="input-g">
-                            <label for="" class="main-label d-flex gap-4">وصف التقرير</label>
-                            <div class="main-input">
-                                <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
+                    <div class="not-item">
+                        <div class="right">
+                            <img src="./assets/imgs/logo_sm.png" alt="" class="logo">
+                            <div class="not_body">
+                                <div class="time">
+                                    <i class="fa-regular fa-bell"></i>
+                                    منذ 5 دقائق
+                                </div>
+                                <p class="mt-3 c-black fs13 ff-d">
+                                    لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم
+                                </p>
                             </div>
                         </div>
                     </div>
 
                 </div>
-
-                <button type="button" class="main-btn sec up lg mx-auto mt-4">اضافة تقرير جديد</button>
 
             </form>
-
-            <div class="reports">
-                <div class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
-                    <h3 class="fs16 ff-b mb-4">سجل بتاريخ  19/5/2025</h3>
-    
-                    <div class="row gy-3">
-    
-                        <div class="col-12">
-                            <div class="input-g">
-                                <label for="" class="main-label">المرفقات</label>
-                                <div class='d-flex gap-4 upload-con'>
-                                    <label class="upload-label">
-                                        <input id="uploadfile" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
-                                        <img src='./assets/imgs/icons/add-file.gif' />
-                                        <span>إضافة مرفق</span>
-                                    </label>
-                                    <div class="photo-con">
-                                        <div class="upload-label">
-                                            <input type='hidden' value='${name}' />
-                                            <img src='./assets/imgs/icons/pdf-file.gif' />
-                                            <span>اسم الملف</span>
-                                            <!-- <button type='button' class='remove-img'>
-                                              <i class="fa-solid fa-xmark"></i>
-                                            </button> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-12">
-                            <div class="input-g">
-                                <div class="main-input">
-                                    <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-    
-                    <div class="buttons justify-content-center mt-4">
-                        <a href="edit_sales_customer_record.html" class="main-btn sec up lg">تعديل التقرير</a>
-                        <button type="button" class="main-btn sec transparent lg"><i class="fa-solid fa-cloud-arrow-down"></i> تحميل</button>
-                    </div>
-    
-                </div>
-            </div>
 
         </div>
     </div>
     <!-- ************** End main Section ************** -->
-
-
-    <!-- ************** Done Modal ************** -->
-    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-
-            <div class="modal-body">
-                <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
-                <h3 class="fs15 c-black text-center ff-d mb-4">تم اضافة العميل بنجاح</h3>
-            </div>
-
-            <div class="modal-footer">
-                <div class="buttons w-100 justify-content-center">
-                    <a href='sales_clients.html' class="main-btn sec lg up">تأكيد</a>
-                </div>
-            </div>
-
-          </div>
-        </div>
-    </div>
 
 
     <!-- Bootstrap 5 -->

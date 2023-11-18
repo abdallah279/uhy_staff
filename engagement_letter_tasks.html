@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
-    <!-- (en و ar) ما بين (lang) عشان تغيير اللغه غيير-->
+<!-- (en و ar) ما بين (lang) عشان تغيير اللغه غيير-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,14 +17,14 @@
     <link rel="stylesheet" href="./assets/plugins/FancyBox/jquery.fancybox.min.css">
     <!-- FlatPicker -->
     <link rel="stylesheet" href="./assets/plugins/FlatPicker/flatpickr.css">
-    <!-- intlTelInput -->
-    <link rel="stylesheet" href="./assets/plugins/flag/css/intlTelInput.css">
     <!-- Datatables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
+
 <body>
 
     <!-- ************** start to loader ************** -->
@@ -40,9 +41,9 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">سجل العملاء</h1>
+                    <h1 class="fs17 ff-b">مهام خطاباط الأرتباط</h1>
                 </div>
-                
+
                 <div class="left-sec">
                     <a href="notifications.html" class="not_link">
                         <img src="./assets/imgs/icons/notification.gif" alt="" class="ic">
@@ -244,102 +245,148 @@
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
 
-            <form class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
-                <h3 class="fs16 ff-b mb-4">إضافة سجل جديد لعميل </h3>
+            <form class='filter_con mb-4'>
 
-                <div class="row gy-3">
-
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">اسم العميل باللغة العربية</label>
-                            <div class="main-input">
-                                <input type="text" placeholder="قم بإدخال اسم العميل باللغة العربية " class="input-me">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">رقم العميل</label>
-                            <div class="main-input">
-                                <input type="number" placeholder="قم بإدخال رقم العميل" class="input-me">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="input-g">
-                            <label for="" class="main-label">المرفقات التقرير</label>
-                            <div class='d-flex gap-4 upload-con'>
-                                <label class="upload-label">
-                                    <input id="uploadImgs" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
-                                    <img src='./assets/imgs/icons/add-file.gif' />
-                                    <span>إضافة مرفق</span>
-                                </label>
-                                <div class="photo-con"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="input-g">
-                            <label for="" class="main-label d-flex gap-4">وصف التقرير</label>
-                            <div class="main-input">
-                                <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class='filter_item main-input'>
+                    <select name="" id="" class="select">
+                        <option value="0" selected disabled>حالة خطاب الأرتباط</option>
+                        <option value="1">حالة خطاب الأرتباط</option>
+                        <option value="2">حالة خطاب الأرتباط</option>
+                        <option value="3">حالة خطاب الأرتباط</option>
+                    </select>
+                    <i class="fa-solid fa-angle-down sec-icon"></i>
                 </div>
 
-                <button type="button" class="main-btn sec up lg mx-auto mt-4">اضافة تقرير جديد</button>
+                <button type="submit" class="main-btn sec up">بحث</button>
 
             </form>
 
-            <div class="reports">
-                <div class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
-                    <h3 class="fs16 ff-b mb-4">سجل بتاريخ  19/5/2025</h3>
-    
-                    <div class="row gy-3">
-    
-                        <div class="col-12">
-                            <div class="input-g">
-                                <label for="" class="main-label">المرفقات</label>
-                                <div class='d-flex gap-4 upload-con'>
-                                    <label class="upload-label">
-                                        <input id="uploadfile" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
-                                        <img src='./assets/imgs/icons/add-file.gif' />
-                                        <span>إضافة مرفق</span>
-                                    </label>
-                                    <div class="photo-con">
-                                        <div class="upload-label">
-                                            <input type='hidden' value='${name}' />
-                                            <img src='./assets/imgs/icons/pdf-file.gif' />
-                                            <span>اسم الملف</span>
-                                            <!-- <button type='button' class='remove-img'>
-                                              <i class="fa-solid fa-xmark"></i>
-                                            </button> -->
-                                        </div>
+            <div class='bg-light rounded-4 overflow-hidden'>
+
+                <div class="data">
+                    <table id="myTable" class="display table" dir="rtl">
+                        <thead>
+                            <tr>
+                                <th>رقم المهمة</th>
+                                <th>اسم العميل</th>
+                                <th>مسندة من</th>
+                                <th>تاريخ البداية</th>
+                                <th>المدة المستغرقة</th>
+                                <th>الحالة</th>
+                                <th>المزيد</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>محمد بن سلمان القحطاني</td>
+                                <td>
+                                    <div class='d-flex-c gap-2'>
+                                        <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                        محمد بن سلمان القحطاني
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-12">
-                            <div class="input-g">
-                                <div class="main-input">
-                                    <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-    
-                    <div class="buttons justify-content-center mt-4">
-                        <a href="edit_sales_customer_record.html" class="main-btn sec up lg">تعديل التقرير</a>
-                        <button type="button" class="main-btn sec transparent lg"><i class="fa-solid fa-cloud-arrow-down"></i> تحميل</button>
-                    </div>
-    
+                                </td>
+                                <td>30/11/2023</td>
+                                <td>3 ايام 4 ساعات و 55 دقيقه</td>
+                                <td>
+                                    <span class="badge_m wait">قيد التنفيذ</span>
+                                </td>
+                                <td class="d-flex-c gap-1">
+                                    <a href="engagement_letter_tasks_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>محمد بن سلمان القحطاني</td>
+                                <td>
+                                    <div class='d-flex-c gap-2'>
+                                        <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                        محمد بن سلمان القحطاني
+                                    </div>
+                                </td>
+                                <td>30/11/2023</td>
+                                <td>3 ايام</td>
+                                <td>
+                                    <span class="badge_m wait">قيد التنفيذ</span>
+                                </td>
+                                <td class="d-flex-c gap-1">
+                                    <a href="engagement_letter_tasks_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>محمد بن سلمان القحطاني </td>
+                                <td>
+                                    <div class='d-flex-c gap-2'>
+                                        <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                        محمد بن سلمان القحطاني
+                                    </div>
+                                </td>
+                                <td>30/11/2023</td>
+                                <td>3 ايام 4 ساعات و 55 دقيقه</td>
+                                <td>
+                                    <span class="badge_m blue">تم الأسناد</span>
+                                </td>
+                                <td class="d-flex-c gap-1">
+                                    <a href="engagement_letter_tasks_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>محمد بن سلمان القحطاني</td>
+                                <td>
+                                    <div class='d-flex-c gap-2'>
+                                        <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                        محمد بن سلمان القحطاني
+                                    </div>
+                                </td>
+                                <td>30/11/2023</td>
+                                <td>3 ايام</td>
+                                <td>
+                                    <span class="badge_m blue">تم الأسناد</span>
+                                </td>
+                                <td class="d-flex-c gap-1">
+                                    <a href="engagement_letter_tasks_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>محمد بن سلمان القحطاني</td>
+                                <td>
+                                    <div class='d-flex-c gap-2'>
+                                        <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                        محمد بن سلمان القحطاني
+                                    </div>
+                                </td>
+                                <td>30/11/2023</td>
+                                <td>3 ايام</td>
+                                <td>
+                                    <span class="badge_m blue">تم الأسناد</span>
+                                </td>
+                                <td class="d-flex-c gap-1">
+                                    <a href="engagement_letter_tasks_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>محمد بن سلمان القحطاني</td>
+                                <td>
+                                    <div class='d-flex-c gap-2'>
+                                        <img src='./assets/imgs/profile_img.jpg' class="circle_img sm" />
+                                        محمد بن سلمان القحطاني
+                                    </div>
+                                </td>
+                                <td>30/11/2023</td>
+                                <td>3 ايام</td>
+                                <td>
+                                    <span class="badge_m red">تم الانتهاء</span>
+                                </td>
+                                <td class="d-flex-c gap-1">
+                                    <a href="engagement_letter_tasks_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -348,6 +395,29 @@
     <!-- ************** End main Section ************** -->
 
 
+    <!-- ************** Delete Modal ************** -->
+    <div class="modal fade" id="deleteModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="./assets/imgs/icons/delete.gif" alt="" class="modal-img-body mb-3 mx-auto">
+                <h3 class="fs15 c-black text-center ff-d mb-4">هل انت متأكد من الحذف ؟</h3>
+            </div>
+
+            <div class="modal-footer">
+                <div class="buttons w-100 justify-content-center">
+                    <button type="button" data-bs-target="#doneModal" data-bs-toggle="modal" data-bs-dismiss="modal" class="main-btn lg up red">حذف</button>
+                    <button type="button" data-bs-dismiss="modal" class="main-btn lg transparent">تراجع</button>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    
+    
+
     <!-- ************** Done Modal ************** -->
     <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -355,18 +425,19 @@
 
             <div class="modal-body">
                 <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
-                <h3 class="fs15 c-black text-center ff-d mb-4">تم اضافة العميل بنجاح</h3>
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم الحذف بنجاح</h3>
             </div>
 
             <div class="modal-footer">
                 <div class="buttons w-100 justify-content-center">
-                    <a href='sales_clients.html' class="main-btn sec lg up">تأكيد</a>
+                    <button type="button" data-bs-dismiss="modal" class="main-btn sec lg up">تأكيد</button>
                 </div>
             </div>
 
           </div>
         </div>
     </div>
+
 
 
     <!-- Bootstrap 5 -->
@@ -378,12 +449,12 @@
     <!-- FlatPicker -->
     <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
     <!-- Datatables -->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
     <!-- Select 2 -->
     <script src="./assets/plugins/select2/select2.js"></script>
-    <!-- intlTelInput -->
-    <script src="./assets/plugins/flag/js/intlTelInput.min.js"></script>
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>

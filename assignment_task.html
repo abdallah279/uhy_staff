@@ -40,7 +40,7 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">سجل العملاء</h1>
+                    <h1 class="fs17 ff-b">الخطابات موجه لإدارة معنية</h1>
                 </div>
                 
                 <div class="left-sec">
@@ -243,36 +243,49 @@
     <!-- ************** Start main Section ************** -->
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
+            
+            <form class='bg-light rounded-4 p-sm-5 py-4 px-3'>
+                <div class="d-flex-between mb-4">
+                    <h3 class="fs16 ff-b">اسناد مهمة</h3>
+                    <!-- <button type="button" class="bg-transparent fs22 c-red p-0">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button> -->
+                </div>
 
-            <form class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
-                <h3 class="fs16 ff-b mb-4">إضافة سجل جديد لعميل </h3>
-
-                <div class="row gy-3">
-
-                    <div class="col-sm-6">
-                        <div class="input-g">
-                            <label for="" class="main-label">اسم العميل باللغة العربية</label>
-                            <div class="main-input">
-                                <input type="text" placeholder="قم بإدخال اسم العميل باللغة العربية " class="input-me">
-                            </div>
-                        </div>
-                    </div>
+                <div class="row gy-2">
 
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">رقم العميل</label>
+                            <label for="" class="main-label"> موظف المهمة</label>
                             <div class="main-input">
-                                <input type="number" placeholder="قم بإدخال رقم العميل" class="input-me">
+                                <select name="" id="" class="select">
+                                    <option value="0" selected disabled hidden>قم باختيار موظف المهمة</option>
+                                    <option value="1">موظف المهمة</option>
+                                    <option value="2">موظف المهمة</option>
+                                    <option value="3">موظف المهمة</option>
+                                    <option value="4">موظف المهمة</option>
+                                    <option value="5">موظف المهمة</option>
+                                </select>
+                                <i class="fa-solid fa-angle-down main-icon"></i>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-12">
                         <div class="input-g">
-                            <label for="" class="main-label">المرفقات التقرير</label>
+                            <label for="" class="main-label d-flex gap-4">وصف المهمة</label>
+                            <div class="main-input">
+                                <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف المهمة"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="input-g">
+                            <label for="" class="main-label">المرفقات</label>
                             <div class='d-flex gap-4 upload-con'>
                                 <label class="upload-label">
-                                    <input id="uploadImgs" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
+                                    <input id="uploadnumber" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
                                     <img src='./assets/imgs/icons/add-file.gif' />
                                     <span>إضافة مرفق</span>
                                 </label>
@@ -281,67 +294,12 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
-                        <div class="input-g">
-                            <label for="" class="main-label d-flex gap-4">وصف التقرير</label>
-                            <div class="main-input">
-                                <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
-                <button type="button" class="main-btn sec up lg mx-auto mt-4">اضافة تقرير جديد</button>
+                <button type="button" data-bs-target='#doneModal' data-bs-toggle='modal' class="main-btn sec up lg mx-auto mt-4">اسناد المهمة</button>
 
             </form>
-
-            <div class="reports">
-                <div class='bg-light rounded-4 p-sm-5 py-4 px-3 mb-4'>
-                    <h3 class="fs16 ff-b mb-4">سجل بتاريخ  19/5/2025</h3>
-    
-                    <div class="row gy-3">
-    
-                        <div class="col-12">
-                            <div class="input-g">
-                                <label for="" class="main-label">المرفقات</label>
-                                <div class='d-flex gap-4 upload-con'>
-                                    <label class="upload-label">
-                                        <input id="uploadfile" type="file" multiple accept="application/*" class="hidden-input img-upload-input">
-                                        <img src='./assets/imgs/icons/add-file.gif' />
-                                        <span>إضافة مرفق</span>
-                                    </label>
-                                    <div class="photo-con">
-                                        <div class="upload-label">
-                                            <input type='hidden' value='${name}' />
-                                            <img src='./assets/imgs/icons/pdf-file.gif' />
-                                            <span>اسم الملف</span>
-                                            <!-- <button type='button' class='remove-img'>
-                                              <i class="fa-solid fa-xmark"></i>
-                                            </button> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-12">
-                            <div class="input-g">
-                                <div class="main-input">
-                                    <textarea name="" id="" class="input-me text-area" placeholder="قم بإدخال وصف التقرير"></textarea>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-    
-                    <div class="buttons justify-content-center mt-4">
-                        <a href="edit_sales_customer_record.html" class="main-btn sec up lg">تعديل التقرير</a>
-                        <button type="button" class="main-btn sec transparent lg"><i class="fa-solid fa-cloud-arrow-down"></i> تحميل</button>
-                    </div>
-    
-                </div>
-            </div>
 
         </div>
     </div>
@@ -355,12 +313,12 @@
 
             <div class="modal-body">
                 <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
-                <h3 class="fs15 c-black text-center ff-d mb-4">تم اضافة العميل بنجاح</h3>
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم اسناد المهمة بنجاح</h3>
             </div>
 
             <div class="modal-footer">
                 <div class="buttons w-100 justify-content-center">
-                    <a href='sales_clients.html' class="main-btn sec lg up">تأكيد</a>
+                    <a href='letters_directed_detailes_tasks.html' class="main-btn sec lg up">تأكيد</a>
                 </div>
             </div>
 
