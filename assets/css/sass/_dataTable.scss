@@ -45,6 +45,12 @@ table.dataTable thead tr th, table.sec_table thead tr th {
   font-weight: 500 !important;
 }
 
+.table.opacity_table thead th{
+  background-color: rgba($color: $main, $alpha: 15%) !important;
+  color: $black !important;
+  font-family: fontDemi !important;
+}
+
 table.dataTable th,
 table.dataTable td,
 table.sec_table th,

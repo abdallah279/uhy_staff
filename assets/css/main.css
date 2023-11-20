@@ -922,14 +922,18 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 }
 
 .icon_link {
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   color: #c3cad9;
   background-color: transparent;
   padding: 0;
+  transition: all 0.3s ease;
 }
 .icon_link.blue {
   color: #589ee3;
+}
+.icon_link:hover {
+  color: #3b82f6;
 }
 
 .badge_m {
@@ -950,7 +954,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 }
 .badge_m.red {
   background-color: rgba(230, 95, 43, 0.18);
-  color: #EE201C;
+  color: #ee201c;
 }
 .badge_m.origin {
   background-color: rgba(106, 106, 106, 0.15);
@@ -961,7 +965,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   color: #064e94;
 }
 .badge_m.blue2 {
-  background-color: #cee1f4;
+  background-color: #E1EFFC;
   color: #064e94;
 }
 .badge_m.yellow {
@@ -985,6 +989,9 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   flex-wrap: wrap;
   font-size: 14px;
   font-family: fontDemi;
+}
+.totla_item.oapcity {
+  background-color: rgba(222, 244, 255, 0.5);
 }
 
 .main-item {
@@ -1412,11 +1419,11 @@ html[lang=ar] .copy-item {
 }
 
 .bg-light {
-  background-color: #F7F9FA !important;
+  background-color: #f7f9fa !important;
 }
 
 .bg-light2 {
-  background-color: #E8F2FF !important;
+  background-color: #e8f2ff !important;
 }
 
 .wait_bg {
@@ -1426,7 +1433,7 @@ html[lang=ar] .copy-item {
 
 .red_bg {
   background-color: rgba(230, 95, 43, 0.18);
-  color: #EE201C;
+  color: #ee201c;
 }
 
 .bg-smain {
@@ -2312,6 +2319,10 @@ html[lang=ar] .remove-append {
 .main_img.xs {
   height: 150px;
 }
+.main_img.xxs {
+  width: fit-content;
+  height: 50px;
+}
 
 .main_ic {
   max-height: 24px;
@@ -2610,7 +2621,7 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
   font-family: "Font Awesome 5 Free";
   display: flex;
   font-size: 13px;
-  color: #fff;
+  color: #3baeaa;
   font-weight: 900;
   align-items: center;
   justify-content: center;
@@ -2659,7 +2670,7 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #E8F2FF;
+  background-color: #e8f2ff;
   border: none;
   border-radius: 2px;
   margin: 0 !important;
@@ -4194,6 +4205,12 @@ table.dataTable thead tr th, table.sec_table thead tr th {
   font-weight: 500 !important;
 }
 
+.table.opacity_table thead th {
+  background-color: rgba(6, 78, 148, 0.15) !important;
+  color: #000 !important;
+  font-family: fontDemi !important;
+}
+
 table.dataTable th,
 table.dataTable td,
 table.sec_table th,
@@ -4532,10 +4549,14 @@ html[lang=ar] .main-padding-right {
   gap: 20px;
   flex-wrap: wrap;
 }
+.filter_con .filter_item {
+  flex-grow: 1;
+}
 .filter_con .filter_item .input-me {
   background-color: #FAFAFA;
   border-color: #FAFAFA;
-  width: 280px;
+  width: 100%;
+  min-width: 250px;
   border-radius: 12px;
 }
 html[lang=en] .filter_con .filter_item .input-me {
@@ -4567,11 +4588,13 @@ html[lang=ar] .filter_con .filter_item .main-icon {
   min-height: 50px;
   background-color: #FAFAFA;
   border-color: #FAFAFA;
-  width: 280px;
+  width: 100%;
+  min-width: 250px;
   border-radius: 12px;
 }
 .filter_con .main-btn {
   border-radius: 12px;
+  min-height: 50px;
 }
 
 /********************* End filter_con *********************/
@@ -4701,5 +4724,57 @@ html[lang=ar] .filter_con .filter_item .main-icon {
   }
 }
 /***************** End not-item Section *********************/
+/********************* Start home_card *********************/
+.payment_card {
+  border-radius: 7px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: space-between;
+  position: relative;
+  background-color: #157BFF;
+  overflow: hidden;
+}
+.payment_card.bink {
+  background-color: #2262A0;
+}
+.payment_card.orange {
+  background-color: #D98A2C;
+}
+.payment_card::after, .payment_card::before {
+  content: "";
+  position: absolute;
+  background-color: #EAF3FF;
+  opacity: 0.3;
+  border-radius: 7px;
+  height: 44px;
+  width: 44px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.payment_card::after {
+  top: -8px;
+}
+html[lang=en] .payment_card::after {
+  right: -8px;
+}
+html[lang=ar] .payment_card::after {
+  left: -8px;
+}
+.payment_card::before {
+  bottom: -8px;
+}
+html[lang=en] .payment_card::before {
+  left: -8px;
+}
+html[lang=ar] .payment_card::before {
+  right: -8px;
+}
+.payment_card:hover::after, .payment_card:hover::before {
+  transform: scale(1.6) rotate(-7deg);
+}
+
+/********************* End home_card *********************/
 
 /*# sourceMappingURL=main.css.map */

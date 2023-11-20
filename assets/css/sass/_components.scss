@@ -375,8 +375,8 @@
     font-size: 12px;
     min-height: 44px;
     min-width: 190px;
-    
-    @media screen and (max-width:$screen-xs) {
+
+    @media screen and (max-width: $screen-xs) {
       min-width: 120px;
       font-size: 11px;
     }
@@ -419,12 +419,12 @@
   position: relative;
   z-index: 10;
 
-  &.sm{
+  &.sm {
     .step-item {
       @media screen and (max-width: 500px) {
         min-width: 85px !important;
       }
-    }  
+    }
   }
 
   .step-item {
@@ -663,14 +663,19 @@
 }
 
 .icon_link {
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   color: #c3cad9;
   background-color: transparent;
   padding: 0;
+  transition: $main-transition;
 
   &.blue {
     color: #589ee3;
+  }
+
+  &:hover {
+    color: $sec;
   }
 }
 
@@ -694,7 +699,7 @@
 
   &.red {
     background-color: rgba($color: #e65f2b, $alpha: 0.18);
-    color: #EE201C;
+    color: #ee201c;
   }
 
   &.origin {
@@ -708,7 +713,7 @@
   }
 
   &.blue2 {
-    background-color: #cee1f4;
+    background-color: #E1EFFC;
     color: #064e94;
   }
 
@@ -733,6 +738,10 @@
   flex-wrap: wrap;
   font-size: 14px;
   font-family: fontDemi;
+  
+  &.oapcity{
+    background-color: rgba($color: #def4ff, $alpha: .5);
+  }
 }
 
 .main-item {
@@ -962,9 +971,9 @@
   }
 
   &.light {
-    background-color: rgba($color: $border-input, $alpha: .4);
+    background-color: rgba($color: $border-input, $alpha: 0.4);
     color: $black;
-    border-color: rgba($color: $border-input, $alpha: .4);
+    border-color: rgba($color: $border-input, $alpha: 0.4);
 
     &:hover {
       color: $black;
@@ -1210,11 +1219,11 @@
 }
 
 .bg-light {
-  background-color: #F7F9FA !important;
+  background-color: #f7f9fa !important;
 }
 
 .bg-light2 {
-  background-color: #E8F2FF !important;
+  background-color: #e8f2ff !important;
 }
 
 .wait_bg {
@@ -1222,9 +1231,9 @@
   color: #dfa510;
 }
 
-.red_bg{
+.red_bg {
   background-color: rgba($color: #e65f2b, $alpha: 0.18);
-  color: #EE201C;
+  color: #ee201c;
 }
 
 .bg-smain {
@@ -1654,6 +1663,11 @@
   &.xs {
     height: 150px;
   }
+
+  &.xxs {
+    width: fit-content;
+    height: 50px;
+  }
 }
 
 .main_ic {
@@ -1888,7 +1902,7 @@
           font-family: "Font Awesome 5 Free";
           display: flex;
           font-size: 13px;
-          color: $white;
+          color: #3baeaa;
           font-weight: 900;
           align-items: center;
           justify-content: center;
@@ -1937,7 +1951,7 @@
 .select2-container--default
   .select2-selection--multiple
   .select2-selection__choice {
-  background-color: #E8F2FF;
+  background-color: #e8f2ff;
   border: none;
   border-radius: 2px;
   margin: 0 !important;
@@ -1953,7 +1967,7 @@
   margin: 0 !important;
 }
 
-.select2-selection.select2-selection--multiple{
+.select2-selection.select2-selection--multiple {
   display: flex;
   align-items: center;
 }
