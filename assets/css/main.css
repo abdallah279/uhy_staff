@@ -86,6 +86,11 @@ body {
   overflow-x: hidden;
   font-size: 14px !important;
 }
+@media only screen and (max-width: 425px) {
+  body {
+    font-size: 12px !important;
+  }
+}
 html[lang=en] body {
   direction: ltr;
   text-align: left;
@@ -97,6 +102,7 @@ html[lang=ar] body {
 
 section {
   overflow-x: hidden;
+  overflow-y: clip;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -418,6 +424,14 @@ input:focus {
 @media screen and (max-width: 1280px) {
   .main_logo.lg {
     max-width: 200px;
+  }
+}
+.main_logo.md {
+  max-height: 110px;
+}
+@media screen and (max-width: 425px) {
+  .main_logo.md {
+    max-height: 60px;
   }
 }
 
@@ -1298,6 +1312,16 @@ html[lang=ar] .copy-item {
 .add_btn i {
   font-size: 20px;
 }
+@media only screen and (max-width: 425px) {
+  .add_btn i {
+    font-size: 15px !important;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .add_btn {
+    font-size: 11px !important;
+  }
+}
 
 .buttons {
   display: flex;
@@ -1557,7 +1581,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs1 {
-    font-size: -1px !important;
+    font-size: -2px !important;
   }
 }
 
@@ -1566,7 +1590,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs2 {
-    font-size: 0px !important;
+    font-size: -1px !important;
   }
 }
 
@@ -1575,7 +1599,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs3 {
-    font-size: 1px !important;
+    font-size: 0px !important;
   }
 }
 
@@ -1584,7 +1608,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs4 {
-    font-size: 2px !important;
+    font-size: 1px !important;
   }
 }
 
@@ -1593,7 +1617,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs5 {
-    font-size: 3px !important;
+    font-size: 2px !important;
   }
 }
 
@@ -1602,7 +1626,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs6 {
-    font-size: 4px !important;
+    font-size: 3px !important;
   }
 }
 
@@ -1611,7 +1635,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs7 {
-    font-size: 5px !important;
+    font-size: 4px !important;
   }
 }
 
@@ -1620,7 +1644,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs8 {
-    font-size: 6px !important;
+    font-size: 5px !important;
   }
 }
 
@@ -1629,7 +1653,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs9 {
-    font-size: 7px !important;
+    font-size: 6px !important;
   }
 }
 
@@ -1638,7 +1662,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs10 {
-    font-size: 8px !important;
+    font-size: 7px !important;
   }
 }
 
@@ -1647,7 +1671,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs11 {
-    font-size: 9px !important;
+    font-size: 8px !important;
   }
 }
 
@@ -1656,7 +1680,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs12 {
-    font-size: 10px !important;
+    font-size: 9px !important;
   }
 }
 
@@ -1665,7 +1689,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs13 {
-    font-size: 11px !important;
+    font-size: 10px !important;
   }
 }
 
@@ -1674,7 +1698,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs14 {
-    font-size: 12px !important;
+    font-size: 11px !important;
   }
 }
 
@@ -1683,7 +1707,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs15 {
-    font-size: 13px !important;
+    font-size: 12px !important;
   }
 }
 
@@ -1692,7 +1716,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs16 {
-    font-size: 14px !important;
+    font-size: 13px !important;
   }
 }
 
@@ -1701,7 +1725,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs17 {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
 }
 
@@ -1710,7 +1734,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs18 {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 }
 
@@ -1719,7 +1743,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs19 {
-    font-size: 17px !important;
+    font-size: 16px !important;
   }
 }
 
@@ -1728,7 +1752,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs20 {
-    font-size: 18px !important;
+    font-size: 17px !important;
   }
 }
 
@@ -1737,7 +1761,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs21 {
-    font-size: 19px !important;
+    font-size: 18px !important;
   }
 }
 
@@ -1746,7 +1770,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs22 {
-    font-size: 20px !important;
+    font-size: 19px !important;
   }
 }
 
@@ -1755,7 +1779,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs23 {
-    font-size: 21px !important;
+    font-size: 20px !important;
   }
 }
 
@@ -1764,7 +1788,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs24 {
-    font-size: 22px !important;
+    font-size: 21px !important;
   }
 }
 
@@ -1773,7 +1797,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs25 {
-    font-size: 23px !important;
+    font-size: 22px !important;
   }
 }
 
@@ -1782,7 +1806,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs26 {
-    font-size: 24px !important;
+    font-size: 23px !important;
   }
 }
 
@@ -1791,7 +1815,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs27 {
-    font-size: 25px !important;
+    font-size: 24px !important;
   }
 }
 
@@ -1800,7 +1824,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs28 {
-    font-size: 26px !important;
+    font-size: 25px !important;
   }
 }
 
@@ -1809,7 +1833,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs29 {
-    font-size: 27px !important;
+    font-size: 26px !important;
   }
 }
 
@@ -1818,7 +1842,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs30 {
-    font-size: 28px !important;
+    font-size: 27px !important;
   }
 }
 
@@ -1827,7 +1851,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs31 {
-    font-size: 29px !important;
+    font-size: 28px !important;
   }
 }
 
@@ -1836,7 +1860,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs32 {
-    font-size: 30px !important;
+    font-size: 29px !important;
   }
 }
 
@@ -1845,7 +1869,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs33 {
-    font-size: 31px !important;
+    font-size: 30px !important;
   }
 }
 
@@ -1854,7 +1878,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs34 {
-    font-size: 32px !important;
+    font-size: 31px !important;
   }
 }
 
@@ -1863,7 +1887,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs35 {
-    font-size: 33px !important;
+    font-size: 32px !important;
   }
 }
 
@@ -1872,7 +1896,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs36 {
-    font-size: 34px !important;
+    font-size: 33px !important;
   }
 }
 
@@ -1881,7 +1905,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs37 {
-    font-size: 35px !important;
+    font-size: 34px !important;
   }
 }
 
@@ -1890,7 +1914,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs38 {
-    font-size: 36px !important;
+    font-size: 35px !important;
   }
 }
 
@@ -1899,7 +1923,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs39 {
-    font-size: 37px !important;
+    font-size: 36px !important;
   }
 }
 
@@ -1908,7 +1932,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs40 {
-    font-size: 38px !important;
+    font-size: 37px !important;
   }
 }
 
@@ -1917,7 +1941,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs41 {
-    font-size: 39px !important;
+    font-size: 38px !important;
   }
 }
 
@@ -1926,7 +1950,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs42 {
-    font-size: 40px !important;
+    font-size: 39px !important;
   }
 }
 
@@ -1935,7 +1959,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs43 {
-    font-size: 41px !important;
+    font-size: 40px !important;
   }
 }
 
@@ -1944,7 +1968,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs44 {
-    font-size: 42px !important;
+    font-size: 41px !important;
   }
 }
 
@@ -1953,7 +1977,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs45 {
-    font-size: 43px !important;
+    font-size: 42px !important;
   }
 }
 
@@ -1962,7 +1986,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs46 {
-    font-size: 44px !important;
+    font-size: 43px !important;
   }
 }
 
@@ -1971,7 +1995,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs47 {
-    font-size: 45px !important;
+    font-size: 44px !important;
   }
 }
 
@@ -1980,7 +2004,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs48 {
-    font-size: 46px !important;
+    font-size: 45px !important;
   }
 }
 
@@ -1989,7 +2013,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs49 {
-    font-size: 47px !important;
+    font-size: 46px !important;
   }
 }
 
@@ -1998,7 +2022,7 @@ html[lang=ar] .copy-item {
 }
 @media only screen and (max-width: 425px) {
   .fs50 {
-    font-size: 48px !important;
+    font-size: 47px !important;
   }
 }
 
@@ -2455,7 +2479,7 @@ html[lang=ar] .main-input .main-icon {
   max-width: 12px;
   cursor: pointer;
 }
-.main-input .main-icon.search-ic {
+.main-input .main-icon.search-ic, .main-input .main-icon.pass-icon {
   pointer-events: auto;
 }
 .main-input .main-icon::after {
@@ -3114,7 +3138,7 @@ html[lang=ar] .user-img .user-camera {
   bottom: 0;
 }
 
-.remove-img {
+.remove-img, .remove_img_modal {
   position: absolute;
   top: -7px;
   border-radius: 50%;
@@ -3128,16 +3152,16 @@ html[lang=ar] .user-img .user-camera {
   cursor: pointer;
   font-size: 13px;
 }
-html[lang=en] .remove-img {
+html[lang=en] .remove-img, html[lang=en] .remove_img_modal {
   right: -7px;
 }
-html[lang=ar] .remove-img {
+html[lang=ar] .remove-img, html[lang=ar] .remove_img_modal {
   left: -7px;
 }
-.remove-img i {
+.remove-img i, .remove_img_modal i {
   font-size: 13px;
 }
-.remove-img img {
+.remove-img img, .remove_img_modal img {
   width: 24px;
   height: 24px;
 }
@@ -4120,6 +4144,11 @@ html[lang=ar] .sidebar-m {
   font-family: fontDemi;
   font-size: 13px;
 }
+@media only screen and (max-width: 425px) {
+  .sidebar-m .links .link {
+    font-size: 12px !important;
+  }
+}
 .sidebar-m .links .link.head {
   font-size: 14px;
   background-color: rgba(237, 240, 248, 0.7);
@@ -4130,6 +4159,11 @@ html[lang=ar] .sidebar-m {
 }
 .sidebar-m .links .link.head::after {
   display: none;
+}
+@media only screen and (max-width: 425px) {
+  .sidebar-m .links .link.head {
+    font-size: 13px !important;
+  }
 }
 .sidebar-m .links .link:first-child {
   margin-top: 0;
@@ -4776,5 +4810,106 @@ html[lang=ar] .payment_card::before {
 }
 
 /********************* End home_card *********************/
+/***************** Start Login Page ***************/
+@media only screen and (max-width: 425px) {
+  .login-sec {
+    height: 100% !important;
+  }
+}
+
+.login-right-sec {
+  padding: 50px 20px;
+  background-color: #F3F6F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login-left-sec {
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+}
+@media screen and (max-width: 992px) {
+  .login-left-sec {
+    padding: 80px 10px;
+  }
+}
+.login-left-sec .login-img {
+  max-height: 380px;
+}
+@media screen and (max-width: 425px) {
+  .login-left-sec .login-img {
+    max-width: calc(100% - 30px);
+  }
+}
+@media screen and (max-width: 992px) {
+  .login-left-sec {
+    display: none;
+  }
+}
+
+.login_footer {
+  padding: 10px 60px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #FAFAFA;
+}
+@media only screen and (max-width: 768px) {
+  .login_footer {
+    padding: 10px 40px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .login_footer {
+    padding: 10px;
+  }
+}
+.login_footer .footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.login_footer .footer-social .social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  transition: all 0.3s ease;
+  background-color: #3b82f6;
+  color: #fff;
+  font-size: 17px;
+}
+.login_footer .footer-social .social-icon img {
+  max-width: 16px;
+  max-height: 16px;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 425px) {
+  .login_footer .footer-social .social-icon img {
+    max-width: 14px;
+    max-height: 14px;
+  }
+}
+.login_footer .footer-social .social-icon:hover {
+  border-color: #064e94;
+  box-shadow: none;
+}
+.login_footer .footer-social .social-icon:hover img {
+  transform: rotate(360deg);
+}
+
+/***************** End Login Page ***************/
 
 /*# sourceMappingURL=main.css.map */

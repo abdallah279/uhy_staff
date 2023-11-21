@@ -190,6 +190,14 @@
       max-width: 200px;
     }
   }
+
+  &.md {
+    max-height: 110px;
+
+    @media screen and (max-width: $screen-xs) {
+      max-height: 60px;
+    }
+  }
 }
 
 .img_hover {
@@ -1815,7 +1823,7 @@
       cursor: pointer;
     }
 
-    &.search-ic {
+    &.search-ic, &.pass-icon {
       pointer-events: auto;
     }
 
@@ -2454,7 +2462,7 @@
   }
 }
 
-.remove-img {
+.remove-img, .remove_img_modal {
   position: absolute;
   top: -7px;
   @include dir-right(-7px);

@@ -296,3 +296,99 @@
   }
 }
 /********************* End home_card *********************/
+
+
+/***************** Start Login Page ***************/
+
+.login-sec {
+  @include devices(xs){
+    height: 100% !important;
+  }
+}
+
+.login-right-sec {
+  padding: 50px 20px;
+  background-color: #F3F6F8;
+  @include center;
+  height: 100%;
+}
+
+.login-left-sec {
+  height: 100%;
+  background: $white;
+  @include center;
+  padding: 80px;
+
+  @media screen and (max-width: $screen-lg) {
+    padding: 80px 10px;
+  }
+
+  .login-img {
+    max-height: 380px;
+
+    @media screen and (max-width: $screen-xs) {
+      max-width: calc(100% - 30px);
+    }
+  }
+
+  @media screen and (max-width: $screen-lg) {
+    display: none;
+  }
+}
+
+.login_footer{
+  padding: 10px 60px;
+  margin-top: 5px;
+  @include between;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: $white2;
+
+  @include devices(md){
+    padding: 10px 40px;
+  }
+
+  @include devices(xs){
+    padding: 10px;
+  }
+
+  .footer-social{
+    @include center;
+    gap: 8px;
+
+    .social-icon{
+        @include center;
+        @include circle(34px);
+        transition: $main-transition;
+        background-color: $sec;
+        color: $white;
+        font-size: 17px;
+
+        @media screen and (max-width:$screen-xs) {
+        }
+
+        img{
+            max-width: 16px;
+            max-height: 16px;
+            transition: $main-transition;
+
+            @media screen and (max-width:$screen-xs) {
+                max-width: 14px;
+                max-height: 14px;
+            }
+
+        }
+
+        &:hover{
+            border-color: $main;
+            box-shadow: none;
+
+            img{
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+}
+
+/***************** End Login Page ***************/
