@@ -50,6 +50,11 @@ body {
   font-family: fontMed;
   overflow-x: hidden;
   font-size: 14px !important;
+  
+  @include devices(xs){
+    font-size: 12px !important;
+  }
+
   #{$ltr} & {
     direction: ltr;
     text-align: left;

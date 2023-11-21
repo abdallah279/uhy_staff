@@ -1091,6 +1091,14 @@
   }
   i {
     font-size: 20px;
+
+    @include devices(xs){
+      font-size: 15px !important;
+    }
+  }
+
+  @include devices(xs){
+    font-size: 11px !important;
   }
 }
 
@@ -1358,7 +1366,7 @@
     font-size: $i + px !important;
 
     @include devices(xs) {
-      font-size: ($i - 2px) !important;
+      font-size: ($i - 3px) !important;
     }
   }
 }

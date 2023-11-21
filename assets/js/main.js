@@ -120,34 +120,36 @@ loginInputs.forEach((input) => {
     input.addEventListener("change", function () {
       imgPreview(input);
     });
-
-    function imgPreview(input) {
-      var file = input.files[0];
-      var mixedfile = file["type"].split("/");
-      var filetype = mixedfile[0];
-      let photoContainer = $(input).closest(".upload-con").find(".photo-con");
-
-      const multiple = $(input).attr("multiple");
-
-      if (multiple) {
-        if (filetype == "image") {
-          uploadMultiImgs(input, photoContainer);
-        } else if (filetype == "application") {
-          uploadFile(input, photoContainer);
-        }
-      } else {
-        if (filetype == "image") {
-          uploadImg(input, photoContainer);
-        } else if (filetype == "application") {
-          photoContainer.empty();
-          uploadFile(input, photoContainer);
-        } else {
-          alert("Invalid file type");
-        }
-      }
-    }
   }
 });
+
+
+// ImgPreview Function
+function imgPreview(input) {
+  var file = input.files[0];
+  var mixedfile = file["type"].split("/");
+  var filetype = mixedfile[0];
+  let photoContainer = $(input).closest(".upload-con").find(".photo-con");
+
+  const multiple = $(input).attr("multiple");
+
+  if (multiple) {
+    if (filetype == "image") {
+      uploadMultiImgs(input, photoContainer);
+    } else if (filetype == "application") {
+      uploadFile(input, photoContainer);
+    }
+  } else {
+    if (filetype == "image") {
+      uploadImg(input, photoContainer);
+    } else if (filetype == "application") {
+      photoContainer.empty();
+      uploadFile(input, photoContainer);
+    } else {
+      alert("Invalid file type");
+    }
+  }
+}
 
 // uploadMultiImgs
 function uploadMultiImgs(input, photoContainer) {

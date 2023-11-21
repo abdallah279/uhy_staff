@@ -63,6 +63,10 @@
       font-family: fontDemi;
       font-size: 13px;
 
+      @include devices(xs){
+        font-size: 12px !important;
+      }
+
       &.head{
         font-size: 14px;
         background-color: rgba($color: $white3, $alpha: .7);
@@ -72,6 +76,10 @@
         border-radius: 12px;
         &::after{
           display: none;
+        }
+
+        @include devices(xs){
+          font-size: 13px !important;
         }
       }
 

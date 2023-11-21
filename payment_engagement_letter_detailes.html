@@ -310,99 +310,106 @@
                 </div>
 
                 <div class="paymnet_items_con mb-4">
-                    <button type='button' class='add_btn up mb-3' id='add_paymnet'>
+                    <button type='button' class='add_btn up mb-3' id='add_payment'>
                         <i class="fa-solid fa-circle-plus"></i>
                         إضافة تحصيل جديد 
                     </button>
 
-                    <h5 class='fs15 c-black ff-d mb-3'>وقت المهمة<h5>
+                    
+                    <form class="paymnet_items" >
+                        
+                        <div id="paymnet_items">
+                            
+                            <!-- Item -->
+                            <div class="paymnet_item_c mb-4">
+                                <h5 class='fs15 c-black ff-d mb-3'>وقت المهمة<h5>
 
-                    <form class="paymnet_items" id="paymnet_items">
-
-                        <!-- Item -->
-                        <div class="paymnet_item row">
-                            <div class="col-sm-6">
-                                <div class="input-g">
-                                    <label for="" class="main-label d-flex-between">
-                                        اسم عميلة الدفع
-                                    </label>
-                                    <div class="main-input">
-                                        <select name="" id="" class="select">
-                                            <option value="0" selected disabled hidden>قم بإدخال اسم عميلة الدفع
-                                            </option>
-                                            <option value="1">اسم عميلة الدفع</option>
-                                            <option value="2">اسم عميلة الدفع</option>
-                                            <option value="3">اسم عميلة الدفع</option>
-                                            <option value="4">اسم عميلة الدفع</option>
-                                            <option value="5">اسم عميلة الدفع</option>
-                                        </select>
+                                <div class="paymnet_item row">
+                                    <div class="col-sm-6">
+                                        <div class="input-g">
+                                            <label for="" class="main-label d-flex-between">
+                                                اسم عميلة الدفع
+                                            </label>
+                                            <div class="main-input">
+                                                <select name="" id="" class="select">
+                                                    <option value="0" selected disabled hidden>قم بإدخال اسم عميلة الدفع
+                                                    </option>
+                                                    <option value="1">اسم عميلة الدفع</option>
+                                                    <option value="2">اسم عميلة الدفع</option>
+                                                    <option value="3">اسم عميلة الدفع</option>
+                                                    <option value="4">اسم عميلة الدفع</option>
+                                                    <option value="5">اسم عميلة الدفع</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="input-g">
-                                    <label for="" class="main-label">تاريخ التحصيل</label>
-                                    <div class="main-input">
-                                        <input type="date" placeholder="قم بإدخال تاريخ التحصيل" class="input-me calender">
-                                        <i class="fa-regular fa-calendar main-icon"></i>
+                                    <div class="col-sm-6">
+                                        <div class="input-g">
+                                            <label for="" class="main-label">تاريخ التحصيل</label>
+                                            <div class="main-input">
+                                                <input type="date" placeholder="قم بإدخال تاريخ التحصيل" class="input-me calender">
+                                                <i class="fa-regular fa-calendar main-icon"></i>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="input-g">
-                                    <label for="" class="main-label">اجمالي المبلغ المحصل</label>
-                                    <div class="main-input">
-                                        <input type="text" placeholder="قم بإدخال اجمالي المبلغ المحصل" class="input-me">
+                                    <div class="col-sm-6">
+                                        <div class="input-g">
+                                            <label for="" class="main-label">اجمالي المبلغ المحصل</label>
+                                            <div class="main-input">
+                                                <input type="text" placeholder="قم بإدخال اجمالي المبلغ المحصل" class="input-me">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="input-g">
-                                    <label for="" class="main-label d-flex-between">
-                                        الشخص المحصل
-                                    </label>
-                                    <div class="main-input">
-                                        <select name="" id="" class="select">
-                                            <option value="0" selected disabled hidden>قم بتحديد الشخص المحصل</option>
-                                            <option value="1">اسم الشخص المحصل</option>
-                                            <option value="2">اسم الشخص المحصل</option>
-                                            <option value="3">اسم الشخص المحصل</option>
-                                            <option value="4">اسم الشخص المحصل</option>
-                                            <option value="5">اسم الشخص المحصل</option>
-                                        </select>
+                                    <div class="col-sm-6">
+                                        <div class="input-g">
+                                            <label for="" class="main-label d-flex-between">
+                                                الشخص المحصل
+                                            </label>
+                                            <div class="main-input">
+                                                <select name="" id="" class="select">
+                                                    <option value="0" selected disabled hidden>قم بتحديد الشخص المحصل</option>
+                                                    <option value="1">اسم الشخص المحصل</option>
+                                                    <option value="2">اسم الشخص المحصل</option>
+                                                    <option value="3">اسم الشخص المحصل</option>
+                                                    <option value="4">اسم الشخص المحصل</option>
+                                                    <option value="5">اسم الشخص المحصل</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <div class="input-g">
-                                    <label for="" class="main-label">المرفقات</label>
-                                    <div class='d-flex gap-4 upload-con'>
-                                        <label class="upload-label">
-                                            <input id="uploadImgs" type="file" multiple accept="image/* , application/*"
-                                                class="hidden-input img-upload-input">
-                                            <img src='./assets/imgs/icons/add-file.gif' />
-                                            <span>إضافة مرفق</span>
-                                        </label>
-                                        <div class="photo-con">
-                                            <!-- <div class="upload-label">
-                                                <input type='hidden' value='${name}' />
-                                                <img src='./assets/imgs/icons/pdf-file.gif' />
-                                                <span>اسم الملف</span>
-                                                <button type='button' class='remove-img'>
-                                                  <i class="fa-solid fa-xmark"></i>
-                                                </button>
-                                            </div> -->
+        
+                                    <div class="col-12">
+                                        <div class="input-g">
+                                            <label for="" class="main-label">المرفقات</label>
+                                            <div class='d-flex gap-4 upload-con'>
+                                                <label class="upload-label">
+                                                    <input id="uploadImgs" type="file" multiple accept="image/* , application/*"
+                                                        class="hidden-input img-upload-input">
+                                                    <img src='./assets/imgs/icons/add-file.gif' />
+                                                    <span>إضافة مرفق</span>
+                                                </label>
+                                                <div class="photo-con">
+                                                    <!-- <div class="upload-label">
+                                                        <input type='hidden' value='${name}' />
+                                                        <img src='./assets/imgs/icons/pdf-file.gif' />
+                                                        <span>اسم الملف</span>
+                                                        <button type='button' class='remove-img'>
+                                                          <i class="fa-solid fa-xmark"></i>
+                                                        </button>
+                                                    </div> -->
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+        
+                                <div class='check-box d-flex gap-2 mt-1 align-items-center'>
+                                    <input type="checkbox" name="" id="finalPayment">
+                                    <label class="check" for="finalPayment"></label>
+                                    <label class="fs14 cu-pointer" for="finalPayment">دفعة نهائية</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class='check-box d-flex gap-2 mt-1 align-items-center'>
-                            <input type="checkbox" name="" id="finalPayment">
-                            <label class="check" for="finalPayment"></label>
-                            <label class="fs14 cu-pointer" for="finalPayment">دفعة نهائية</label>
                         </div>
 
                         <button type="submit" class='main-btn sec up lg mt-3'>إضافة التحصيل</button>
@@ -588,6 +595,8 @@
         src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
     <!-- Select 2 -->
     <script src="./assets/plugins/select2/select2.js"></script>
+    <!-- Main Js -->
+    <script src="./assets/js/main.js"></script>
     <!-- Flat Picker -->
     <script>
         flatpickr(".calender", {
@@ -596,8 +605,116 @@
             dateFormat: "Y-m-d",
         });
     </script>
-    <!-- Main Js -->
-    <script src="./assets/js/main.js"></script>
+    
+
+    <!-- add_payment -->
+    <script>
+        let count = 0;
+        $(document).on('click', '#add_payment', function () {
+            count++;
+            let payment_item = `
+            <div class="paymnet_item_c mb-4">
+                <h5 class='fs15 c-black ff-d mb-3'>وقت المهمة<h5>
+                <div class="paymnet_item row">
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label d-flex-between">
+                                اسم عميلة الدفع
+                                <span class="c-red cu-pointer delete_payment">حذف العميلة</span>
+                            </label>
+                            <div class="main-input">
+                                <select name="" id="" class="select">
+                                    <option value="0" selected disabled hidden>قم بإدخال اسم عميلة الدفع
+                                    </option>
+                                    <option value="1">اسم عميلة الدفع</option>
+                                    <option value="2">اسم عميلة الدفع</option>
+                                    <option value="3">اسم عميلة الدفع</option>
+                                    <option value="4">اسم عميلة الدفع</option>
+                                    <option value="5">اسم عميلة الدفع</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">تاريخ التحصيل</label>
+                            <div class="main-input">
+                                <input type="date" placeholder="قم بإدخال تاريخ التحصيل" class="input-me calender">
+                                <i class="fa-regular fa-calendar main-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label">اجمالي المبلغ المحصل</label>
+                            <div class="main-input">
+                                <input type="text" placeholder="قم بإدخال اجمالي المبلغ المحصل" class="input-me">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-g">
+                            <label for="" class="main-label d-flex-between">
+                                الشخص المحصل
+                            </label>
+                            <div class="main-input">
+                                <select name="" id="" class="select">
+                                    <option value="0" selected disabled hidden>قم بتحديد الشخص المحصل</option>
+                                    <option value="1">اسم الشخص المحصل</option>
+                                    <option value="2">اسم الشخص المحصل</option>
+                                    <option value="3">اسم الشخص المحصل</option>
+                                    <option value="4">اسم الشخص المحصل</option>
+                                    <option value="5">اسم الشخص المحصل</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="input-g">
+                            <label for="" class="main-label">المرفقات</label>
+                            <div class='d-flex gap-4 upload-con'>
+                                <label class="upload-label">
+                                    <input id="uploadImgs${count}" onchange="imgPreview(this)" type="file" multiple accept="image/* , application/*"
+                                        class="hidden-input img-upload-input">
+                                    <img src='./assets/imgs/icons/add-file.gif' />
+                                    <span>إضافة مرفق</span>
+                                </label>
+                                <div class="photo-con"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='check-box d-flex gap-2 mt-1 align-items-center'>
+                    <input type="checkbox" name="" id="finalPayment${count}">
+                    <label class="check" for="finalPayment${count}"></label>
+                    <label class="fs14 cu-pointer" for="finalPayment${count}">دفعة نهائية</label>
+                </div>
+            </div>
+            `;
+
+            $('#paymnet_items').append(payment_item);
+
+            if ($(".select").length > 0) {
+                $(".select").select2({
+                    dir: isRtl ? "rtl" : "ltr",
+                    minimumResultsForSearch: Infinity,
+                });
+            }
+
+            flatpickr(".calender", {
+                disableMobile: "true",
+                inline: false,
+                dateFormat: "Y-m-d",
+            });
+        });
+
+        // Delete Services Btn
+        $(document).on('click', '.delete_payment', function () {
+            $(this).closest('.paymnet_item_c').remove();
+        });
+    </script>
 </body>
 
 </html>
