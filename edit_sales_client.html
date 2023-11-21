@@ -375,7 +375,7 @@
                                         <input type='hidden' value='${name}' />
                                         <img src='./assets/imgs/icons/pdf-file.gif' />
                                         <span>اسم الملف</span>
-                                        <button type='button' class='remove-img'>
+                                        <button type='button' class='remove_img_modal' data-bs-target='#deleteModal' data-bs-toggle='modal'>
                                           <i class="fa-solid fa-xmark"></i>
                                         </button>
                                     </div>
@@ -399,7 +399,7 @@
                                         <input type='hidden' value='${name}' />
                                         <img src='./assets/imgs/icons/pdf-file.gif' />
                                         <span>اسم الملف</span>
-                                        <button type='button' class='remove-img'>
+                                        <button type='button' class='remove_img_modal' data-bs-target='#deleteModal' data-bs-toggle='modal'>
                                           <i class="fa-solid fa-xmark"></i>
                                         </button>
                                     </div>
@@ -440,7 +440,6 @@
                                     <option value="4">اسم الفرع</option>
                                     <option value="5">اسم الفرع</option>
                                 </select>
-                                <i class="fa-solid fa-angle-down main-icon"></i>
                             </div>
                         </div>
                     </div>
@@ -456,7 +455,7 @@
 
                 </div>
 
-                <button type="button" data-bs-target='#doneModal' data-bs-toggle='modal' class="main-btn sec up lg mx-auto mt-4">تعديل بيانات العميل</button>
+                <button type="button" data-bs-target='#formDoneModal' data-bs-toggle='modal' class="main-btn sec up lg mx-auto mt-4">تعديل بيانات العميل</button>
 
             </form>
 
@@ -465,8 +464,47 @@
     <!-- ************** End main Section ************** -->
 
 
+    <!-- ************** Delete Modal ************** -->
+    <div class="modal fade" id="deleteModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <img src="./assets/imgs/icons/delete.gif" alt="" class="modal-img-body mb-3 mx-auto">
+                    <h3 class="fs15 c-black text-center ff-d mb-4">هل انت متأكد من الحذف ؟</h3>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="buttons w-100 justify-content-center">
+                        <button type="button" data-bs-target="#doneModal" data-bs-toggle="modal" data-bs-dismiss="modal"
+                            class="main-btn lg up red">حذف</button>
+                        <button type="button" data-bs-dismiss="modal" class="main-btn lg transparent">تراجع</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
     <!-- ************** Done Modal ************** -->
     <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
+                    <!-- <img src="./assets/imgs/icons/letter.gif" alt="" class="modal-img-body verified mb-4 mx-auto"> -->
+                    <h3 class="fs15 c-black text-center ff-d mb-4">تم الحذف بنجاح</h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ************** Form Done Modal ************** -->
+    <div class="modal fade" id="formDoneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
 
@@ -509,6 +547,17 @@
             separateDialCode: true,
         }));
     </script>
+
+    <!-- Close Modal After 2.5 seconds -->
+    <script>
+        const doneModal = document.getElementById('doneModal');
+        doneModal.addEventListener('shown.bs.modal', () => {
+            setTimeout(function () {
+                $('#doneModal').modal('hide')
+            }, 2500);
+        })
+    </script>
+
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>
 </body>

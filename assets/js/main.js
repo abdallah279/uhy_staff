@@ -11,12 +11,44 @@ $(".links .link").each(function () {
   }
 });
 
+// Add Height To Logo Login
+$(document).ready(function () {
+  let navbarHeight = $(".login_footer").outerHeight();
+
+  $(".login-sec").css("height", `calc(100vh - ${navbarHeight}px - 5px)`);
+});
+
 // Add Height To Logo
 $(document).ready(function () {
   let navbarHeight = $(".navbar-m").outerHeight();
 
   $(".sidebar-m .logo").css("height", navbarHeight);
 });
+
+
+// PassWord Show In Setting Page
+const iconsPassSet = document.querySelectorAll('.pass-icon');
+
+if(iconsPassSet){
+  iconsPassSet.forEach((ic) =>{
+    ic.addEventListener('click', function(){
+      let input = ic.parentElement.querySelector('.input-me');
+      showPassword(input, ic);
+    });
+  });
+}
+
+// Function To Show And Hide Password
+function showPassword(input, icon){
+
+  if(input.type == 'password'){
+    input.setAttribute('type', 'text');
+    icon.innerHTML = `<i class="fa-regular fa-eye"></i>`;
+  } else{
+    input.setAttribute('type', 'password');
+    icon.innerHTML = `<i class="fa-regular fa-eye-slash"></i>`;
+  }
+}
 
 // SideBar
 $("#open_links").on("click", function () {

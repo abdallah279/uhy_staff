@@ -41,7 +41,7 @@
             <div class="navbar-content">
 
                 <div class="d-flex align-items-center gap-2">
-                    <h1 class="fs17 ff-b">سجل العملاء</h1>
+                    <h1 class="fs17 ff-b">دفع خطاب الارتباط </h1>
                 </div>
 
                 <div class="left-sec">
@@ -248,109 +248,96 @@
     <!-- ************** Start main Section ************** -->
     <div class="main-sec sec-padding main-padding-right">
         <div class="container">
-            <a href="add_sales_customer_record.html" class='add_btn up mb-4'> <i class="fa-solid fa-circle-plus"></i> إضافة سجل جديد لعميل </a>
 
-            <form class='filter_con mb-4'>
+            <div class='bg-light rounded-4 p-sm-5 py-4 px-3'>
+                <h3 class="fs16 ff-b mb-4"> إضافة تحصيل جديد </h3>
 
-                <div class='filter_item main-input'>
-                    <i class="fa-solid fa-magnifying-glass main-icon"></i>
-                    <input class='input-me' id='searchTable' placeholder='ابحث باسم العميل او البائع او المتعاون' />
-                </div>
+                <form class="paymnet_items" >
+                    
+                    <div class="paymnet_item_c mb-4">
+                        <h5 class='fs15 c-black ff-d mb-3'>وقت المهمة<h5>
 
-                <div class='filter_item main-input'>
-                    <i class="fa-solid fa-magnifying-glass main-icon"></i>
-                    <input class='input-me' id='searchTable' placeholder='ابحث برقم الجوال' />
-                </div>
+                        <div class="paymnet_item row">
+                            <div class="col-sm-6">
+                                <div class="input-g">
+                                    <label for="" class="main-label d-flex-between">
+                                        اسم عميلة الدفع
+                                    </label>
+                                    <div class="main-input">
+                                        <select name="" id="" class="select">
+                                            <option value="0" selected disabled hidden>قم بإدخال اسم عميلة الدفع
+                                            </option>
+                                            <option value="1">اسم عميلة الدفع</option>
+                                            <option value="2">اسم عميلة الدفع</option>
+                                            <option value="3">اسم عميلة الدفع</option>
+                                            <option value="4">اسم عميلة الدفع</option>
+                                            <option value="5">اسم عميلة الدفع</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-g">
+                                    <label for="" class="main-label">تاريخ التحصيل</label>
+                                    <div class="main-input">
+                                        <input type="date" placeholder="قم بإدخال تاريخ التحصيل" class="input-me calender">
+                                        <i class="fa-regular fa-calendar main-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-g">
+                                    <label for="" class="main-label">اجمالي المبلغ المحصل</label>
+                                    <div class="main-input">
+                                        <input type="text" placeholder="قم بإدخال اجمالي المبلغ المحصل" class="input-me">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-g">
+                                    <label for="" class="main-label d-flex-between">
+                                        الشخص المحصل
+                                    </label>
+                                    <div class="main-input">
+                                        <select name="" id="" class="select">
+                                            <option value="0" selected disabled hidden>قم بتحديد الشخص المحصل</option>
+                                            <option value="1">اسم الشخص المحصل</option>
+                                            <option value="2">اسم الشخص المحصل</option>
+                                            <option value="3">اسم الشخص المحصل</option>
+                                            <option value="4">اسم الشخص المحصل</option>
+                                            <option value="5">اسم الشخص المحصل</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
-                <button type="submit" class="main-btn sec up">بحث</button>
+                            <div class="col-12">
+                                <div class="input-g">
+                                    <label for="" class="main-label">المرفقات</label>
+                                    <div class='d-flex gap-4 upload-con'>
+                                        <label class="upload-label">
+                                            <input id="uploadImgs" type="file" multiple accept="image/* , application/*"
+                                                class="hidden-input img-upload-input">
+                                            <img src='./assets/imgs/icons/add-file.gif' />
+                                            <span>إضافة مرفق</span>
+                                        </label>
+                                        <div class="photo-con"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            </form>
+                        <div class='check-box d-flex gap-2 mt-1 align-items-center'>
+                            <input type="checkbox" name="" id="finalPayment">
+                            <label class="check" for="finalPayment"></label>
+                            <label class="fs14 cu-pointer" for="finalPayment">دفعة نهائية</label>
+                        </div>
+                    </div>
 
-            <div class="data">
-                <table id="myTable" class="display table" dir="rtl">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>اسم العميل</th>
-                            <th>رقم الجوال</th>
-                            <th>عدد التقرير</th>
-                            <th>حالته</th>
-                            <th>المزيد</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>محمد بن سلمان القحطاني</td>
-                            <td>+966051231231</td>
-                            <td>15</td>
-                            <td>
-                                <span class="badge_m blue">بانتظار اعتماد للعميل</span>
-                            </td>
-                            <td class="d-flex-c gap-1">
-                                <a href="Sales_customer_record_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
-                                <a href="edit_sales_customer_record.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
-                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>محمد بن سلمان القحطاني</td>
-                            <td>+966051231231</td>
-                            <td>15</td>
-                            <td>
-                                <span class="badge_m blue">بانتظار اعتماد للعميل</span>
-                            </td>
-                            <td class="d-flex-c gap-1">
-                                <a href="Sales_customer_record_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
-                                <a href="edit_sales_customer_record.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
-                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>محمد بن سلمان القحطاني</td>
-                            <td>+966051231231</td>
-                            <td>15</td>
-                            <td>
-                                <span class="badge_m wait">بانتظار اعتماد V.P</span>
-                            </td>
-                            <td class="d-flex-c gap-1">
-                                <a href="Sales_customer_record_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
-                                <a href="edit_sales_customer_record.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
-                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>محمد بن سلمان القحطاني</td>
-                            <td>+966051231231</td>
-                            <td>15</td>
-                            <td>
-                                <span class="badge_m wait">بانتظار اعتماد V.P</span>
-                            </td>
-                            <td class="d-flex-c gap-1">
-                                <a href="Sales_customer_record_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
-                                <a href="edit_sales_customer_record.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
-                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>محمد بن سلمان القحطاني</td>
-                            <td>+966051231231</td>
-                            <td>15</td>
-                            <td>
-                                <span class="badge_m yellow">بانتظار أرساله للعميل</span>
-                            </td>
-                            <td class="d-flex-c gap-1">
-                                <a href="Sales_customer_record_detailes.html" class="icon_link"><i class="fa-solid fa-eye"></i></a>
-                                <a href="edit_sales_customer_record.html" class="icon_link"><i class="fa-solid fa-pen"></i></a>
-                                <button type='button' data-bs-target="#deleteModal" data-bs-toggle="modal" class="icon_link"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <button type="button" data-bs-target='#formDoneModal' data-bs-toggle='modal' class='main-btn sec up lg mt-4'>إضافة التحصيل</button>
+
+                </form>
+
             </div>
 
         </div>
@@ -358,42 +345,19 @@
     <!-- ************** End main Section ************** -->
 
 
-    <!-- ************** Delete Modal ************** -->
-    <div class="modal fade" id="deleteModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-
-            <div class="modal-body">
-                <img src="./assets/imgs/icons/delete.gif" alt="" class="modal-img-body mb-3 mx-auto">
-                <h3 class="fs15 c-black text-center ff-d mb-4">هل انت متأكد من الحذف ؟</h3>
-            </div>
-
-            <div class="modal-footer">
-                <div class="buttons w-100 justify-content-center">
-                    <button type="button" data-bs-target="#doneModal" data-bs-toggle="modal" data-bs-dismiss="modal" class="main-btn lg up red">حذف</button>
-                    <button type="button" data-bs-dismiss="modal" class="main-btn lg transparent">تراجع</button>
-                </div>
-            </div>
-
-          </div>
-        </div>
-    </div>
-    
-    
-
-    <!-- ************** Done Modal ************** -->
-    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <!-- ************** Form Done Modal ************** -->
+    <div class="modal fade" id="formDoneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
 
             <div class="modal-body">
                 <img src="./assets/imgs/icons/verified.gif" alt="" class="modal-img-body verified mb-4 mx-auto">
-                <h3 class="fs15 c-black text-center ff-d mb-4">تم الحذف بنجاح</h3>
+                <h3 class="fs15 c-black text-center ff-d mb-4">تم إضافة تحصيل جديد بنجاح</h3>
             </div>
 
             <div class="modal-footer">
                 <div class="buttons w-100 justify-content-center">
-                    <button type="button" data-bs-dismiss="modal" class="main-btn sec lg up">تأكيد</button>
+                    <a href='payment_engagement_letter_detailes.html' class="main-btn sec lg up">استمرار</a>
                 </div>
             </div>
 
@@ -407,8 +371,6 @@
     <script src="./assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- Jquery -->
     <script src="./assets/plugins/jquery/jquery-3.5.1.min.js"></script>
-    <!-- Select 2 -->
-    <script src="./assets/plugins/select2/select2.js"></script>
     <!-- fancybox -->
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
     <!-- FlatPicker -->
@@ -416,8 +378,18 @@
     <!-- Datatables -->
     <script type="text/javascript"
         src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
+    <!-- Select 2 -->
+    <script src="./assets/plugins/select2/select2.js"></script>
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>
+    <!-- Flat Picker -->
+    <script>
+        flatpickr(".calender", {
+            disableMobile: "true",
+            inline: false,
+            dateFormat: "Y-m-d",
+        });
+    </script>
 </body>
 
 </html>
