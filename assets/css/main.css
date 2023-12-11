@@ -796,6 +796,67 @@ html[lang=ar] .steps .step-item + .step-item:after {
 .steps .step-item.reject .progress-label {
   color: #D44A4A;
 }
+.steps.steps_vr {
+  display: block;
+  width: 390px;
+  margin: auto;
+}
+@media only screen and (max-width: 425px) {
+  .steps.steps_vr {
+    width: 100%;
+  }
+}
+.steps.steps_vr .step-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-direction: row;
+  min-height: 100px;
+}
+@media only screen and (max-width: 425px) {
+  .steps.steps_vr .step-item {
+    justify-content: center;
+  }
+}
+.steps.steps_vr .step-item:after {
+  display: none;
+}
+.steps.steps_vr .step-item .first {
+  min-width: 160px;
+}
+@media only screen and (max-width: 425px) {
+  .steps.steps_vr .step-item .first {
+    min-width: fit-content;
+  }
+}
+.steps.steps_vr .step-item:not(:last-child) .progress-count {
+  position: relative;
+}
+.steps.steps_vr .step-item:not(:last-child) .progress-count:after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 50% !important;
+  height: 95px;
+  width: 1px;
+  transform: translateX(-50%) !important;
+  z-index: -11;
+  opacity: 0.5;
+  border: 1px dashed #064e94;
+}
+html[lang=en] .steps.steps_vr .step-item:not(:last-child) .progress-count:after {
+  left: unset !important;
+}
+html[lang=ar] .steps.steps_vr .step-item:not(:last-child) .progress-count:after {
+  right: unset !important;
+}
+.steps.steps_vr .step-item .progress-count {
+  margin: 0 !important;
+  flex-shrink: 0;
+}
+.steps.steps_vr .step-item .progress-label {
+  margin-top: 0;
+}
 
 /********************* breadcrumb *********************/
 .breadcrumb-con {
@@ -979,7 +1040,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   color: #064e94;
 }
 .badge_m.blue2 {
-  background-color: #E1EFFC;
+  background-color: #e1effc;
   color: #064e94;
 }
 .badge_m.yellow {
@@ -3138,7 +3199,8 @@ html[lang=ar] .user-img .user-camera {
   bottom: 0;
 }
 
-.remove-img, .remove_img_modal {
+.remove-img,
+.remove_img_modal {
   position: absolute;
   top: -7px;
   border-radius: 50%;
@@ -3152,16 +3214,20 @@ html[lang=ar] .user-img .user-camera {
   cursor: pointer;
   font-size: 13px;
 }
-html[lang=en] .remove-img, html[lang=en] .remove_img_modal {
+html[lang=en] .remove-img,
+html[lang=en] .remove_img_modal {
   right: -7px;
 }
-html[lang=ar] .remove-img, html[lang=ar] .remove_img_modal {
+html[lang=ar] .remove-img,
+html[lang=ar] .remove_img_modal {
   left: -7px;
 }
-.remove-img i, .remove_img_modal i {
+.remove-img i,
+.remove_img_modal i {
   font-size: 13px;
 }
-.remove-img img, .remove_img_modal img {
+.remove-img img,
+.remove_img_modal img {
   width: 24px;
   height: 24px;
 }

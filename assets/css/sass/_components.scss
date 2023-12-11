@@ -534,6 +534,68 @@
       }
     }
   }
+
+  &.steps_vr {
+    display: block;
+    width: 390px;
+    margin: auto;
+    @include devices(xs){
+      width: 100%;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-direction: row;
+      min-height: 100px;
+
+      @include devices(xs){
+        justify-content: center;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      .first{
+        min-width: 160px;
+
+        @include devices(xs){
+          min-width: fit-content;
+        }
+      }
+
+      &:not(:last-child) {
+        .progress-count {
+          position: relative;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 21px;
+            @include dir-left(unset !important);
+            left: 50% !important;
+            height: 95px;
+            width: 1px;
+            transform: translateX(-50%) !important;
+            z-index: -11;
+            opacity: 0.5;
+            border: 1px dashed $main;
+          }
+        }
+      }
+
+      .progress-count {
+        margin: 0 !important;
+        flex-shrink: 0;
+      }
+
+      .progress-label {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 /********************* breadcrumb *********************/
@@ -721,7 +783,7 @@
   }
 
   &.blue2 {
-    background-color: #E1EFFC;
+    background-color: #e1effc;
     color: #064e94;
   }
 
@@ -746,9 +808,9 @@
   flex-wrap: wrap;
   font-size: 14px;
   font-family: fontDemi;
-  
-  &.oapcity{
-    background-color: rgba($color: #def4ff, $alpha: .5);
+
+  &.oapcity {
+    background-color: rgba($color: #def4ff, $alpha: 0.5);
   }
 }
 
@@ -1100,12 +1162,12 @@
   i {
     font-size: 20px;
 
-    @include devices(xs){
+    @include devices(xs) {
       font-size: 15px !important;
     }
   }
 
-  @include devices(xs){
+  @include devices(xs) {
     font-size: 11px !important;
   }
 }
@@ -1823,7 +1885,8 @@
       cursor: pointer;
     }
 
-    &.search-ic, &.pass-icon {
+    &.search-ic,
+    &.pass-icon {
       pointer-events: auto;
     }
 
@@ -2462,7 +2525,8 @@
   }
 }
 
-.remove-img, .remove_img_modal {
+.remove-img,
+.remove_img_modal {
   position: absolute;
   top: -7px;
   @include dir-right(-7px);
