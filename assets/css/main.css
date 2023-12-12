@@ -798,8 +798,6 @@ html[lang=ar] .steps .step-item + .step-item:after {
 }
 .steps.steps_vr {
   display: block;
-  width: 390px;
-  margin: auto;
 }
 @media only screen and (max-width: 425px) {
   .steps.steps_vr {
@@ -813,16 +811,11 @@ html[lang=ar] .steps .step-item + .step-item:after {
   flex-direction: row;
   min-height: 100px;
 }
-@media only screen and (max-width: 425px) {
-  .steps.steps_vr .step-item {
-    justify-content: center;
-  }
-}
 .steps.steps_vr .step-item:after {
   display: none;
 }
 .steps.steps_vr .step-item .first {
-  min-width: 160px;
+  min-width: 85px;
 }
 @media only screen and (max-width: 425px) {
   .steps.steps_vr .step-item .first {
