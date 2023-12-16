@@ -3009,37 +3009,50 @@
   &.left {
     // min-width: 180px;
     #{$ltr} & {
-      inset: 50px 0% auto auto;
+      inset: 65px 0% auto auto;
     }
     #{$rtl} & {
-      inset: 50px auto auto 0%;
+      inset: 65px auto auto 0%;
     }
 
     &.show {
       #{$ltr} & {
-        inset: 28px 0% auto auto !important;
+        inset: 50px 0% auto auto !important;
       }
       #{$rtl} & {
-        inset: 28px auto auto 0% !important;
+        inset: 50px auto auto 0% !important;
       }
     }
   }
 
   &.drop-lang {
-    min-width: 120px;
+    min-width: 170px;
 
     .lang-item {
-      display: block;
-      padding: 8px;
-      font-size: 16px;
+      display: flex;
+      align-items: center;
+      padding: 12px 8px;
+      font-size: 14px;
+      gap: 10px;
+      font-size: 14px;
       color: $black;
       transition: $main-transition;
       border-radius: 5px;
+
+      .ic {
+        max-width: 17px;
+      }
+
+      &.red {
+        color: $red !important;
+      }
 
       &:hover {
         color: $dark;
         background-color: $white3;
       }
+
+
     }
   }
 

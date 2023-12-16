@@ -3668,27 +3668,36 @@ html[lang=ar] .dropdown-menu.show {
   inset: 28px 0% auto auto !important;
 }
 html[lang=en] .dropdown-menu.left {
-  inset: 50px 0% auto auto;
+  inset: 65px 0% auto auto;
 }
 html[lang=ar] .dropdown-menu.left {
-  inset: 50px auto auto 0%;
+  inset: 65px auto auto 0%;
 }
 html[lang=en] .dropdown-menu.left.show {
-  inset: 28px 0% auto auto !important;
+  inset: 50px 0% auto auto !important;
 }
 html[lang=ar] .dropdown-menu.left.show {
-  inset: 28px auto auto 0% !important;
+  inset: 50px auto auto 0% !important;
 }
 .dropdown-menu.drop-lang {
-  min-width: 120px;
+  min-width: 170px;
 }
 .dropdown-menu.drop-lang .lang-item {
-  display: block;
-  padding: 8px;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+  font-size: 14px;
+  gap: 10px;
+  font-size: 14px;
   color: #000;
   transition: all 0.3s ease;
   border-radius: 5px;
+}
+.dropdown-menu.drop-lang .lang-item .ic {
+  max-width: 17px;
+}
+.dropdown-menu.drop-lang .lang-item.red {
+  color: #D44A4A !important;
 }
 .dropdown-menu.drop-lang .lang-item:hover {
   color: #272727;
